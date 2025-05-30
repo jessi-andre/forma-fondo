@@ -103,9 +103,6 @@ nav {
   transition: background 0.3s ease;
 }
 
-.btn-nav:hover {
-  font-size: 0.9rem;
-}
 
 .hero {
   /* background: url('/img/fondo-hero.jpg') center/cover no-repeat;*/
@@ -263,17 +260,19 @@ button:hover {
   background: var(--lila);
   color: #343434;
   font-size: 1.2rem;
+}
 
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
+/* Estas reglas van por fuera, no dentro de .btn:hover */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 @media (max-width: 768px) {
   .nav-links {
@@ -294,7 +293,6 @@ button:hover {
   }
 }
 
-}
 
 /*BOTON DE WHATSAPP*/
 
@@ -377,6 +375,7 @@ footer {
   color: var(--negro);
   transition: color 0.3s ease;
 }
+
 .footer-icons a:hover i {
   color: var(--lila);
 }
@@ -411,16 +410,21 @@ footer {
 #nosotros .card {
   flex: 1 1 350px;
   max-width: 500px;
-  max-height: 250px; /* limita altura máxima */
-  padding: 1.5rem 2rem; /* menos padding vertical */
+  max-height: 250px;
+  /* limita altura máxima */
+  padding: 1.5rem 2rem;
+  /* menos padding vertical */
   box-sizing: border-box;
-  overflow: hidden; /* evita que se pase el contenido */
+  overflow: hidden;
+  /* evita que se pase el contenido */
 }
 
 
 #nosotros .card {
-  flex: 1 1 350px;   /* ancho mínimo de 350px y flexible */
-  max-width: 500px;  /* ancho máximo para las cards */
+  flex: 1 1 350px;
+  /* ancho mínimo de 350px y flexible */
+  max-width: 500px;
+  /* ancho máximo para las cards */
   padding: 2rem;
   box-sizing: border-box;
 }
@@ -438,5 +442,3 @@ footer {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
-
-
