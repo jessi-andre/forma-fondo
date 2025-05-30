@@ -5,14 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Forma & Fondo</title>
-
-  <!-- Solo estas 2 fuentes -->
+  <!-- fuentes-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;700&display=swap"
     rel="stylesheet" />
-
+  <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/phosphor.css">
   <link rel="stylesheet" href="./css/style.css" />
   <script defer src="./js/script.js"></script>
 </head>
@@ -28,12 +27,17 @@
       <div class="logo">
         <a href="#inicio"><img src="./img/logo.png" alt="logo" /></a>
       </div>
+
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+        <li>
+          <button id="darkModeToggle" aria-label="Cambiar modo" class="dark-mode-btn">🌙</button>
+        </li>
       </ul>
+
       <button class="nav-toggle" aria-label="Abrir menú">&#9776;</button>
     </nav>
   </header>
@@ -46,58 +50,101 @@
     </section>
 
     <section id="servicios" class="section fade-in">
-      <h2>Servicios</h2>
-      <div class="cards">
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Placeholder" />
+      <h2>Transformamos tu visión en impacto real</h2>
+      <p>Servicios estratégicos de diseño que conectan, inspiran y potencian tu marca para destacarse en un mundo
+        competitivo.</p>
 
-          <h3>Branding</h3>
-          <a href="#contacto" class="btn-card">Saber más</a>
-        </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Placeholder" />
+      <div class="cards-servicios">
 
-          <h3>Diseño UX/UI</h3>
-          <a href="#contacto" class="btn-card">Saber más</a>
+        <div class="card-servicio">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./img/branding.png" alt="Branding" />
+              <h3>Branding</h3>
+            </div>
+            <div class="card-back">
+              <p>Construimos identidades visuales que comunican con claridad, coherencia y personalidad.</p>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Placeholder" />
 
-          <h3>Diseño Web</h3>
-          <a href="#contacto" class="btn-card">Saber más</a>
+        <div class="card-servicio">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./img/uiUx.png" alt="Diseño UX/UI" />
+              <h3>Diseño UX/UI</h3>
+            </div>
+            <div class="card-back">
+              <p>Diseñamos experiencias intuitivas y funcionales que conectan con tus usuarios desde el primer clic.</p>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Placeholder" />
 
-          <h3>Contenidos</h3>
-          <a href="#contacto" class="btn-card">Saber más</a>
+        <div class="card-servicio">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./img/diseñoWeb.png" alt="Diseño Web" />
+              <h3>Diseño Web</h3>
+            </div>
+            <div class="card-back">
+              <p>Webs a medida, visualmente atractivas, accesibles y alineadas con tu identidad de marca.</p>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Placeholder" />
 
-          <h3>Asesorías</h3>
-          <a href="#contacto" class="btn-card">Saber más</a>
+        <div class="card-servicio">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./img/contenidos.png" alt="Contenidos" />
+              <h3>Contenidos</h3>
+            </div>
+            <div class="card-back">
+              <p>Generamos piezas visuales que potencian tu mensaje en redes, web y otros medios.</p>
+            </div>
+          </div>
         </div>
+
+        <div class="card-servicio">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./img/asesorías.png" alt="Asesorías" />
+              <h3>Asesorías</h3>
+            </div>
+            <div class="card-back">
+              <p>Te guiamos estratégicamente en el desarrollo y posicionamiento visual de tu marca.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section id="nosotros" class="section fade-in">
-      <h2>Sobre nosotros</h2>
+      <h2>Un estudio. Una misma visión.</h2>
+      <p>Creamos identidades visuales, contenido y experiencias digitales pensadas desde lo funcional y lo estético.
+        Unimos estrategia, diseño y comunicación para dar forma y fondo a cada proyecto.</p>
+
       <div class="cards">
         <div class="card nosotros-card">
-          <img src="#" alt="Persona 1">
+          <img src="./img/jessica.png" alt="Foto de Jessi" id="nosotrosImg">
           <h3>Jessi</h3>
-          <p>Diseñadora UX/UI y programadora. Apasionada por el diseño con propósito, combina estética y funcionalidad
-            en cada proyecto.</p>
+          <p>Me especializo en branding, diseño de contenido, sitios web y experiencias UI/UX que conectan marcas con
+            personas de forma auténtica y estratégica.</p>
+          <a href="https://tuweb.com/portfolio/jessi" class="btn-card-nosotros" target="_blank"
+            rel="noopener noreferrer" aria-label="Ver portfolio de Jessi">Ver portfolio</a>
         </div>
+
         <div class="card nosotros-card">
-          <img src="#" alt="Persona 2">
+          <img src="./img/jessica.png" alt="Foto de Eze" id="nosotrosImg">
           <h3>Eze</h3>
-          <p>Comunicadora y creativa. Aporta sensibilidad editorial y acompaña procesos de identidad desde la empatía y
-            la estrategia.</p>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout.</p>
+          <a href="https://tuweb.com/portfolio/eze" class="btn-card-nosotros" target="_blank" rel="noopener noreferrer"
+            aria-label="Ver portfolio de Eze">Ver portfolio</a>
         </div>
       </div>
     </section>
+
 
 
     <section id="contacto" class="section fade-in">
@@ -112,17 +159,21 @@
     </section>
   </main>
 
+  <a href="#" class="scroll-to-top" aria-label="Ir arriba">
+    <i class="ph ph-arrow-up"></i>
+  </a>
+
   <footer>
     <div class="footer-container">
       <div class="footer-icons">
 
-        <a href="https://www.behance.net/jessAndrey" target="_blank" aria-label="Behance">
+        <a href="https://www.behance.net/jessAndre" target="_blank" aria-label="Behance">
           <i class="ph ph-behance-logo"></i>
         </a>
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+        <a href="https://instagram.com/formayfondo__" target="_blank" aria-label="Instagram">
           <i class="ph ph-instagram-logo"></i>
         </a>
-        <a href="mailto:tucorreo@ejemplo.com" aria-label="Correo">
+        <a href="mailto:jessicaandre890@gmail.com" aria-label="Correo">
           <i class="ph ph-envelope-simple"></i>
         </a>
       </div>

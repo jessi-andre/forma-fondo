@@ -8,6 +8,8 @@ if (toggleBtn && navLinks) {
   });
 }
 
+
+
 // === ANIMACIÓN DE SCROLL ===
 const faders = document.querySelectorAll(".fade-in");
 
@@ -20,7 +22,7 @@ const appearOnScroll = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.15,
+    threshold: 0.2,
     rootMargin: "0px 0px -50px 0px"
   }
 );
@@ -82,7 +84,7 @@ if (header) {
   });
 }
 
-// === DETECCIÓN DE TEMA OSCURO (opcional para futuro) ===
+// === DETECCIÓN DE TEMA OSCURO ===
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
   console.log("El usuario prefiere modo oscuro. Podés adaptar el estilo si querés.");
 }
@@ -134,7 +136,57 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('darkModeToggle');
+  const prefersDark = localStorage.getItem('darkMode') === 'enabled';
+
+  if (prefersDark) {
+    document.body.classList.add('dark-mode');
+    toggleBtn.textContent = '☀️';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const darkEnabled = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', darkEnabled ? 'enabled' : 'disabled');
+    toggleBtn.textContent = darkEnabled ? '☀️' : '🌙';
+  });
+});
+
+
+const servicioCards = document.querySelectorAll('.card-servicio');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+servicioCards.forEach(card => observer.observe(card));
+
+
+ const scrollBtn = document.querySelector('.scroll-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+
+  scrollBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
