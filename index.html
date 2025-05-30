@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forma & Fondo</title>
+
+  <!-- Solo estas 2 fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <script defer src="/js/script.js"></script>
+</head>
+
+<body>
+  <a href="https://wa.me/5491125532868" class="btn-whatsapp" target="_blank" aria-label="WhatsApp">
+    <img src="https://icongr.am/fontawesome/whatsapp.svg?size=32&color=ffffff" alt="WhatsApp">
+  </a>
+
+
+  <header id="header">
+    <nav>
+      <div class="logo">
+        <a href="#inicio"><img src="/img/logo.png" alt="logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Abrir menú">&#9776;</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero fade-in">
+      <h1>Diseño consciente con forma y fondo</h1>
+      <p>Acompañamos a marcas y personas a mostrarse con autenticidad y coherencia.</p>
+      <a href="#contacto" class="btn">Contactar</a>
+    </section>
+
+    <section id="servicios" class="section fade-in">
+      <h2>Servicios</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="/img/branding.jpg" alt="Branding">
+          <h3>Branding</h3>
+          <a href="#contacto" class="btn-card">Saber más</a>
+        </div>
+        <div class="card">
+          <img src="/img/ux.jpg" alt="Diseño UX/UI">
+          <h3>Diseño UX/UI</h3>
+          <a href="#contacto" class="btn-card">Saber más</a>
+        </div>
+        <div class="card">
+          <img src="/img/web.jpg" alt="Diseño Web">
+          <h3>Diseño Web</h3>
+          <a href="#contacto" class="btn-card">Saber más</a>
+        </div>
+        <div class="card">
+          <img src="/img/contenidos.jpg" alt="Contenidos">
+          <h3>Contenidos</h3>
+          <a href="#contacto" class="btn-card">Saber más</a>
+        </div>
+        <div class="card">
+          <img src="/img/asesorias.jpg" alt="Asesorías">
+          <h3>Asesorías</h3>
+          <a href="#contacto" class="btn-card">Saber más</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="section fade-in">
+      <h2>Sobre nosotros</h2>
+      <div class="cards">
+        <div class="card nosotros-card">
+          <img src="/img/persona1.jpg" alt="Persona 1">
+          <h3>Jessi</h3>
+          <p>Diseñadora UX/UI y programadora. Apasionada por el diseño con propósito, combina estética y funcionalidad
+            en cada proyecto.</p>
+        </div>
+        <div class="card nosotros-card">
+          <img src="/img/persona2.jpg" alt="Persona 2">
+          <h3>Eze</h3>
+          <p>Comunicadora y creativa. Aporta sensibilidad editorial y acompaña procesos de identidad desde la empatía y
+            la estrategia.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contacto" class="section fade-in">
+      <h2>Contacto</h2>
+   <form id="contact-form" action="https://formspree.io/f/tu-codigo" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
+        <input type="email" name="_replyto" placeholder="Tu email" required />
+        <textarea name="mensaje" placeholder="Escribinos tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+        <p id="form-status" class="form-status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-icons">
+
+        <a href="https://www.behance.net/jessAndrey" target="_blank" aria-label="Behance">
+          <i class="ph ph-behance-logo"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <i class="ph ph-instagram-logo"></i>
+        </a>
+        <a href="mailto:tucorreo@ejemplo.com" aria-label="Correo">
+          <i class="ph ph-envelope-simple"></i>
+        </a>
+      </div>
+      <div class="footer-location">Ñuñoa, Santiago de Chile</div>
+      <div class="footer-copy">© 2025 Forma & Fondo</div>
+    </div>
+  </footer>
+
+  <!-- Phosphor Icons CDN -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+</body>
+
+</html>
