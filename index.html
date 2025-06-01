@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Forma & Fondo - Estudio de diseño estratégico, branding, UX/UI y contenido visual en Santiago de Chile y al mundo.">
+
   <title>Forma & Fondo</title>
   <!-- fuentes-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,19 +16,39 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/phosphor.css">
   <link rel="stylesheet" href="./css/style.css" />
+
   <script defer src="./js/script.js"></script>
 </head>
 
 <body>
+  <!-- LOGO INTRO  -->
+  <div class="logo-intro" id="logoIntro">
+    <img src="./img/logo.png" alt="Forma & Fondo logo" />
+  </div>
+
+  <!-- BARRA INTRO -->
+  <div class="barra-intro" id="barraIntro">
+    <div class="barra-contenido">
+      <span class="barra-fecha">Jessica Andre · 2025</span>
+      <span class="barra-servicios">Branding / Web / UX/UI / Contenido</span>
+      <span class="barra-compania">Forma & Fondo</span>
+    </div>
+  </div>
+
+
+
   <a href="https://wa.me/5491125532868" class="btn-whatsapp" target="_blank" aria-label="WhatsApp">
     <img src="https://icongr.am/fontawesome/whatsapp.svg?size=32&color=ffffff" alt="WhatsApp">
   </a>
 
 
   <header id="header">
+
+    <!-- NAV + LOGO  -->
+
     <nav>
       <div class="logo">
-        <a href="#inicio"><img src="./img/logo.png" alt="logo" /></a>
+        <a href="#inicio"><img src="./img/logo.png" alt="Logo de Forma y Fondo" /></a>
       </div>
 
       <ul class="nav-links">
@@ -33,22 +56,46 @@
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+
         <li>
           <button id="darkModeToggle" aria-label="Cambiar modo" class="dark-mode-btn">🌙</button>
         </li>
       </ul>
 
       <button class="nav-toggle" aria-label="Abrir menú">&#9776;</button>
+
     </nav>
+    
   </header>
 
   <main>
+
+
+    <!-- HERO -->
+
     <section id="inicio" class="hero fade-in">
       <h1>Diseño consciente con forma y fondo</h1>
-      <p>Acompañamos a marcas y personas a mostrarse con autenticidad y coherencia.</p>
-      <a href="#contacto" class="btn">Contactar</a>
+      <p>Diseñamos experiencias visuales que reflejan quién sos y hacia dónde querés ir.</p>
+      <a href="#contacto" class="btn">Conversemos</a>
     </section>
 
+
+    <section class="marquee-section fade-in">
+      <div class="marquee">
+        <span class="marquee-text">
+          Diseño estratégico ✷ Identidad visual auténtica ✺ Experiencias digitales a medida ✦ Branding con personalidad
+          • Interfaces funcionales y elegantes ✷
+        </span>
+        <span class="marquee-text">
+          Diseño estratégico ✷ Identidad visual auténtica ✺ Experiencias digitales a medida ✦ Branding con personalidad
+          • Interfaces funcionales y elegantes ✷
+        </span>
+      </div>
+    </section>
+
+
+
+    <!-- SERVICIOS -->
     <section id="servicios" class="section fade-in">
       <h2>Transformamos tu visión en impacto real</h2>
       <p>Servicios estratégicos de diseño que conectan, inspiran y potencian tu marca para destacarse en un mundo
@@ -118,7 +165,7 @@
 
       </div>
     </section>
-
+    <!-- NOSOTROS -->
     <section id="nosotros" class="section fade-in">
       <h2>Un estudio. Una misma visión.</h2>
       <p>Creamos identidades visuales, contenido y experiencias digitales pensadas desde lo funcional y lo estético.
@@ -130,7 +177,7 @@
           <h3>Jessi</h3>
           <p>Me especializo en branding, diseño de contenido, sitios web y experiencias UI/UX que conectan marcas con
             personas de forma auténtica y estratégica.</p>
-          <a  href="https://www.behance.net/jessAndre" class="btn-card-nosotros" target="_blank"
+          <a href="https://www.behance.net/jessAndre" class="btn-card-nosotros" target="_blank"
             rel="noopener noreferrer" aria-label="Ver portfolio de Jessi">Ver portfolio</a>
         </div>
 
@@ -139,21 +186,23 @@
           <h3>Eze</h3>
           <p>It is a long established fact that a reader will be distracted by the readable content of a page when
             looking at its layout.</p>
-          <a href="https://www.behance.net/jessAndre" class="btn-card-nosotros" target="_blank" rel="noopener noreferrer"
-            aria-label="Ver portfolio de Eze">Ver portfolio</a>
+          <a href="https://www.behance.net/jessAndre" class="btn-card-nosotros" target="_blank"
+            rel="noopener noreferrer" aria-label="Ver portfolio de Eze">Ver portfolio</a>
         </div>
       </div>
     </section>
 
-
+    <!-- FORMULARIO  -->
 
     <section id="contacto" class="section fade-in">
-      <h2>Contacto</h2>
-      <form id="contact-form" action="https://formspree.io/f/tu-codigo" method="POST">
+      <h2>Tu proyecto merece una imagen con identidad</h2>
+      <p>Escribinos sin compromiso. Contanos tu idea, proyecto o necesidad y te respondemos en menos de 24 horas.</p>
+      <form id="contact-form" action="https://formspree.io/f/xkgbwywv" method="POST">
         <input type="text" name="nombre" placeholder="Tu nombre" required />
         <input type="email" name="_replyto" placeholder="Tu email" required />
         <textarea name="mensaje" placeholder="Escribinos tu mensaje" required></textarea>
-        <button type="submit">Enviar</button>
+        <button type="submit" class="btn btn-contacto">Enviar consulta</button>
+
         <p id="form-status" class="form-status"></p>
       </form>
     </section>
@@ -162,7 +211,7 @@
   <a href="#" class="scroll-to-top" aria-label="Ir arriba">
     <i class="ph ph-arrow-up"></i>
   </a>
-
+  <!-- FOOTER -->
   <footer>
     <div class="footer-container">
       <div class="footer-icons">
