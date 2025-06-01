@@ -35,6 +35,7 @@ body {
 }
 
 /* ========== LOGO INTRO  ========== */
+
 .logo-intro {
   position: fixed;
   top: 0;
@@ -52,7 +53,6 @@ body {
 
 .logo-intro.fade-out {
   animation: slide-up-fade 1.5s ease forwards;
-  /* antes era 1s */
   pointer-events: none;
 }
 
@@ -82,7 +82,7 @@ body {
 }
 
 
-
+/* ========== BARRA DE LA INTRO ========== */
 
 .barra-intro {
   position: fixed;
@@ -104,7 +104,6 @@ body {
   transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
-
 .barra-contenido {
   width: 100%;
   padding: 0 1.5rem;
@@ -121,12 +120,9 @@ body {
   pointer-events: none;
 }
 
-
-
 .intro-card {
   position: fixed;
-  top: 0 !important;
-  /* ahora está pegada al borde superior */
+  /*top: 0 !important;*/
   left: 0;
   width: 100vw;
   background-color: var(--blanco);
@@ -177,6 +173,7 @@ body {
 
 
 /* ========== HEADER ========== */
+
 header {
   background: var(--blanco);
   border-bottom: 1px solid var(--gris-borde);
@@ -230,20 +227,19 @@ nav {
   font-weight: 550;
 }
 
+nav.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
 
 /*====== LOGO ======*/
 .logo img {
   height: 46px;
 }
 
-
-
-
-
-
-
-
-/* ========== HERO ========== */
+/* ========== HERO - INICIO  ========== */
 
 .hero {
   padding-top: 100px;
@@ -289,7 +285,7 @@ nav {
 
 
 
-/*====== BANNER PEQUEÑO  ======*/
+/*====== BANNER PEQUEÑO EN EL INICIO ======*/
 .marquee-section {
   height: 40px;
   margin-top: 2.5rem;
@@ -373,7 +369,6 @@ nav {
   margin-bottom: 5rem;
 }
 
-/* ========== CARDS DE SERVICIOS ========== */
 
 .cards-servicios {
   display: grid;
@@ -443,72 +438,6 @@ nav {
   transform: rotateY(180deg);
 }
 
-@media (max-width: 768px) {
-
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
-  .cards-servicios {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .card-servicio {
-    width: 90%;
-    max-width: 360px;
-    background-color: var(--blanco);
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 6px hsl(0, 0%, 20%);
-  }
-
-  .card-servicio .card-inner {
-    all: unset;
-    display: block;
-    width: 100%;
-  }
-
-  .card-servicio .card-front,
-  .card-servicio .card-back {
-    all: unset;
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .card-servicio img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-  }
-
-  .card-servicio h3 {
-    font-size: 1.1rem;
-    margin: 0.8rem 0 0.5rem;
-    text-align: center;
-  }
-
-  .card-servicio .card-back p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    text-align: center;
-  }
-
-  #servicios {
-    background-color: var(--blanco);
-    padding-bottom: 3rem;
-  }
-}
-
-
 /*====== FORMULARIO ======*/
 
 form {
@@ -570,7 +499,6 @@ button {
     opacity: 0;
   }
 }
-
 
 
 #contacto h2 {
@@ -666,96 +594,8 @@ button {
   transform: rotateY(180deg);
   /* Voltea el reverso para que aparezca al girar */
   padding: 1rem;
-  /* opcional, para que se vea bien el texto */
   box-sizing: border-box;
 }
-
-
-/* MEDIA QUERIES */
-@media (max-width: 768px) {
-
-  #inicio h1 {
-    font-size: 1.8rem;
-    /* título más pequeño que en desktop pero legible */
-    margin-bottom: 0.5rem;
-  }
-
-  #inicio p {
-    font-size: 1rem;
-    /* subtítulo más pequeño y cómodo */
-    margin-bottom: 1rem;
-  }
-
-  #inicio .btn {
-    padding: 0.6rem 2rem;
-    /* más ancho y cómodo para tocar */
-    font-size: 1.1rem;
-    /* tamaño de texto más visible */
-    max-width: 220px;
-    /* mayor ancho máximo */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: inline-block;
-    box-sizing: border-box;
-  }
-
-  .nav-links {
-    display: none;
-    /* oculta el menú */
-    flex-direction: column;
-    background: var(--blanco);
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    z-index: 1001;
-  }
-
-  /* Mostrar menú cuando tenga la clase open */
-  .nav-links.open {
-    display: flex;
-  }
-
-  /* Mostrar botón hamburguesa en móvil */
-  .nav-toggle {
-    margin-left: auto;
-    margin-right: 1rem;
-    z-index: 1100;
-  }
-
-
-
-  #nosotros .card {
-    flex: 1 1 90vw;
-    /* ancho flexible, casi 90% del viewport */
-    max-width: none;
-    /* sin límite máximo */
-    max-height: none;
-    /* sin límite de altura */
-    padding: 1rem 1.2rem;
-    /* menos padding para que no se vea gigante */
-    margin: 0 auto 1.5rem;
-    /* margen abajo para separación */
-  }
-
-  #nosotros .cards {
-    flex-direction: column;
-    /* apilar cards verticalmente */
-    gap: 1.5rem;
-    /* menos gap para espacio */
-  }
-}
-
-/* 2. En desktop ocultar botón hamburguesa */
-@media (min-width: 769px) {
-  .nav-toggle {
-    display: none;
-  }
-}
-
 
 
 /* ============ BOTON DE WHATSAPP ============*/
@@ -790,7 +630,8 @@ button {
 }
 
 
-/*footer*/
+/* =========== FOOTER ===========*/
+
 footer {
   background-color: var(--blanco);
   color: #343434;
@@ -842,11 +683,11 @@ footer {
 
 #nosotros .card {
   flex: 1 1 280px;
-  /* bajamos el tamaño base para que no queden tan anchas */
+  /* bajO el tamaño base para que no queden tan anchas */
   max-width: 350px;
   /* también bajamos el max para limitar tamaño */
   max-height: 450px;
-  /* puedes ajustar la altura si quieres */
+  /* altura */
   padding: 2rem;
   box-sizing: border-box;
   overflow: hidden;
@@ -874,15 +715,10 @@ footer {
 
 #nosotrosImg {
   width: 100%;
-  /* para que la imagen se adapte al ancho de la card */
   height: auto;
-  /* mantiene proporción */
   max-height: 200px;
-  /* límite alto para no alargar demasiado */
   object-fit: cover;
-  /* para que recorte bien si es necesario */
   border-radius: 12px;
-  /* opcional, para que quede más bonito */
 }
 
 #nosotros h3 {
@@ -906,7 +742,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/*aplica efecto fade con desplazamiento*/
+/*efecto fade con desplazamiento*/
 
 .fade-in {
   opacity: 0;
@@ -920,7 +756,8 @@ footer {
   transform: translateY(0) !important;
 }
 
-/* ========== BTN OSCURO ========== */
+/* ========== BOTÓN OSCURO ========== */
+
 .dark-mode-btn {
   font-size: 1.4rem;
   background: none;
@@ -1028,17 +865,6 @@ body.dark-mode .dark-mode-btn:hover {
   visibility: visible;
 }
 
-
-@media (max-width: 768px) {
-  .scroll-to-top {
-    bottom: 90px;
-    right: 20px;
-    left: auto;
-  }
-}
-
-
-
 /* CONTENEDOR FLEX DE LOS BOTONES */
 .nav-right {
   display: flex;
@@ -1055,61 +881,202 @@ body.dark-mode .dark-mode-btn:hover {
 
 
 
+/* MEDIA QUERIES */
 
-@media (max-width: 1024px) {
-  .vav-toggle {
-    padding: 0.25rem 33.5rem;
+/* MOBILE */
+@media (max-width: 768px) {
+
+  html,
+  body {
+    overflow-x: hidden;
   }
-}
 
-/* DESKTOP */
-@media (min-width: 769px) {
-  .nav-buttons {
+  .cards-servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .card-servicio {
+    width: 90%;
+    max-width: 360px;
+    background-color: var(--blanco);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px hsl(0, 0%, 20%);
+  }
+
+  .card-servicio .card-inner {
+    all: unset;
+    display: block;
+    width: 100%;
+  }
+
+  .card-servicio .card-front,
+  .card-servicio .card-back {
+    all: unset;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .card-servicio img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .card-servicio h3 {
+    font-size: 1.1rem;
+    margin: 0.8rem 0 0.5rem;
+    text-align: center;
+  }
+
+  .card-servicio .card-back p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  #servicios {
+    background-color: var(--blanco);
+    padding-bottom: 3rem;
+  }
+
+
+  /*   .nav-buttons {
     margin-left: 1rem;
+  }*/
+
+  .nav-buttons {
+    margin-left: auto;
+    margin-right: 1rem;
   }
 
-  .nav-toggle {
+  /* .nav-toggle {
     display: none;
+  }*/
+
+ .nav-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--negro);
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 1rem;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    z-index: 1100;
   }
 
-  .dark-mode-btn {
+  #inicio h1 {
+    font-size: 1.8rem;
+    /* título más pequeño que en desktop pero legible */
+    margin-bottom: 0.5rem;
+  }
+
+  #inicio p {
+    font-size: 1rem;
+    /* subtítulo más pequeño y cómodo */
+    margin-bottom: 1rem;
+  }
+
+  #inicio .btn {
+    padding: 0.6rem 2rem;
+    /* más ancho y cómodo para tocar */
+    font-size: 1.1rem;
+    /* tamaño de texto más visible */
+    max-width: 220px;
+    /* mayor ancho máximo */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  .nav-links {
+    display: none;
+    /* oculta el menú */
+    flex-direction: column;
+    background: var(--blanco);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    z-index: 1001;
+  }
+
+  /* Mostrar menú cuando tenga la clase open */
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Mostrar botón hamburguesa en móvil */
+/*  .nav-toggle {
+    margin-left: auto;
+    margin-right: 1rem;
+    z-index: 1100;
+  }*/
+
+  #nosotros .card {
+    flex: 1 1 90vw;
+    /* ancho flexible, casi 90% del viewport */
+    max-width: none;
+    /* sin límite máximo */
+    max-height: none;
+    /* sin límite de altura */
+    padding: 1rem 1.2rem;
+    /* menos padding para que no se vea gigante */
+    margin: 0 auto 1.5rem;
+    /* margen abajo para separación */
+  }
+
+  #nosotros .cards {
+    flex-direction: column;
+    /* apilar cards verticalmente */
+    gap: 1.5rem;
+    /* menos gap para espacio */
+  }
+
+  /*.dark-mode-btn {
     font-size: 1.4rem;
     background: none;
     border: none;
     cursor: pointer;
     color: var(--negro);
   }
-}
-
-/* TABLET/MOBILE */
-@media (max-width: 768px) {
-  .nav-buttons {
-    margin-left: auto;
-    margin-right: 1rem;
-  }
-
-  .nav-toggle {
-    font-size: 1.6rem;
-    /* ⬅️ tamaño más acorde al diseño */
-    background: none;
-    border: none;
-    color: var(--negro);
-    cursor: pointer;
-    margin-left: auto;
-    margin-right: 1.2rem;
-    /* ⬅️ margen cómodo a la derecha */
-    padding: 0.25rem 8.5rem;
-    /* ⬅️ menos padding */
-    display: flex;
-    align-items: center;
-    line-height: 1;
-  }
-
+*/
   .dark-mode-btn {
     font-size: 1.6rem;
     background: none;
     border: none;
     cursor: pointer;
     color: var(--negro);
+  }
+
+  .scroll-to-top {
+    bottom: 90px;
+    right: 20px;
+    left: auto;
+  }
+}
+
+/* =========== web =========== */
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none;
   }
 }
