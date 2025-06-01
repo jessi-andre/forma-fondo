@@ -962,7 +962,7 @@ body.dark-mode .dark-mode-btn:hover {
     display: none;
   }*/
 
- .nav-toggle {
+  .nav-toggle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1025,7 +1025,7 @@ body.dark-mode .dark-mode-btn:hover {
   }
 
   /* Mostrar botón hamburguesa en móvil */
-/*  .nav-toggle {
+  /*  .nav-toggle {
     margin-left: auto;
     margin-right: 1rem;
     z-index: 1100;
