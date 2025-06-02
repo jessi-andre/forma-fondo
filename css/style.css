@@ -920,8 +920,12 @@ body.dark-mode .dark-mode-btn:hover {
   }
 
 .barra-intro {
-  display: none !important;
-}
+    display: none !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
   .cards-servicios {
     display: flex;
     flex-direction: column;
