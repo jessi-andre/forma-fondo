@@ -910,7 +910,7 @@ body.dark-mode .dark-mode-btn:hover {
 
 
 /* MEDIA QUERIES */
-@media (max-width: 490px) {
+@media (max-width: 390px) {
   #nosotros .cards {
     flex-direction: column;
     align-items: center;
