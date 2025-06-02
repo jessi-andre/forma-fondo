@@ -353,7 +353,7 @@ nav.navbar {
   margin: auto;
 }
 
-.section h2 {
+.section h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -500,11 +500,14 @@ button {
   }
 }
 
+#contacto {
+  margin-top: 4rem;
+}
 
-#contacto h2 {
-  margin: 0.9rem 0 0.5rem;
-  font-size: 2rem;
-  padding-top: 7rem;
+#contacto h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
 }
 
 .cards {
@@ -680,15 +683,17 @@ footer {
 
 
 /* ============ NOSOTROS ============*/
+#nosotros {
+  margin-bottom: 6rem;
+  /* Ajusta el valor según tus necesidades */
+}
 
 #nosotros .card {
-  flex: 1 1 280px;
-  /* bajO el tamaño base para que no queden tan anchas */
-  max-width: 350px;
-  /* también bajamos el max para limitar tamaño */
-  max-height: 450px;
-  /* altura */
-  padding: 2rem;
+  flex: 1 1 200px;
+  /* base flexible con mínimo de 350px */
+  max-width: 750px;
+  max-height: 650px;
+  padding: 1rem;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -703,22 +708,30 @@ footer {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
-#nosotros .card {
-  flex: 1 1 350px;
-  /* base flexible con mínimo de 350px */
+#nosotros .card.nosotros-card {
   max-width: 500px;
-  max-height: 500px;
-  padding: 2rem;
-  box-sizing: border-box;
-  overflow: hidden;
+  background: var(--blanco);
+  border: none;
+  box-shadow: 0 6px 24px #343434;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.4s ease;
+  margin-bottom: 1rem;
+}
+
+
+#nosotros .card.nosotros-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
 #nosotrosImg {
-  width: 100%;
-  height: auto;
-  max-height: 200px;
+  border-radius: 16px;
   object-fit: cover;
-  border-radius: 12px;
+  height: 180px;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 #nosotros h3 {
@@ -741,6 +754,21 @@ footer {
   border-radius: 4px;
   font-size: 0.9rem;
 }
+
+/*.rol {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--azul);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+*/
+
+
+
+
 
 /*efecto fade con desplazamiento*/
 
@@ -948,11 +976,6 @@ body.dark-mode .dark-mode-btn:hover {
     padding-bottom: 3rem;
   }
 
-
-  /*   .nav-buttons {
-    margin-left: 1rem;
-  }*/
-
   .nav-buttons {
     margin-left: auto;
     margin-right: 1rem;
@@ -980,19 +1003,19 @@ body.dark-mode .dark-mode-btn:hover {
   }
 
   #inicio h1 {
-    font-size: 1.8rem;
-    /* título más pequeño que en desktop pero legible */
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
   }
 
   #inicio p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     /* subtítulo más pequeño y cómodo */
     margin-bottom: 1rem;
   }
 
   #inicio .btn {
-    padding: 0.6rem 2rem;
+    padding: 0.4rem 1rem;
     /* más ancho y cómodo para tocar */
     font-size: 1.1rem;
     /* tamaño de texto más visible */
@@ -1003,6 +1026,16 @@ body.dark-mode .dark-mode-btn:hover {
     text-overflow: ellipsis;
     display: inline-block;
     box-sizing: border-box;
+  }
+
+  .marquee-section {
+    height: 33px;
+    margin-top: 0.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero {
+    padding: 2rem 32px;
   }
 
   .nav-links {
@@ -1032,23 +1065,59 @@ body.dark-mode .dark-mode-btn:hover {
   }*/
 
   #nosotros .card {
-    flex: 1 1 90vw;
-    /* ancho flexible, casi 90% del viewport */
+    flex: 1 1 155vw;
     max-width: none;
-    /* sin límite máximo */
     max-height: none;
-    /* sin límite de altura */
     padding: 1rem 1.2rem;
-    /* menos padding para que no se vea gigante */
     margin: 0 auto 1.5rem;
-    /* margen abajo para separación */
   }
 
-  #nosotros .cards {
-    flex-direction: column;
-    /* apilar cards verticalmente */
-    gap: 1.5rem;
-    /* menos gap para espacio */
+  .section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+  }
+
+  .section p {
+    font-size: 1rem;
+    color: #343434;
+  }
+
+
+  .servicios p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #nosotro .p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 5rem;
+  }
+
+
+  #nosotros .card.nosotros-card {
+    max-width: 260px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #nosotrosImg {
+    height: 150px;
+    border-radius: 12px;
+  }
+
+  .btn.btn-contacto {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+    max-width: 200px;
+    margin: 1rem auto 0 auto;
+    display: block;
+  }
+
+
+  #contacto {
+    margin-top: 2rem;
   }
 
   /*.dark-mode-btn {
@@ -1072,11 +1141,91 @@ body.dark-mode .dark-mode-btn:hover {
     right: 20px;
     left: auto;
   }
+
+  #contacto form {
+    padding: 0 1rem;
+    max-width: 90%;
+    margin-top: 1.5rem;
+  }
+
+  #contacto input,
+  #contacto textarea {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+
+  /* BOTÓN más chico y alineado */
+  .btn.btn-contacto {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .footer-container {
+    gap: 1rem;
+  }
 }
 
 /* =========== web =========== */
 @media (min-width: 769px) {
   .nav-toggle {
     display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .hero {
+    padding: 5rem 3rem;
+    min-height: 60vh;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+  }
+
+  .hero .btn {
+    padding: 0.6rem 2rem;
+    font-size: 1rem;
+    max-width: 260px;
+  }
+
+  .cards-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .card-servicio {
+    max-width: 280px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  #nosotros .card.nosotros-card {
+    flex: 1 1 45%;
+    /* 2 cards por fila aproximadamente */
+    max-width: 350px;
+    margin: 0 auto;
   }
 }
