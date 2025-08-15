@@ -17,8 +17,6 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/phosphor.css">
   <link rel="stylesheet" href="./css/style.css" />
-
-  <script defer src="./js/script.js"></script>
 </head>
 
 <body>
@@ -27,7 +25,7 @@
     <img src="./img/logo.png" alt="Forma & Fondo logo" />
   </div>
 
-  <!-- BARRA INTRO -->
+  <!-- BARRA INTRO 
   <div class="barra-intro" id="barraIntro">
     <div class="barra-contenido">
       <span class="barra-fecha">Jessica Andre · 2025</span>
@@ -36,7 +34,7 @@
     </div>
   </div>
 
-
+-->
 
   <a href="https://wa.me/5491125532868" class="btn-whatsapp" target="_blank" aria-label="WhatsApp">
     <img src="https://icongr.am/fontawesome/whatsapp.svg?size=32&color=ffffff" alt="WhatsApp">
@@ -71,11 +69,26 @@
 
     <!-- HERO -->
 
-    <section id="inicio" class="hero fade-in">
-      <h1>Diseño consciente con forma y fondo</h1>
-      <p>Diseñamos experiencias visuales que reflejan quién sos y hacia dónde querés ir.</p>
-      <a href="#contacto" class="btn">Conversemos</a>
+    <section id="inicio" class="ff-hero fade-in">
+      <h1 class="ff-hero__title">
+        Diseñamos experiencias que <br>
+        <span class="highlight">
+          conectan <strong>y</strong> transforman
+        </span>
+      </h1>
+
+
+
+
+      <p class="ff-hero__subtitle">
+        Somos un estudio de diseño especializado en branding, UI/UX y contenidos digitales.
+        Creamos identidades visuales únicas que potencian tu marca y conectan con tu audiencia.
+      </p>
+
+      <a href="#contacto" class="ff-hero__cta">Contactanos</a>
     </section>
+
+
 
 
     <section class="marquee-section fade-in">
@@ -108,7 +121,9 @@
               <h3>Branding</h3>
             </div>
             <div class="card-back">
-              <p>Construimos identidades visuales que comunican con claridad, coherencia y personalidad.</p>
+              <p>Creamos marcas con alma, memorables y coherentes, que expresan quién sos y enamoran a tu audiencia..
+              </p>
+              <a href="https://www.behance.net/jessAndre" class="btn-card" target="_blank">Ver proyecto</a>
             </div>
           </div>
         </div>
@@ -121,6 +136,8 @@
             </div>
             <div class="card-back">
               <p>Diseñamos experiencias intuitivas y funcionales que conectan con tus usuarios desde el primer clic.</p>
+              <a href="https://www.figma.com/proto/PGklOasdKogvHFV0wshsCU/Jessica-Andr%C3%A9?page-id=0%3A1&node-id=5-2&starting-point-node-id=5%3A2&t=hk3BXbLffKfZsdYt-1"
+                class="btn-card" target="_blank">Ver en Figma</a>
             </div>
           </div>
         </div>
@@ -132,7 +149,10 @@
               <h3>Diseño Web</h3>
             </div>
             <div class="card-back">
-              <p>Webs a medida, visualmente atractivas, accesibles y alineadas con tu identidad de marca.</p>
+              <p>
+                Landing moderna para una marca de lencería. Sitio responsive, visual y enfocado en conversión.
+              </p> <a href="https://jessi-andre.github.io/landing-gema-lenceria/" class="btn-card" target="_blank">Ver
+                proyecto web</a>
             </div>
           </div>
         </div>
@@ -144,7 +164,9 @@
               <h3>Contenidos</h3>
             </div>
             <div class="card-back">
-              <p>Generamos piezas visuales que potencian tu mensaje en redes, web y otros medios.</p>
+              <p>Creamos contenido visual y estratégico que comunica con claridad y conecta con tu audiencia en todos
+                los canales.</p>
+              <a href="https://www.instagram.com/formayfondo__/" class="btn-card" target="_blank">Ver en Instagram</a>
             </div>
           </div>
         </div>
@@ -156,7 +178,8 @@
               <h3>Asesorías</h3>
             </div>
             <div class="card-back">
-              <p>Te guiamos estratégicamente en el desarrollo y posicionamiento visual de tu marca.</p>
+              <p>Te acompañamos en tu camino creativo y estratégico para que tomes decisiones con seguridad y foco.</p>
+              <a href="https://wa.me/5491125532868" class="btn-card" target="_blank">Escribinos</a>
             </div>
           </div>
         </div>
@@ -166,32 +189,42 @@
 
     <!-- NOSOTROS -->
     <section id="nosotros" class="section fade-in">
+
+
+    </section>
+    <!-- prueba-->
+    <section id="nosotros" class="section">
       <h1>Un estudio. Una misma visión.</h1>
       <p>Creamos identidades visuales, contenido y experiencias digitales pensadas desde lo funcional y lo estético.
         Unimos estrategia, diseño y comunicación para dar forma y fondo a cada proyecto.</p>
+      <div class="cards-nosotros">
 
-      <div class="cards">
-        <div class="card nosotros-card">
-          <!-- <small class="rol">Diseño UX/UI · Branding</small>-->
-          <img src="./img/jessica.png" alt="Foto de Jessi" id="nosotrosImg">
-
-          <h3>Jessi</h3>
-          <p>Me especializo en branding, diseño de contenido, sitios web y experiencias UI/UX que conectan marcas con
-            personas de forma auténtica y estratégica.</p>
-          <a href="https://www.behance.net/jessAndre" class="btn-card-nosotros" target="_blank"
-            rel="noopener noreferrer" aria-label="Ver portfolio de Jessi">Ver portfolio</a>
+        <!-- Card Jessi -->
+        <div class="card-nos">
+          <img src="./img/jessica.png" alt="Foto de Jessi">
+          <div class="card-content">
+            <h3>Jessi</h3>
+            <p>Me apasiona crear marcas y experiencias digitales con alma. Diseño contenido, webs y UX/UI que reflejan
+              quién sos y hablan con claridad. Aporto creatividad, estrategia y una mirada humana a cada proyecto.</p>
+            <a href="https://www.behance.net/jessAndre" class="btn-card" target="_blank">Ver portfolio</a>
+          </div>
         </div>
 
-        <div class="card nosotros-card">
-          <img src="./img/jessica.png" alt="Foto de Eze" id="nosotrosImg">
-          <h3>Eze</h3>
-          <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-            looking at its layout.</p>
-          <a href="https://www.behance.net/jessAndre" class="btn-card-nosotros" target="_blank"
-            rel="noopener noreferrer" aria-label="Ver portfolio de Eze">Ver portfolio</a>
+        <!-- Card Eze -->
+        <div class="card-nos">
+          <img src="./img/jessica.png" alt="Foto de Eze">
+          <div class="card-content">
+            <h3>Eze</h3>
+            <p>Me desempeño como diseñador y desarrollador web, Creativo de Marca y Social Media. Creo identidades y
+              experiencias digitales que conectan con audiencias llevando cada proyecto a su máximo potencial creativo y
+              estratégico.</p>
+            <a href="https://www.behance.net/ezequiel" class="btn-card" target="_blank">Ver portfolio</a>
+          </div>
         </div>
+
       </div>
     </section>
+
 
     <!-- FORMULARIO  -->
 
@@ -214,26 +247,80 @@
   </a>
   <!-- FOOTER -->
   <footer>
-    <div class="footer-container">
-      <div class="footer-icons">
+    <!-- Fondo decorativo opcional -->
+    <div class="ff-footer-bg">
+      <div class="ff-circle ff-c1"></div>
+      <div class="ff-circle ff-c2"></div>
+      <div class="ff-circle ff-c3"></div>
+    </div>
 
-        <a href="https://www.behance.net/jessAndre" target="_blank" aria-label="Behance">
-          <i class="ph ph-behance-logo"></i>
+    <div class="footer-container">
+      <!-- Columna marca + CTA + redes-->
+      <div class="ff-footer-col ff-brand">
+        <h3 class="ff-title">Forma & Fondo</h3>
+        <p class="ff-text">
+          Transformamos ideas en experiencias visuales extraordinarias.
+          Cada proyecto es una oportunidad de crear algo único y memorable.
+        </p>
+
+        <a href="#contacto" class="btn btn-footer-cta">
+          Empezar mi proyecto
+          <i class="ph ph-arrow-right"></i>
         </a>
-        <a href="https://instagram.com/formayfondo__" target="_blank" aria-label="Instagram">
-          <i class="ph ph-instagram-logo"></i>
-        </a>
-        <a href="mailto:jessicaandre890@gmail.com" aria-label="Correo">
-          <i class="ph ph-envelope-simple"></i>
-        </a>
+
+
+        <!-- íconos originales  -->
+        <div class="footer-icons">
+          <a href="https://www.behance.net/jessAndre" target="_blank" aria-label="Behance">
+            <i class="ph ph-behance-logo"></i>
+          </a>
+          <a href="https://instagram.com/formayfondo__" target="_blank" aria-label="Instagram">
+            <i class="ph ph-instagram-logo"></i>
+          </a>
+          <a href="mailto:jessicaandre890@gmail.com" aria-label="Correo">
+            <i class="ph ph-envelope-simple"></i>
+          </a>
+        </div>
       </div>
-      <div class="footer-location">Ñuñoa, Santiago de Chile</div>
-      <div class="footer-copy">© 2025 Forma & Fondo</div>
+
+      <!-- Columna navegación rápida -->
+      <div class="ff-footer-col ff-nav">
+        <h4 class="ff-subtitle">Navegación</h4>
+        <nav class="ff-links">
+          <a href="#inicio" class="ff-link">Inicio</a>
+          <a href="#servicios" class="ff-link">Servicios</a>
+          <a href="#nosotros" class="ff-link">Nosotros</a>
+          <a href="#contacto" class="ff-link">Contacto</a>
+        </nav>
+      </div>
+
+      <!-- Columna contacto -->
+      <div class="ff-footer-col ff-contact">
+        <h4 class="ff-subtitle">Contacto</h4>
+        <ul class="ff-contact-list">
+
+          <li>
+            <span class="ff-label">WhatsApp</span>
+            <a class="ff-value" href="https://wa.me/5491125532868" target="_blank">+54 9 11 2553-2868</a>
+          </li>
+          <li>
+            <span class="ff-label">Email</span>
+            <a class="ff-value" href="mailto:jessicaandre890@gmail.com">jessicaandre890@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Barra inferior: se mantienen .footer-location y .footer-copy -->
+    <div class="footer-copy">
+      © <span id="ff-year"></span> Forma & Fondo. Hecho con ❤️
     </div>
   </footer>
 
   <!-- Phosphor Icons CDN -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script src="js/script.js?v=1.0.0" defer></script>
+
 
 </body>
 
