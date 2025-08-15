@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jessi-andre.github.io/forma-fondo/sitemap.xml

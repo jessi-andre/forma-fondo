@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // === FADE-IN EN SCROLL ===
   const fadeElements = document.querySelectorAll(".fade-in");
   const obsFade = new IntersectionObserver(ents => {
-    ents.forEach(en => { if (en.isIntersecting) { en.target.classList.add("show"); obsFade.unobserve(en.target); }});
+    ents.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add("show"); obsFade.unobserve(en.target); }
+    });
   }, { threshold: 0.2, rootMargin: "0px 0px -50px 0px" });
   fadeElements.forEach(el => {
     el.style.opacity = "0";
@@ -26,10 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     obsFade.observe(el);
   });
 
-  // === INTRO: al hacer click / wheel / touch / scroll => se desvanece y va a #inicio ===
+  // === INTRO ocultar y scroll al inicio ===
   const logoIntro = document.getElementById("logoIntro");
-  const barraIntro = document.getElementById("barraIntro"); // puede no existir (OK)
-
+  const barraIntro = document.getElementById("barraIntro");
   if (logoIntro) {
     const hideIntroAndGoHome = () => {
       if (logoIntro.dataset.done === "1") return;
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       [logoIntro, barraIntro].forEach(el => el && el.addEventListener("transitionend", onEnd, { once:true }));
-      setTimeout(onEnd, 600); // por si no dispara transitionend
+      setTimeout(onEnd, 600);
     };
 
     setTimeout(() => {
@@ -79,7 +80,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.scrollY > 300) scrollBtn?.classList.add("visible");
     else scrollBtn?.classList.remove("visible");
   });
-  scrollBtn?.addEventListener("click", e => { e.preventDefault(); window.scrollTo({ top:0, behavior:"smooth" }); });
+  scrollBtn?.addEventListener("click", e => {
+    e.preventDefault();
+    window.scrollTo({ top:0, behavior:"smooth" });
+  });
 
   // === FORMULARIO ===
   const form = document.getElementById("contact-form");
@@ -87,13 +91,20 @@ document.addEventListener("DOMContentLoaded", () => {
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(form.action, { method: form.method, body: new FormData(form), headers: { "Accept":"application/json" }});
-      if (res.ok) { if (status){ status.textContent="¡Mensaje enviado con éxito!"; status.style.color="green"; } form.reset(); }
-      else throw new Error();
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { "Accept":"application/json" }
+      });
+      if (res.ok) {
+        if (status){ status.textContent="¡Mensaje enviado con éxito!"; status.style.color="green"; }
+        form.reset();
+      } else throw new Error();
     } catch {
       if (status){ status.textContent="Hubo un error. Intentalo más tarde."; status.style.color="red"; }
     }
-    status?.classList.add("visible"); setTimeout(()=>{ if(status) status.textContent=""; }, 4000);
+    status?.classList.add("visible");
+    setTimeout(()=>{ if(status) status.textContent=""; }, 4000);
   });
 
   // === EFECTO corazones botón contacto ===
@@ -112,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // === FOOTER: año + scroll suave ===
+  // === FOOTER: año + scroll suave en links internos ===
   const y = document.getElementById("ff-year");
   if (y) y.textContent = new Date().getFullYear();
   document.querySelectorAll('footer .ff-link, footer .btn-footer-cta, footer .footer-icons a[href^="#"]').forEach(a=>{
@@ -123,3 +134,88 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // arriba al recargar
 window.onbeforeunload = () => window.scrollTo(0, 0);
+
+// === Carrusel Testimonios (si existiera la sección) ===
+(() => {
+  const section = document.querySelector('#testimonios');
+  if (!section) return;
+
+  const viewport = section.querySelector('.testi-viewport');
+  const track    = section.querySelector('.testi-track');
+  const prevBtn  = section.querySelector('.testi-prev');
+  const nextBtn  = section.querySelector('.testi-next');
+  const dotsBox  = section.querySelector('.testi-dots');
+
+  const gap = 16;
+  const slideW = () => (track.querySelector('.testi-card')?.getBoundingClientRect().width || 300) + gap;
+
+  // Duplica tarjetas para loop suave
+  const originals = Array.from(track.querySelectorAll('.testi-card'));
+  originals.forEach(card => track.appendChild(card.cloneNode(true)));
+
+  // Dots (por cantidad de reales)
+  dotsBox.innerHTML = '';
+  originals.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.className = 'testi-dot' + (i===0 ? ' is-active' : '');
+    b.setAttribute('role', 'tab');
+    b.addEventListener('click', () => goTo(i));
+    dotsBox.appendChild(b);
+  });
+  const dots = Array.from(section.querySelectorAll('.testi-dot'));
+
+  let index = 0;
+  function goTo(i, smooth = true){
+    index = (i + originals.length) % originals.length;
+    const x = i * slideW();
+    track.scrollTo({ left: x, behavior: smooth ? 'smooth' : 'auto' });
+    dots.forEach((d,di)=> d.classList.toggle('is-active', di===index));
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    const approx = Math.round(track.scrollLeft / slideW());
+    goTo(approx - 1);
+  });
+  nextBtn?.addEventListener('click', () => {
+    const approx = Math.round(track.scrollLeft / slideW());
+    goTo(approx + 1);
+  });
+
+  track.addEventListener('scroll', () => {
+    const approx = Math.round(track.scrollLeft / slideW());
+    const logical = ((approx % originals.length) + originals.length) % originals.length;
+    dots.forEach((d,di)=> d.classList.toggle('is-active', di===logical));
+  });
+
+  // Autoplay
+  let autoplay = setInterval(()=> nextBtn?.click(), 5000);
+  const stop = () => { clearInterval(autoplay); autoplay = null; };
+  const start = () => { if (!autoplay) autoplay = setInterval(()=> nextBtn?.click(), 5000); };
+  viewport.addEventListener('mouseenter', stop);
+  viewport.addEventListener('mouseleave', start);
+  viewport.addEventListener('touchstart', stop, {passive:true});
+  viewport.addEventListener('touchend', start);
+
+  // Accesibilidad teclado
+  viewport.tabIndex = 0;
+  viewport.addEventListener('keydown', (e)=>{
+    if (e.key === 'ArrowRight') nextBtn?.click();
+    if (e.key === 'ArrowLeft')  prevBtn?.click();
+  });
+
+  // Avatares
+  section.querySelectorAll('.testi-avatar').forEach(av => {
+    const img = av.querySelector('img');
+    const ini = av.querySelector('.initial');
+    if (!img) return;
+    const showImg = () => { if (ini) ini.style.display = 'none'; };
+    const hideImg = () => { img.hidden = true; if (ini) ini.style.display = 'grid'; };
+
+    if (img.complete) {
+      (img.naturalWidth > 0 ? showImg : hideImg)();
+    } else {
+      img.addEventListener('load', showImg, { once: true });
+      img.addEventListener('error', hideImg, { once: true });
+    }
+  });
+})();

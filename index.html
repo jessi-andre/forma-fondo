@@ -4,19 +4,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
+
+  <!-- SEO básico -->
+  <title>Forma & Fondo — Branding, UX/UI y Contenido</title>
   <meta name="description"
-    content="Forma & Fondo - Estudio de diseño estratégico, branding, UX/UI y contenido visual en Santiago de Chile y al mundo.">
-  <title>Forma & Fondo</title>
-  <link rel="icon" href="ruta/a/tu/favicon.ico" type="image/x-icon">
-  <!-- fuentes-->
+    content="Estudio de diseño estratégico. Branding, UX/UI y contenido visual desde Santiago de Chile hacia el mundo. Diseñamos marcas y experiencias que conectan y transforman." />
+  <meta name="keywords"
+    content="branding, identidad visual, diseño de marca, diseño ux, diseño ui, diseño web, contenidos, estudio de diseño, santiago de chile, forma y fondo" />
+  <link rel="canonical" href="https://jessi-andre.github.io/forma-fondo/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Forma & Fondo — Branding, UX/UI y Contenido" />
+  <meta property="og:description"
+    content="Diseñamos experiencias que conectan y transforman. Branding, UX/UI y contenido visual." />
+  <meta property="og:url" content="https://jessi-andre.github.io/forma-fondo/" />
+  <meta property="og:image" content="https://jessi-andre.github.io/forma-fondo/img/og-cover.jpg" />
+  <meta property="og:locale" content="es_CL" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Forma & Fondo — Branding, UX/UI y Contenido" />
+  <meta name="twitter:description" content="Estudio de diseño estratégico. Branding, UX/UI y contenido visual." />
+  <meta name="twitter:image" content="https://jessi-andre.github.io/forma-fondo/img/og-cover.jpg" />
+
+  <!-- Colores del navegador -->
+  <meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F7F5F2" media="(prefers-color-scheme: light)">
+
+  <!-- Favicons -->
+  <link rel="icon" href="./img/favicon-32.png" sizes="32x32">
+  <link rel="icon" href="./img/favicon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
+
+  <!-- Rendimiento -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+  <!-- Fuentes -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Work+Sans:wght@300;400;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/phosphor.css">
-  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- Phosphor Icons (CSS correcto) -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./css/style.css?v=2.0.0" />
+
+  <!-- Seguridad (CSP) -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; img-src 'self' data: https:; script-src 'self' https://unpkg.com 'unsafe-inline'; style-src  'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src https://fonts.gstatic.com https://unpkg.com data:; connect-src https://formspree.io; form-action https://formspree.io; frame-ancestors 'none'; base-uri 'self';">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Permissions-Policy"
+    content="geolocation=(), camera=(), microphone=(), payment=(), interest-cohort=()">
+
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Forma & Fondo",
+    "url":"https://jessi-andre.github.io/forma-fondo/",
+    "logo":"https://jessi-andre.github.io/forma-fondo/img/logo.png",
+    "sameAs":[
+      "https://www.behance.net/jessAndre",
+      "https://www.behance.net/ezequielandre1",
+      "https://instagram.com/formayfondo__"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://jessi-andre.github.io/forma-fondo/",
+    "name":"Forma & Fondo"
+  }
+  </script>
 </head>
 
 <body>
@@ -25,7 +93,8 @@
     <img src="./img/logo.png" alt="Forma & Fondo logo" />
   </div>
 
-  <!-- BARRA INTRO 
+  <!-- BARRA INTRO (opcional) -->
+  <!--
   <div class="barra-intro" id="barraIntro">
     <div class="barra-contenido">
       <span class="barra-fecha">Jessica Andre · 2025</span>
@@ -33,20 +102,20 @@
       <span class="barra-compania">Forma & Fondo</span>
     </div>
   </div>
-
--->
+  -->
 
   <a href="https://wa.me/5491125532868" class="btn-whatsapp" target="_blank" aria-label="WhatsApp">
     <img src="https://icongr.am/fontawesome/whatsapp.svg?size=32&color=ffffff" alt="WhatsApp">
   </a>
 
-
   <header id="header">
-
     <!-- NAV + LOGO  -->
     <nav class="navbar">
       <div class="logo">
-        <a href="#inicio"><img src="./img/logo.png" alt="Logo de Forma y Fondo" /></a>
+        <a href="#inicio" class="logo-link" aria-label="Ir al inicio">
+          <img id="logoLight" src="./img/logo.png" alt="Forma & Fondo" />
+          <img id="logoDark" src="./img/logoBlanco.png" alt="Forma & Fondo" />
+        </a>
       </div>
 
       <button class="nav-toggle" aria-label="Abrir menú">&#9776;</button>
@@ -61,35 +130,21 @@
         </li>
       </ul>
     </nav>
-
   </header>
 
   <main>
-
-
     <!-- HERO -->
-
     <section id="inicio" class="ff-hero fade-in">
       <h1 class="ff-hero__title">
         Diseñamos experiencias que <br>
-        <span class="highlight">
-          conectan <strong>y</strong> transforman
-        </span>
+        <span class="highlight">conectan <strong>y</strong> transforman</span>
       </h1>
-
-
-
-
       <p class="ff-hero__subtitle">
         Somos un estudio de diseño especializado en branding, UI/UX y contenidos digitales.
         Creamos identidades visuales únicas que potencian tu marca y conectan con tu audiencia.
       </p>
-
       <a href="#contacto" class="ff-hero__cta">Contactanos</a>
     </section>
-
-
-
 
     <section class="marquee-section fade-in">
       <div class="marquee">
@@ -104,8 +159,6 @@
       </div>
     </section>
 
-
-
     <!-- SERVICIOS -->
     <section id="servicios" class="section fade-in">
       <h1>Transformamos tu visión en impacto real</h1>
@@ -113,7 +166,6 @@
         competitivo.</p>
 
       <div class="cards-servicios">
-
         <div class="card-servicio">
           <div class="card-inner">
             <div class="card-front">
@@ -149,9 +201,8 @@
               <h3>Diseño Web</h3>
             </div>
             <div class="card-back">
-              <p>
-                Landing moderna para una marca de lencería. Sitio responsive, visual y enfocado en conversión.
-              </p> <a href="https://jessi-andre.github.io/landing-gema-lenceria/" class="btn-card" target="_blank">Ver
+              <p>Landing moderna para una marca de lencería. Sitio responsive, visual y enfocado en conversión.</p>
+              <a href="https://jessi-andre.github.io/landing-gema-lenceria/" class="btn-card" target="_blank">Ver
                 proyecto web</a>
             </div>
           </div>
@@ -183,22 +234,16 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
     <!-- NOSOTROS -->
-    <section id="nosotros" class="section fade-in">
-
-
-    </section>
-    <!-- prueba-->
     <section id="nosotros" class="section">
       <h1>Un estudio. Una misma visión.</h1>
       <p>Creamos identidades visuales, contenido y experiencias digitales pensadas desde lo funcional y lo estético.
         Unimos estrategia, diseño y comunicación para dar forma y fondo a cada proyecto.</p>
-      <div class="cards-nosotros">
 
+      <div class="cards-nosotros">
         <!-- Card Jessi -->
         <div class="card-nos">
           <img src="./img/jessica.png" alt="Foto de Jessi">
@@ -221,23 +266,35 @@
             <a href="https://www.behance.net/ezequielandre1" class="btn-card" target="_blank">Ver portfolio</a>
           </div>
         </div>
-
       </div>
     </section>
 
-
     <!-- FORMULARIO  -->
-
     <section id="contacto" class="section fade-in">
       <h1>Tu proyecto merece una imagen con identidad</h1>
       <p>Escribinos sin compromiso. Contanos tu idea, proyecto o necesidad y te respondemos en menos de 24 horas.</p>
-      <form id="contact-form" action="https://formspree.io/f/xkgbwywv" method="POST">
-        <input type="text" name="nombre" placeholder="Tu nombre" required />
-        <input type="email" name="_replyto" placeholder="Tu email" required />
-        <textarea name="mensaje" placeholder="Escribinos tu mensaje" required></textarea>
-        <button type="submit" class="btn btn-contacto">Enviar consulta</button>
 
-        <p id="form-status" class="form-status"></p>
+      <form id="contact-form" action="https://formspree.io/f/xkgbwywv" method="POST" novalidate>
+        <label class="sr-only" for="nombre">Tu nombre</label>
+        <input id="nombre" type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" inputmode="text"
+          minlength="2" required />
+
+        <label class="sr-only" for="email">Tu email</label>
+        <input id="email" type="email" name="_replyto" placeholder="Tu email" autocomplete="email" inputmode="email"
+          required />
+
+        <label class="sr-only" for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribinos tu mensaje" minlength="10" required></textarea>
+
+        <!-- Honeypot anti-spam -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+          style="position:absolute;left:-9999px;opacity:0">
+
+        <!-- URL de origen -->
+        <input type="hidden" name="pagina" value="https://jessi-andre.github.io/forma-fondo/">
+
+        <button type="submit" class="btn btn-contacto" aria-label="Enviar consulta">Enviar consulta</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
@@ -245,9 +302,9 @@
   <a href="#" class="scroll-to-top" aria-label="Ir arriba">
     <i class="ph ph-arrow-up"></i>
   </a>
+
   <!-- FOOTER -->
   <footer>
-    <!-- Fondo decorativo opcional -->
     <div class="ff-footer-bg">
       <div class="ff-circle ff-c1"></div>
       <div class="ff-circle ff-c2"></div>
@@ -268,8 +325,7 @@
           <i class="ph ph-arrow-right"></i>
         </a>
 
-
-        <!-- íconos originales  -->
+        <!-- íconos originales -->
         <div class="footer-icons">
           <a href="https://www.behance.net/jessAndre" target="_blank" aria-label="Behance">
             <i class="ph ph-behance-logo"></i>
@@ -298,7 +354,6 @@
       <div class="ff-footer-col ff-contact">
         <h4 class="ff-subtitle">Contacto</h4>
         <ul class="ff-contact-list">
-
           <li>
             <span class="ff-label">WhatsApp</span>
             <a class="ff-value" href="https://wa.me/5491125532868" target="_blank">+54 9 11 2553-2868</a>
@@ -311,17 +366,15 @@
       </div>
     </div>
 
-    <!-- Barra inferior: se mantienen .footer-location y .footer-copy -->
     <div class="footer-copy">
       © <span id="ff-year"></span> Forma & Fondo. Hecho con ❤️
     </div>
   </footer>
 
-  <!-- Phosphor Icons CDN -->
+  <!-- Phosphor Icons JS (opcional) -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- App script -->
   <script src="js/script.js?v=1.0.0" defer></script>
-
-
 </body>
 
 </html>
