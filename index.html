@@ -8,9 +8,7 @@
   <!-- SEO básico -->
   <title>Forma & Fondo — Branding, UX/UI y Contenido</title>
   <meta name="description"
-    content="Estudio de diseño estratégico. Branding, UX/UI y contenido visual desde Santiago de Chile hacia el mundo. Diseñamos marcas y experiencias que conectan y transforman." />
-  <meta name="keywords"
-    content="branding, identidad visual, diseño de marca, diseño ux, diseño ui, diseño web, contenidos, estudio de diseño, santiago de chile, forma y fondo" />
+    content="Estudio de diseño estratégico. Branding, UX/UI y contenido visual. Diseñamos marcas y experiencias que conectan y transforman." />
   <link rel="canonical" href="https://jessi-andre.github.io/forma-fondo/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
@@ -40,23 +38,36 @@
   <!-- Rendimiento -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="dns-prefetch" href="//fonts.googleapis.com" />
   <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="//connect.facebook.net" />
 
   <!-- Fuentes -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Work+Sans:wght@300;400;600;700&display=swap"
     rel="stylesheet" />
 
-  <!-- Phosphor Icons (CSS correcto) -->
+  <!-- Phosphor Icons -->
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="./css/style.css?v=2.0.0" />
+  <link rel="stylesheet" href="./css/style.css?v=2.2.0" />
 
-  <!-- Seguridad (CSP) -->
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; img-src 'self' data: https:; script-src 'self' https://unpkg.com 'unsafe-inline'; style-src  'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src https://fonts.gstatic.com https://unpkg.com data:; connect-src https://formspree.io; form-action https://formspree.io; frame-ancestors 'none'; base-uri 'self';">
+  <!-- Seguridad (CSP) — actualizada para GA4 y Meta Pixel -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    img-src 'self' data: https: https://www.facebook.com https://www.google-analytics.com;
+    script-src 'self' 'unsafe-inline' https://unpkg.com https://www.googletagmanager.com https://connect.facebook.net;
+    style-src  'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
+    font-src https://fonts.gstatic.com https://unpkg.com data:;
+    connect-src https://formspree.io https://www.google-analytics.com https://www.facebook.com;
+    form-action https://formspree.io;
+    frame-ancestors 'none';
+    base-uri 'self';
+  ">
+
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Permissions-Policy"
@@ -85,48 +96,68 @@
     "name":"Forma & Fondo"
   }
   </script>
+
+  <!-- GA4: gtag.js (reemplazar G-XXXXXXXXXX) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX'); // <-- tu GA4 ID
+  </script>
+
+  <!-- Meta Pixel (reemplazar 123456789012345) -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      }; if (!f._fbq) f._fbq = n;
+      n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '123456789012345'); // <-- tu Pixel ID
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=123456789012345&ev=PageView&noscript=1" alt="" />
+  </noscript>
 </head>
 
 <body>
-  <!-- LOGO INTRO  -->
-  <div class="logo-intro" id="logoIntro">
-    <img src="./img/logo.png" alt="Forma & Fondo logo" />
+  <!-- INTRO -->
+  <div class="logo-intro" id="logoIntro" aria-hidden="true">
+    <img src="./img/logo.png" alt="Logo de Forma & Fondo" />
   </div>
 
-  <!-- BARRA INTRO (opcional) -->
-  <!--
-  <div class="barra-intro" id="barraIntro">
-    <div class="barra-contenido">
-      <span class="barra-fecha">Jessica Andre · 2025</span>
-      <span class="barra-servicios">Branding / Web / UX/UI / Contenido</span>
-      <span class="barra-compania">Forma & Fondo</span>
-    </div>
-  </div>
-  -->
-
-  <a href="https://wa.me/5491125532868" class="btn-whatsapp" target="_blank" aria-label="WhatsApp">
-    <img src="https://icongr.am/fontawesome/whatsapp.svg?size=32&color=ffffff" alt="WhatsApp">
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/5491125532868" class="btn-whatsapp" target="_blank" aria-label="Contactar por WhatsApp">
+    <img src="https://icongr.am/fontawesome/whatsapp.svg?size=32&color=ffffff" alt="Icono WhatsApp">
   </a>
 
+  <!-- HEADER -->
   <header id="header">
-    <!-- NAV + LOGO  -->
     <nav class="navbar">
       <div class="logo">
         <a href="#inicio" class="logo-link" aria-label="Ir al inicio">
-          <img id="logoLight" src="./img/logo.png" alt="Forma & Fondo" />
-          <img id="logoDark" src="./img/logoBlanco.png" alt="Forma & Fondo" />
+          <img id="logoLight" src="./img/logo.png" alt="Forma & Fondo — logo" />
+          <img id="logoDark" src="./img/logoBlanco.png" alt="Forma & Fondo — logo modo oscuro" />
         </a>
       </div>
 
-      <button class="nav-toggle" aria-label="Abrir menú">&#9776;</button>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
 
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#contacto" class="btn-nav">Contacto</a></li>
-        <li>
-          <button id="darkModeToggle" aria-label="Cambiar modo" class="dark-mode-btn">🌙</button>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacto" class="btn btn-nav btn-primary">Contacto</a></li>
+        <li><button id="darkModeToggle" aria-label="Cambiar modo" class="dark-mode-btn" title="Cambiar modo">🌙</button>
         </li>
       </ul>
     </nav>
@@ -134,48 +165,46 @@
 
   <main>
     <!-- HERO -->
-    <section id="inicio" class="ff-hero fade-in">
-      <h1 class="ff-hero__title">
-        Diseñamos experiencias que <br>
-        <span class="highlight">conectan <strong>y</strong> transforman</span>
+    <section id="inicio" class="ff-hero fade-in" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="ff-hero__title">
+        Diseñamos experiencias que <span class="highlight">conectan <strong>y</strong> transforman</span>
       </h1>
       <p class="ff-hero__subtitle">
         Somos un estudio de diseño especializado en branding, UI/UX y contenidos digitales.
         Creamos identidades visuales únicas que potencian tu marca y conectan con tu audiencia.
       </p>
-      <a href="#contacto" class="ff-hero__cta">Contactanos</a>
+      <div class="hero-ctas">
+        <a href="#contacto" class="btn btn-lg btn-primary ff-hero__cta">Contactanos</a>
+        <a href="#servicios" class="btn btn-lg btn-ghost" aria-label="Ver servicios">Ver servicios</a>
+      </div>
     </section>
 
-    <section class="marquee-section fade-in">
+    <!-- MARQUEE -->
+    <section class="marquee-section fade-in" aria-hidden="true">
       <div class="marquee">
-        <span class="marquee-text">
-          Diseño estratégico ✷ Identidad visual auténtica ✺ Experiencias digitales a medida ✦ Branding con personalidad
-          • Interfaces funcionales y elegantes ✷
-        </span>
-        <span class="marquee-text">
-          Diseño estratégico ✷ Identidad visual auténtica ✺ Experiencias digitales a medida ✦ Branding con personalidad
-          • Interfaces funcionales y elegantes ✷
-        </span>
+        <span class="marquee-text">Diseño estratégico ✷ Identidad visual ✺ Experiencias digitales ✦ Branding con
+          personalidad • Interfaces funcionales ✷</span>
+        <span class="marquee-text">Diseño estratégico ✷ Identidad visual ✺ Experiencias digitales ✦ Branding con
+          personalidad • Interfaces funcionales ✷</span>
       </div>
     </section>
 
     <!-- SERVICIOS -->
-    <section id="servicios" class="section fade-in">
-      <h1>Transformamos tu visión en impacto real</h1>
-      <p>Servicios estratégicos de diseño que conectan, inspiran y potencian tu marca para destacarse en un mundo
-        competitivo.</p>
+    <section id="servicios" class="section fade-in" aria-labelledby="servicios-title">
+      <h2 id="servicios-title">Transformamos tu visión en impacto real</h2>
+      <p>Servicios estratégicos de diseño que conectan, inspiran y potencian tu marca para destacarte.</p>
 
       <div class="cards-servicios">
         <div class="card-servicio">
           <div class="card-inner">
             <div class="card-front">
-              <img src="./img/branding.png" alt="Branding" />
+              <img src="./img/branding.png" alt="Piezas de identidad visual para branding" />
               <h3>Branding</h3>
             </div>
             <div class="card-back">
-              <p>Creamos marcas con alma, memorables y coherentes, que expresan quién sos y enamoran a tu audiencia..
-              </p>
-              <a href="https://www.behance.net/jessAndre" class="btn-card" target="_blank">Ver proyecto</a>
+              <p>Creamos marcas memorables, coherentes y con alma que expresan quién sos y enamoran a tu audiencia.</p>
+              <a href="https://www.behance.net/jessAndre" class="btn-card" target="_blank" rel="noopener">Ver
+                proyecto</a>
             </div>
           </div>
         </div>
@@ -183,13 +212,13 @@
         <div class="card-servicio">
           <div class="card-inner">
             <div class="card-front">
-              <img src="./img/uiUx.png" alt="Diseño UX/UI" />
+              <img src="./img/uiUx.png" alt="Interfaz de app con diseño UI y UX" />
               <h3>Diseño UX/UI</h3>
             </div>
             <div class="card-back">
-              <p>Diseñamos experiencias intuitivas y funcionales que conectan con tus usuarios desde el primer clic.</p>
+              <p>Experiencias intuitivas y funcionales que convierten desde el primer clic, centradas en el usuario.</p>
               <a href="https://www.figma.com/proto/PGklOasdKogvHFV0wshsCU/Jessica-Andr%C3%A9?page-id=0%3A1&node-id=5-2&starting-point-node-id=5%3A2&t=hk3BXbLffKfZsdYt-1"
-                class="btn-card" target="_blank">Ver en Figma</a>
+                class="btn-card" target="_blank" rel="noopener">Ver en Figma</a>
             </div>
           </div>
         </div>
@@ -197,13 +226,13 @@
         <div class="card-servicio">
           <div class="card-inner">
             <div class="card-front">
-              <img src="./img/diseñoWeb.png" alt="Diseño Web" />
+              <img src="./img/diseñoWeb.png" alt="Mockup de sitio web responsive" />
               <h3>Diseño Web</h3>
             </div>
             <div class="card-back">
-              <p>Landing moderna para una marca de lencería. Sitio responsive, visual y enfocado en conversión.</p>
-              <a href="https://jessi-andre.github.io/landing-gema-lenceria/" class="btn-card" target="_blank">Ver
-                proyecto web</a>
+              <p>Landing moderna y responsive enfocada en conversión, lista para escalar.</p>
+              <a href="https://jessi-andre.github.io/landing-gema-lenceria/" class="btn-card" target="_blank"
+                rel="noopener">Ver proyecto web</a>
             </div>
           </div>
         </div>
@@ -211,13 +240,13 @@
         <div class="card-servicio">
           <div class="card-inner">
             <div class="card-front">
-              <img src="./img/contenidos.png" alt="Contenidos" />
+              <img src="./img/contenidos.png" alt="Piezas para redes sociales y contenido" />
               <h3>Contenidos</h3>
             </div>
             <div class="card-back">
-              <p>Creamos contenido visual y estratégico que comunica con claridad y conecta con tu audiencia en todos
-                los canales.</p>
-              <a href="https://www.instagram.com/formayfondo__/" class="btn-card" target="_blank">Ver en Instagram</a>
+              <p>Contenido visual y estratégico que comunica con claridad y genera comunidad.</p>
+              <a href="https://www.instagram.com/formayfondo__/" class="btn-card" target="_blank" rel="noopener">Ver en
+                Instagram</a>
             </div>
           </div>
         </div>
@@ -225,56 +254,179 @@
         <div class="card-servicio">
           <div class="card-inner">
             <div class="card-front">
-              <img src="./img/asesorías.png" alt="Asesorías" />
+              <img src="./img/asesorías.png" alt="Reunión de asesoría creativa" />
               <h3>Asesorías</h3>
             </div>
             <div class="card-back">
-              <p>Te acompañamos en tu camino creativo y estratégico para que tomes decisiones con seguridad y foco.</p>
-              <a href="https://wa.me/5491125532868" class="btn-card" target="_blank">Escribinos</a>
+              <p>Acompañamiento creativo y estratégico para decidir con foco y avanzar seguro.</p>
+              <a href="https://wa.me/5491125532868" class="btn-card" target="_blank" rel="noopener">Escribinos</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- BENEFICIOS -->
+    <section id="beneficios" class="section fade-in" aria-labelledby="beneficios-title">
+      <h2 id="beneficios-title">¿Por qué trabajar con nosotros?</h2>
+      <p>Resultados medibles, procesos claros y una estética que posiciona tu marca.</p>
+
+      <div class="benefits-grid">
+        <article class="benefit-card">
+          <i class="ph ph-rocket-launch" aria-hidden="true"></i>
+          <h3>Enfoque en conversión</h3>
+          <p>Diseño pensado para vender: CTA claros, storytelling y jerarquía visual efectiva.</p>
+        </article>
+
+        <article class="benefit-card">
+          <i class="ph ph-users-three" aria-hidden="true"></i>
+          <h3>UX basada en datos</h3>
+          <p>Decisiones informadas con buenas prácticas, accesibilidad y tests.</p>
+        </article>
+
+        <article class="benefit-card">
+          <i class="ph ph-palette" aria-hidden="true"></i>
+          <h3>Identidad consistente</h3>
+          <p>Coherencia visual en web, redes y materiales para fortalecer tu marca.</p>
+        </article>
+
+        <article class="benefit-card">
+          <i class="ph ph-clock" aria-hidden="true"></i>
+          <h3>Entrega ágil</h3>
+          <p>Procesos claros por etapas y feedback continuo para avanzar rápido.</p>
+        </article>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span>+20</span> Proyectos</div>
+        <div class="stat"><span>3</span> Países</div>
+        <div class="stat"><span>95%</span> Satisfacción</div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="section fade-in" aria-labelledby="testimonios-title">
+      <h2 id="testimonios-title">Lo que dicen nuestros clientes</h2>
+      <p>Historias reales de marcas que hoy se ven y venden mejor.</p>
+
+      <div class="testi-viewport" aria-roledescription="carrusel">
+        <div class="testi-track">
+          <article class="testi-card">
+            <div class="testi-header">
+              <div class="testi-avatar">
+                <span class="initial" aria-hidden="true">M</span>
+                <img src="./img/avatars/maria.jpg" alt="Foto de María — Directora de Marketing" loading="lazy">
+              </div>
+              <div>
+                <h3>María — Directora de Marketing</h3>
+                <small>Retail · Caso web + contenido</small>
+              </div>
+            </div>
+            <p>“Profesionales, rápidos y con criterio. Pasamos de una web caótica a un sitio claro que convirtió 2x.”
+            </p>
+          </article>
+
+          <article class="testi-card">
+            <div class="testi-header">
+              <div class="testi-avatar">
+                <span class="initial" aria-hidden="true">L</span>
+                <img src="./img/avatars/lucas.jpg" alt="Foto de Lucas — Fundador" loading="lazy">
+              </div>
+              <div>
+                <h3>Lucas — Fundador</h3>
+                <small>Startup · Branding + UI</small>
+              </div>
+            </div>
+            <p>“Nos ayudaron a encontrar la voz y la estética. Hoy la marca se siente sólida y diferencial.”</p>
+          </article>
+
+          <article class="testi-card">
+            <div class="testi-header">
+              <div class="testi-avatar">
+                <span class="initial" aria-hidden="true">A</span>
+                <img src="./img/avatars/ana.jpg" alt="Foto de Ana — Emprendedora" loading="lazy">
+              </div>
+              <div>
+                <h3>Ana — Emprendedora</h3>
+                <small>Servicios · UX de reservas</small>
+              </div>
+            </div>
+            <p>“Mejoraron la experiencia de reserva y aumentó la tasa de consultas. Súper recomendables.”</p>
+          </article>
+        </div>
+
+        <button class="testi-prev" aria-label="Anterior"><i class="ph ph-caret-left"></i></button>
+        <button class="testi-next" aria-label="Siguiente"><i class="ph ph-caret-right"></i></button>
+      </div>
+      <div class="testi-dots" role="tablist" aria-label="Indicadores del carrusel"></div>
+    </section>
+
     <!-- NOSOTROS -->
-    <section id="nosotros" class="section">
-      <h1>Un estudio. Una misma visión.</h1>
-      <p>Creamos identidades visuales, contenido y experiencias digitales pensadas desde lo funcional y lo estético.
-        Unimos estrategia, diseño y comunicación para dar forma y fondo a cada proyecto.</p>
+    <section id="nosotros" class="section" aria-labelledby="nosotros-title">
+      <h2 id="nosotros-title">Un estudio. Una misma visión.</h2>
+      <p>Creamos identidades visuales, contenido y experiencias digitales pensadas desde lo funcional y lo estético.</p>
 
       <div class="cards-nosotros">
-        <!-- Card Jessi -->
         <div class="card-nos">
-          <img src="./img/jessica.png" alt="Foto de Jessi">
+          <img src="./img/jessica.png" alt="Retrato de Jessi" loading="lazy">
           <div class="card-content">
             <h3>Jessi</h3>
-            <p>Me apasiona crear marcas y experiencias digitales con alma. Diseño contenido, webs y UX/UI que reflejan
-              quién sos y hablan con claridad. Aporto creatividad, estrategia y una mirada humana a cada proyecto.</p>
-            <a href="https://www.behance.net/jessAndre" class="btn-card" target="_blank">Ver portfolio</a>
+            <p>Diseño contenido, webs y UX/UI que reflejan quién sos y hablan con claridad. Creatividad, estrategia y
+              mirada humana.</p>
+            <a href="https://www.behance.net/jessAndre" class="btn-card" target="_blank" rel="noopener">Ver
+              portfolio</a>
           </div>
         </div>
 
-        <!-- Card Eze -->
         <div class="card-nos">
-          <img src="./img/fotoEze.jpeg" alt="Foto de Eze">
+          <img src="./img/fotoEze.jpeg" alt="Retrato de Eze" loading="lazy">
           <div class="card-content">
             <h3>Eze</h3>
-            <p>Me desempeño como diseñador y desarrollador web, Creativo de Marca y Social Media. Creo identidades y
-              experiencias digitales que conectan con audiencias llevando cada proyecto a su máximo potencial creativo y
-              estratégico.</p>
-            <a href="https://www.behance.net/ezequielandre1" class="btn-card" target="_blank">Ver portfolio</a>
+            <p>Diseñador y desarrollador web. Creo identidades y experiencias digitales que conectan y potencian
+              proyectos.</p>
+            <a href="https://www.behance.net/ezequielandre1" class="btn-card" target="_blank" rel="noopener">Ver
+              portfolio</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FORMULARIO  -->
-    <section id="contacto" class="section fade-in">
-      <h1>Tu proyecto merece una imagen con identidad</h1>
-      <p>Escribinos sin compromiso. Contanos tu idea, proyecto o necesidad y te respondemos en menos de 24 horas.</p>
+    <!-- FAQ -->
+    <section id="faq" class="section fade-in" aria-labelledby="faq-title">
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+      <p>Respondemos las dudas más comunes antes de empezar.</p>
 
-      <form id="contact-form" action="https://formspree.io/f/xkgbwywv" method="POST" novalidate>
+      <div class="faq">
+        <details class="faq-item">
+          <summary><span>¿Cómo es el proceso de trabajo?</span></summary>
+          <div class="faq-content">Trabajamos por etapas: brief, moodboard, prototipos, iteraciones y entrega final.
+            Feedback en cada paso.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>¿En cuánto tiempo entregan?</span></summary>
+          <div class="faq-content">Depende del alcance. Una landing suele ser 1–2 semanas; branding completo 3–5
+            semanas.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>¿Qué incluyen los paquetes?</span></summary>
+          <div class="faq-content">Entrega de editables, guía de uso, versiones para redes y soporte acordado.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>¿Cómo se paga?</span></summary>
+          <div class="faq-content">Reserva del 50% al iniciar y 50% al entregar. Factura y acuerdo de alcance.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section fade-in" aria-labelledby="contacto-title">
+      <h2 id="contacto-title">Tu proyecto merece una imagen con identidad</h2>
+      <p>Escribinos sin compromiso. Te respondemos en menos de 24 horas.</p>
+
+      <form id="contact-form" action="https://formspree.io/f/xkgbwywv" method="POST">
         <label class="sr-only" for="nombre">Tu nombre</label>
         <input id="nombre" type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" inputmode="text"
           minlength="2" required />
@@ -284,79 +436,74 @@
           required />
 
         <label class="sr-only" for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" placeholder="Escribinos tu mensaje" minlength="10" required></textarea>
+        <textarea id="mensaje" name="mensaje" placeholder="Contanos tu idea o necesidad" minlength="10"
+          required></textarea>
 
         <!-- Honeypot anti-spam -->
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
-          style="position:absolute;left:-9999px;opacity:0">
+          style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
 
         <!-- URL de origen -->
         <input type="hidden" name="pagina" value="https://jessi-andre.github.io/forma-fondo/">
 
-        <button type="submit" class="btn btn-contacto" aria-label="Enviar consulta">Enviar consulta</button>
+        <button type="submit" class="btn btn-contacto btn-primary" aria-label="Enviar consulta">Enviar consulta</button>
         <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
 
+  <!-- Scroll to top -->
   <a href="#" class="scroll-to-top" aria-label="Ir arriba">
     <i class="ph ph-arrow-up"></i>
   </a>
 
   <!-- FOOTER -->
   <footer>
-    <div class="ff-footer-bg">
+    <div class="ff-footer-bg" aria-hidden="true">
       <div class="ff-circle ff-c1"></div>
       <div class="ff-circle ff-c2"></div>
       <div class="ff-circle ff-c3"></div>
     </div>
 
     <div class="footer-container">
-      <!-- Columna marca + CTA + redes-->
       <div class="ff-footer-col ff-brand">
         <h3 class="ff-title">Forma & Fondo</h3>
-        <p class="ff-text">
-          Transformamos ideas en experiencias visuales extraordinarias.
-          Cada proyecto es una oportunidad de crear algo único y memorable.
-        </p>
+        <p class="ff-text">Transformamos ideas en experiencias visuales. Creamos marcas y sitios que venden y se
+          recuerdan.</p>
 
-        <a href="#contacto" class="btn btn-footer-cta">
+        <a href="#contacto" class="btn btn-footer-cta btn-contrast">
           Empezar mi proyecto
           <i class="ph ph-arrow-right"></i>
         </a>
 
-        <!-- íconos originales -->
-        <div class="footer-icons">
-          <a href="https://www.behance.net/jessAndre" target="_blank" aria-label="Behance">
-            <i class="ph ph-behance-logo"></i>
-          </a>
-          <a href="https://instagram.com/formayfondo__" target="_blank" aria-label="Instagram">
-            <i class="ph ph-instagram-logo"></i>
-          </a>
-          <a href="mailto:jessicaandre890@gmail.com" aria-label="Correo">
-            <i class="ph ph-envelope-simple"></i>
-          </a>
+        <div class="footer-icons" aria-label="Redes sociales">
+          <a href="https://www.behance.net/jessAndre" target="_blank" rel="noopener" aria-label="Behance"><i
+              class="ph ph-behance-logo"></i></a>
+          <a href="https://instagram.com/formayfondo__" target="_blank" rel="noopener" aria-label="Instagram"><i
+              class="ph ph-instagram-logo"></i></a>
+          <a href="mailto:jessicaandre890@gmail.com" aria-label="Correo"><i class="ph ph-envelope-simple"></i></a>
         </div>
       </div>
 
-      <!-- Columna navegación rápida -->
       <div class="ff-footer-col ff-nav">
         <h4 class="ff-subtitle">Navegación</h4>
         <nav class="ff-links">
           <a href="#inicio" class="ff-link">Inicio</a>
           <a href="#servicios" class="ff-link">Servicios</a>
+          <a href="#beneficios" class="ff-link">Beneficios</a>
+          <a href="#testimonios" class="ff-link">Testimonios</a>
           <a href="#nosotros" class="ff-link">Nosotros</a>
+          <a href="#faq" class="ff-link">FAQ</a>
           <a href="#contacto" class="ff-link">Contacto</a>
         </nav>
       </div>
 
-      <!-- Columna contacto -->
       <div class="ff-footer-col ff-contact">
         <h4 class="ff-subtitle">Contacto</h4>
         <ul class="ff-contact-list">
           <li>
             <span class="ff-label">WhatsApp</span>
-            <a class="ff-value" href="https://wa.me/5491125532868" target="_blank">+54 9 11 2553-2868</a>
+            <a class="ff-value" href="https://wa.me/5491125532868" target="_blank" rel="noopener">+54 9 11 2553-2868</a>
           </li>
           <li>
             <span class="ff-label">Email</span>
@@ -371,10 +518,10 @@
     </div>
   </footer>
 
-  <!-- Phosphor Icons JS (opcional) -->
+  <!-- Phosphor Icons JS -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <!-- App script -->
-  <script src="js/script.js?v=1.0.0" defer></script>
+  <script src="js/script.js?v=1.2.0" defer></script>
 </body>
 
 </html>
