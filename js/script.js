@@ -78,21 +78,20 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top:0, behavior:"smooth" });
   });
 
-  // === FORMULARIO + eventos de conversión ===
-  // === FORMULARIO (validación nativa + fetch) ===
+
+  // === FORMULARIO ===
 const form = document.getElementById("contact-form");
 const status = document.getElementById("form-status");
 const submitBtn = form?.querySelector('button[type="submit"]');
 
 form?.addEventListener("submit", async (e) => {
-  // Si el form NO es válido, mostramos los mensajes nativos y no enviamos
   if (!form.checkValidity()) {
     e.preventDefault();
     form.reportValidity();
     return;
   }
 
-  // Válido: hacemos envío AJAX
+  // Válido
   e.preventDefault();
 
   // UX: deshabilitar botón mientras envía
@@ -225,5 +224,35 @@ form?.addEventListener("submit", async (e) => {
   })();
 });
 
-// Asegurar arriba al recargar
 window.onbeforeunload = () => window.scrollTo(0, 0);
+
+
+// Animación de números en .stat span
+function animateValue(el, end, duration = 1500) {
+  let start = 0;
+  let startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    el.textContent = Math.floor(progress * (end - start) + start);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// Observer para disparar la animación al entrar en pantalla
+const stats = document.querySelectorAll(".stat span");
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      stats.forEach(span => {
+        const target = parseInt(span.textContent.replace(/\D/g, "")); // extrae el número
+        animateValue(span, target);
+      });
+      obs.disconnect(); // solo lo hace una vez
+    }
+  });
+}, { threshold: 0.3 });
+
+if (stats.length) observer.observe(stats[0].parentElement);

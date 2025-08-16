@@ -55,7 +55,7 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="./css/style.css?v=2.2.0" />
 
-  <!-- Seguridad (CSP) — actualizada para GA4 y Meta Pixel -->
+  <!-- Seguridad (CSP) — para GA4 y Meta Pixel -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     img-src 'self' data: https: https://www.facebook.com https://www.google-analytics.com;
@@ -97,7 +97,7 @@
   }
   </script>
 
-  <!-- GA4: gtag.js (reemplazar G-XXXXXXXXXX) -->
+  <!-- GA4: gtag.js  -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -106,18 +106,18 @@
     gtag('config', 'G-XXXXXXXXXX'); // <-- tu GA4 ID
   </script>
 
-  <!-- Meta Pixel (reemplazar 123456789012345) -->
+  <!-- Meta Pixel -->
   <script>
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       }; if (!f._fbq) f._fbq = n;
       n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
       t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
     }(window, document, 'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '123456789012345'); // <-- tu Pixel ID
+    fbq('init', '123456789012345'); // <-- Pixel ID
     fbq('track', 'PageView');
   </script>
   <noscript>
@@ -296,12 +296,12 @@
           <p>Procesos claros por etapas y feedback continuo para avanzar rápido.</p>
         </article>
       </div>
-
       <div class="stats">
-        <div class="stat"><span>+20</span> Proyectos</div>
-        <div class="stat"><span>3</span> Países</div>
-        <div class="stat"><span>95%</span> Satisfacción</div>
+        <div class="stat" data-emoji="🚀">+ Experiencia en proyectos reales</div>
+        <div class="stat" data-emoji="😊">+ Clientes felices</div>
+        <div class="stat" data-emoji="🌍">+ Presencia internacional</div>
       </div>
+
     </section>
 
     <!-- TESTIMONIOS -->
@@ -371,8 +371,8 @@
           <img src="./img/jessica.png" alt="Retrato de Jessi" loading="lazy">
           <div class="card-content">
             <h3>Jessi</h3>
-            <p>Diseño contenido, webs y UX/UI que reflejan quién sos y hablan con claridad. Creatividad, estrategia y
-              mirada humana.</p>
+            <p>Me apasiona crear marcas y experiencias digitales con alma. Diseño contenido, webs y UX/UI que reflejan
+              quién sos y hablan con claridad. Aporto creatividad, estrategia y una mirada humana a cada proyecto.</p>
             <a href="https://www.behance.net/jessAndre" class="btn-card" target="_blank" rel="noopener">Ver
               portfolio</a>
           </div>
@@ -382,8 +382,9 @@
           <img src="./img/fotoEze.jpeg" alt="Retrato de Eze" loading="lazy">
           <div class="card-content">
             <h3>Eze</h3>
-            <p>Diseñador y desarrollador web. Creo identidades y experiencias digitales que conectan y potencian
-              proyectos.</p>
+            <p>Me desempeño como diseñador y desarrollador web, Creativo de Marca y Social Media. Creo identidades y
+              experiencias digitales que conectan con audiencias llevando cada proyecto a su máximo potencial creativo y
+              estratégico.</p>
             <a href="https://www.behance.net/ezequielandre1" class="btn-card" target="_blank" rel="noopener">Ver
               portfolio</a>
           </div>
