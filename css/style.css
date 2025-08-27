@@ -941,6 +941,33 @@ body.dark-mode .btn-nav {
   outline: none
 }
 
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* texto a la izq, flecha a la der */
+  gap: .6rem;
+  padding: .6rem 0;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none; /* oculta el triangulito nativo */
+}
+
+.faq-item i {
+  transition: transform .3s ease, color .3s ease;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+/* cuando el item está abierto, la flecha rota */
+.faq-item[open] i {
+  transform: rotate(180deg);
+  color: var(--text);
+}
+
+
 /* =======================================
    FORMULARIO
 ======================================= */
@@ -1296,7 +1323,7 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: .5rem;
-  margin-left: .4rem;
+
 }
 
 .ff-pay-text {

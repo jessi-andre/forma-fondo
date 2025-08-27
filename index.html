@@ -153,8 +153,8 @@
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#beneficios">Beneficios</a></li>
         <li><a href="#packs">Packs</a></li>
+         <li><a href="#beneficios">Beneficios</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto" class="btn btn-nav btn-primary">Contacto</a></li>
@@ -555,28 +555,55 @@
 
       <div class="faq">
         <details class="faq-item">
-          <summary><span>¿Cómo es el proceso de trabajo?</span></summary>
-          <div class="faq-content">Trabajamos por etapas: brief, moodboard, prototipos, iteraciones y entrega final.
-            Feedback en cada paso.</div>
+          <summary>
+            <span>¿Cómo es el proceso de trabajo?</span>
+            <i class="ph ph-caret-down" aria-hidden="true"></i>
+          </summary>
+          <div class="faq-content">
+            Trabajamos por etapas: brief inicial → planificación y calendario → producción de piezas
+            (diseño/copy/edición) → revisión y ajustes → programación/publicación → reporte con métricas e insights.
+            Todo con feedback guiado y fechas claras.
+          </div>
         </details>
 
         <details class="faq-item">
-          <summary><span>¿En cuánto tiempo entregan?</span></summary>
-          <div class="faq-content">Depende del alcance. Una landing suele ser 1–2 semanas; branding completo 3–5
-            semanas.</div>
+          <summary>
+            <span>¿En cuánto tiempo entregan?</span>
+            <i class="ph ph-caret-down" aria-hidden="true"></i>
+          </summary>
+          <div class="faq-content">
+            Los tiempos de entrega dependen del tipo de proyecto y el alcance acordado.
+            En cada propuesta se detallan los plazos estimados y se ajustan en conjunto con el cliente para asegurar
+            calidad y realismo en la planificación.
+          </div>
         </details>
 
         <details class="faq-item">
-          <summary><span>¿Qué incluyen los paquetes?</span></summary>
-          <div class="faq-content">Entrega de editables, guía de uso, versiones para redes y soporte acordado.</div>
+          <summary>
+            <span>¿Cómo se paga?</span>
+            <i class="ph ph-caret-down" aria-hidden="true"></i>
+          </summary>
+          <div class="faq-content">
+            Modalidad por hitos: <strong>50 %</strong> para iniciar, <strong>30 %</strong> al aprobar planificación y
+            piezas clave, y <strong>20 %</strong> al finalizar/entregar. Puede ajustarse por acuerdo. Aceptamos
+            transferencia y PayPal.
+          </div>
         </details>
-
         <details class="faq-item">
-          <summary><span>¿Cómo se paga?</span></summary>
-          <div class="faq-content">Reserva del 50% al iniciar y 50% al entregar. Factura y acuerdo de alcance.</div>
+          <summary>
+            <span>¿Puedo cancelar o pausar el servicio?</span>
+            <i class="ph ph-caret-down" aria-hidden="true"></i>
+          </summary>
+          <div class="faq-content">
+            Sí. El servicio es mensual con renovación automática. Para no continuar, avisá por escrito <strong>10 días
+              antes</strong> del cierre del período. Si hay trabajo ya realizado se calcula proporcional (planificación
+            30 % · producción 40 % · programación/entrega 30 %). Ver <button type="button" class="legal-link"
+              data-modal="modal-cancelacion">Política de Cancelación</button>.
+          </div>
         </details>
       </div>
     </section>
+
 
     <!-- CONTACTO -->
     <section id="contacto" class="section fade-in" aria-labelledby="contacto-title">
@@ -680,7 +707,7 @@
     </div>
 
     <div class="footer-copy">
-      © <span id="ff-year"></span> Forma & Fondo. Hecho con ❤️
+      © <span id="ff-year"></span> Forma & Fondo. Hecho con ❤️ Todos los derechos reservados.
     </div>
 
     <!-- ===== Modales legales ===== -->
@@ -690,13 +717,26 @@
       <div class="ff-modal__dialog" role="document">
         <button class="ff-modal__close" aria-label="Cerrar" data-close-modal>×</button>
         <h3 id="ttl-terminos">Términos y Condiciones</h3>
-        <p><strong>1) Alcance y revisiones</strong><br>El servicio incluye hasta dos (2) rondas de modificaciones por
-          pieza sobre el material incluido en el pack contratado. Cambios fuera de alcance o rondas adicionales tendrán
-          costo extra a cotizar.</p>
-        <p><strong>2) Términos de pago</strong><br>Seña del 50% para iniciar. Saldo contra aprobación final previa a la
-          entrega de editables y/o publicación. Medios de pago: los indicados en este sitio.</p>
-        <p><strong>3) Adicionales</strong><br>Todo servicio adicional a lo publicado en la web/portfolio tendrá un costo
-          aparte a cotizar.</p>
+
+        <p><strong>1) Alcance del servicio</strong><br>
+          Cada proyecto incluye lo acordado en la propuesta/presupuesto. Cambios o adicionales fuera de ese alcance
+          tendrán costo extra.</p>
+
+        <p><strong>2) Pagos</strong><br>
+          Esquema habitual: <strong>50%</strong> inicial para comenzar, <strong>30%</strong> al aprobar planificación y
+          piezas principales, y <strong>20%</strong> al entregar materiales finales.<br>
+          Este esquema puede ajustarse por acuerdo con el cliente según características del proyecto.</p>
+
+        <p><strong>3) Revisiones</strong><br>
+          Se contemplan hasta <em>2 rondas de cambios</em> por entregable dentro del alcance. Rondas adicionales o
+          cambios de brief se cotizan aparte.</p>
+
+        <p><strong>4) Propiedad intelectual</strong><br>
+          Hasta cancelar el 100% del servicio, los diseños/prototipos son propiedad de <em>Forma & Fondo</em>. Con el
+          pago total, el cliente obtiene derechos de uso conforme a lo acordado.</p>
+
+        <p><strong>5) Uso en portfolio</strong><br>
+          Forma & Fondo podrá mostrar el resultado final en portfolio y redes, salvo acuerdo distinto por escrito.</p>
       </div>
     </div>
 
@@ -706,9 +746,21 @@
       <div class="ff-modal__dialog" role="document">
         <button class="ff-modal__close" aria-label="Cerrar" data-close-modal>×</button>
         <h3 id="ttl-privacidad">Política de Privacidad</h3>
-        <p>Usamos la información provista solo para responder consultas, presupuestos y gestionar proyectos. No
-          compartimos datos con terceros salvo obligación legal. Podés solicitar la eliminación de tus datos escribiendo
-          al email publicado.</p>
+
+        <p><strong>1) Datos recolectados</strong><br>
+          Guardamos únicamente los datos enviados por formularios o WhatsApp.</p>
+
+        <p><strong>2) Uso de datos</strong><br>
+          La información se utiliza para responder consultas, presupuestos y gestionar proyectos.</p>
+
+        <p><strong>3) No compartimos datos</strong><br>
+          No compartimos tu información con terceros, salvo obligación legal.</p>
+
+        <p><strong>4) Eliminación de datos</strong><br>
+          Podés solicitar la eliminación de tus datos escribiendo a nuestro email de contacto.</p>
+
+        <p><strong>5) Cookies y analítica</strong><br>
+          Usamos Google Analytics con fines estadísticos, sin identificar usuarios individualmente.</p>
       </div>
     </div>
 
@@ -718,10 +770,45 @@
       <div class="ff-modal__dialog" role="document">
         <button class="ff-modal__close" aria-label="Cerrar" data-close-modal>×</button>
         <h3 id="ttl-cancelacion">Política de Cancelación</h3>
-        <p>Cancelaciones antes de iniciar el trabajo: reembolso del 50% de la seña. Una vez iniciada la etapa de
-          diseño/producción, la seña no es reembolsable. Reprogramaciones sin costo con 48 h de aviso.</p>
+
+        <h4>Plazos y aprobaciones</h4>
+        <p>Con el pago inicial, la planificación se entrega en <strong>hasta 5 días hábiles</strong>.<br>
+          Ventana de feedback del cliente: <strong>48 horas</strong>. Sin respuesta, se considera aprobado para
+          avanzar.<br>
+          Correcciones dentro del alcance: entrega en <strong>48–72 hs</strong> según complejidad.<br>
+          Feedback o materiales fuera de plazo pueden reprogramarse y/o generar costos adicionales.</p>
+
+        <h4>Cancelación y renovación</h4>
+        <p>El servicio mensual se renueva automáticamente. Para no continuar, notificar por escrito con <strong>mínimo
+            10 días</strong> de anticipación al cierre del período.<br>
+          Aviso fuera de término: se cobrará el <strong>50% del valor mensual</strong> por planificación/producción
+          anticipada del mes siguiente.</p>
+
+        <h4>Política de devoluciones</h4>
+        <p>No se realizan devoluciones por trabajo ya efectuado. Si la cancelación ocurre antes de iniciar tareas, podrá
+          evaluarse un reembolso proporcional, descontando gastos administrativos si correspondiera.</p>
+
+        <h4>Trabajo ya realizado (criterio objetivo)</h4>
+        <ul>
+          <li>Planificación &amp; estrategia: 30%</li>
+          <li>Producción de piezas (diseño / copy / edición): 40%</li>
+          <li>Programación / publicación &amp; entrega final: 30%</li>
+        </ul>
+        <p>Ejemplos:<br>
+          – Planificación aprobada → 30%<br>
+          – Planificación + piezas producidas → 70%<br>
+          – Contenido programado/publicado → 100%</p>
+
+        <h4>Modificaciones</h4>
+        <p>Cada pieza incluye hasta <strong>2 rondas de cambios</strong> dentro del alcance. Rondas adicionales o
+          cambios de brief se cotizan aparte.</p>
+
+        <h4>Contacto</h4>
+        <p>Para cancelar o reprogramar, escribí con la mayor anticipación posible para coordinar entregables y fechas.
+          La comunicación oficial se considerará válida por email o WhatsApp Business.</p>
       </div>
     </div>
+
   </footer>
 
 
