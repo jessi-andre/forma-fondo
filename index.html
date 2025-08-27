@@ -6,29 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
-  <title>Forma & Fondo — Branding, UX/UI y Contenido</title>
+  <title>Forma & Fondo — Branding, UX/UI, Web y Community Management</title>
   <meta name="description"
-    content="Estudio de diseño estratégico. Branding, UX/UI y contenido visual. Diseñamos marcas y experiencias que conectan y transforman." />
+    content="Forma & Fondo es un estudio de diseño estratégico. Creamos branding, UX/UI, desarrollo web y community management para marcas con propósito que buscan presencia, coherencia y resultados." />
+  <meta name="keywords" content="branding, ux/ui, desarrollo web, community management, diseño consciente, marketing digital, forma y fondo, santiago de chile, argentina" />
   <link rel="canonical" href="https://jessi-andre.github.io/forma-fondo/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
-  <!-- Open Graph / Social -->
+  <!-- Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Forma & Fondo — Branding, UX/UI y Contenido" />
+  <meta property="og:title" content="Forma & Fondo — Branding, UX/UI, Web y Community Management" />
   <meta property="og:description"
-    content="Diseñamos experiencias que conectan y transforman. Branding, UX/UI y contenido visual." />
+    content="Diseñamos marcas que inspiran y se adaptan a lo digital: branding, UX/UI, desarrollo web y community management." />
   <meta property="og:url" content="https://jessi-andre.github.io/forma-fondo/" />
   <meta property="og:image" content="https://jessi-andre.github.io/forma-fondo/img/og-cover.jpg" />
   <meta property="og:locale" content="es_CL" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Forma & Fondo — Branding, UX/UI y Contenido" />
-  <meta name="twitter:description" content="Estudio de diseño estratégico. Branding, UX/UI y contenido visual." />
-  <meta name="twitter:image" content="https://jessi-andre.github.io/forma-fondo/img/og-cover.jpg" />
-
-  <!-- Colores del navegador -->
-  <meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#F7F5F2" media="(prefers-color-scheme: light)">
 
   <!-- Favicons -->
   <link rel="icon" href="./img/favicon-32.png" sizes="32x32">
@@ -56,7 +48,7 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="./css/style.css?v=2.2.0" />
 
-  <!-- Seguridad (CSP) — para GA4 y Meta Pixel -->
+  <!-- Seguridad (CSP) -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     img-src 'self' data: https: https://www.facebook.com https://www.google-analytics.com;
@@ -85,7 +77,9 @@
     "sameAs":[
       "https://www.behance.net/jessAndre",
       "https://www.behance.net/ezequielandre1",
-      "https://instagram.com/formayfondo__"
+      "https://instagram.com/formayfondo__",
+      "https://www.linkedin.com/in/jessicaandre", 
+      "https://github.com/jessi-andre"
     ]
   }
   </script>
@@ -98,27 +92,27 @@
   }
   </script>
 
-  <!-- GA4: gtag.js  -->
+  <!--esta parte es la que conecta la web con herramientas de analítica y publicidad
+  GA4 = estadísticas generales de visitas.-->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX'); // <-- tu GA4 ID
+    gtag('config', 'G-XXXXXXXXXX');
   </script>
 
-  <!-- Meta Pixel -->
+  <!-- Meta Pixel = seguimiento para publicidad en Facebook/Instagram. -->
   <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      }; if (!f._fbq) f._fbq = n;
-      n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '123456789012345'); // <-- Pixel ID
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '123456789012345'); 
     fbq('track', 'PageView');
   </script>
   <noscript>
@@ -154,7 +148,7 @@
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#packs">Packs</a></li>
-         <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto" class="btn btn-nav btn-primary">Contacto</a></li>
@@ -204,7 +198,7 @@
           </p>
           <ul class="service-bullets">
             <li>Calendario de publicaciones</li>
-            <li>Monitoreo y respuestas de Mensajes</li>
+            <li>Monitoreo y respuestas de mensajes</li>
             <li>Reportes con métricas claras</li>
             <li>Community management</li>
           </ul>
@@ -217,7 +211,7 @@
           <p>Diseños únicos que mantienen tu feed coherente y atractivo, transmitiendo la esencia de tu marca.</p>
           <ul class="service-bullets">
             <li>Identidad Visual</li>
-            <li>Piezas gráficas en Illustreator o Canva</li>
+            <li>Piezas gráficas en Illustrator o Canva</li>
             <li>Interfaces creadas en Figma</li>
             <li>Stories que inspiran interacción</li>
           </ul>
@@ -229,7 +223,7 @@
           <h3>Planificación Estratégica</h3>
           <p>Organización inteligente para que tu comunicación sea constante, efectiva y sin improvisación.</p>
           <ul class="service-bullets">
-            <li>Oganización en Trello</li>
+            <li>Organización en Trello</li>
             <li>Estrategia de contenido por etapas</li>
             <li>Cronogramas claros y flexibles</li>
             <li>Optimización de tiempos y recursos</li>
@@ -252,7 +246,7 @@
         <!-- Grillas de Contenido -->
         <article class="service-card">
           <div class="service-icon" aria-hidden="true"><i class="ph ph-grid-four"></i></div>
-          <h3>Grillas de Contenido</h3>
+          <h3>Grillas de contenido</h3>
           <p>Planificación visual para que tu perfil se vea ordenado, profesional y fácil de navegar.</p>
           <ul class="service-bullets">
             <li>Diseño de grillas coherentes</li>
