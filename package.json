@@ -1,0 +1,12 @@
+{
+  "name": "formayfondo",
+  "version": "1.0.0",
+  "description": "Landing de marca personal (Branding, UX/UI, Contenido) optimizada para conversión, SEO y performance.  \r Live: `https://jessi-andre.github.io/forma-fondo/`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

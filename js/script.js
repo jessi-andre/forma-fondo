@@ -78,47 +78,44 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top:0, behavior:"smooth" });
   });
 
-
   // === FORMULARIO ===
-const form = document.getElementById("contact-form");
-const status = document.getElementById("form-status");
-const submitBtn = form?.querySelector('button[type="submit"]');
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  const submitBtn = form?.querySelector('button[type="submit"]');
 
-form?.addEventListener("submit", async (e) => {
-  if (!form.checkValidity()) {
-    e.preventDefault();
-    form.reportValidity();
-    return;
-  }
-
-  // Válido
-  e.preventDefault();
-
-  // UX: deshabilitar botón mientras envía
-  submitBtn?.setAttribute("disabled", "disabled");
-  if (status) { status.textContent = "Enviando..."; status.style.color = ""; }
-
-  try {
-    const res = await fetch(form.action, {
-      method: form.method,
-      body: new FormData(form),
-      headers: { "Accept": "application/json" }
-    });
-
-    if (res.ok) {
-      if (status) { status.textContent = "¡Mensaje enviado con éxito!"; status.style.color = "green"; }
-      form.reset();
-    } else {
-      throw new Error();
+  form?.addEventListener("submit", async (e) => {
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      form.reportValidity();
+      return;
     }
-  } catch {
-    if (status) { status.textContent = "Hubo un error. Intentalo más tarde."; status.style.color = "red"; }
-  } finally {
-    submitBtn?.removeAttribute("disabled");
-    setTimeout(() => { if (status) status.textContent = ""; }, 4000);
-  }
-});
+    // Válido
+    e.preventDefault();
 
+    // UX: deshabilitar botón mientras envía
+    submitBtn?.setAttribute("disabled", "disabled");
+    if (status) { status.textContent = "Enviando..."; status.style.color = ""; }
+
+    try {
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      });
+
+      if (res.ok) {
+        if (status) { status.textContent = "¡Mensaje enviado con éxito!"; status.style.color = "green"; }
+        form.reset();
+      } else {
+        throw new Error();
+      }
+    } catch {
+      if (status) { status.textContent = "Hubo un error. Intentalo más tarde."; status.style.color = "red"; }
+    } finally {
+      submitBtn?.removeAttribute("disabled");
+      setTimeout(() => { if (status) status.textContent = ""; }, 4000);
+    }
+  });
 
   // === EFECTO corazones botón contacto ===
   const sendButton = document.querySelector(".btn-contacto");
@@ -222,37 +219,61 @@ form?.addEventListener("submit", async (e) => {
       }
     });
   })();
+
+  // === ANIMACIÓN de números en .stat span ===
+  function animateValue(el, end, duration = 1500) {
+    let start = 0;
+    let startTime = null;
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      el.textContent = Math.floor(progress * (end - start) + start);
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const stats = document.querySelectorAll(".stat span");
+  if (stats.length) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          stats.forEach(span => {
+            const target = parseInt(span.textContent.replace(/\D/g, "")) || 0;
+            animateValue(span, target);
+          });
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(stats[0].parentElement);
+  }
+
+  // === MODALES LEGALES ===
+  // abrir
+  document.querySelectorAll('.legal-link').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-modal');
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.classList.add('is-open');
+      // focus accesible
+      const closeBtn = modal.querySelector('.ff-modal__close');
+      closeBtn?.focus();
+    });
+  });
+  // cerrar por click en backdrop o botón
+  document.querySelectorAll('.ff-modal [data-close-modal], .ff-modal__backdrop').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const modal = e.target.closest('.ff-modal') || document.querySelector('.ff-modal.is-open');
+      modal?.classList.remove('is-open');
+    });
+  });
+  // cerrar con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.ff-modal.is-open').forEach(m => m.classList.remove('is-open'));
+    }
+  });
 });
 
 window.onbeforeunload = () => window.scrollTo(0, 0);
-
-
-// Animación de números en .stat span
-function animateValue(el, end, duration = 1500) {
-  let start = 0;
-  let startTime = null;
-
-  function step(timestamp) {
-    if (!startTime) startTime = timestamp;
-    const progress = Math.min((timestamp - startTime) / duration, 1);
-    el.textContent = Math.floor(progress * (end - start) + start);
-    if (progress < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-// Observer para disparar la animación al entrar en pantalla
-const stats = document.querySelectorAll(".stat span");
-const observer = new IntersectionObserver((entries, obs) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      stats.forEach(span => {
-        const target = parseInt(span.textContent.replace(/\D/g, "")); // extrae el número
-        animateValue(span, target);
-      });
-      obs.disconnect(); // solo lo hace una vez
-    }
-  });
-}, { threshold: 0.3 });
-
-if (stats.length) observer.observe(stats[0].parentElement);
