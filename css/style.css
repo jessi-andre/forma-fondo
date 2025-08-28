@@ -121,13 +121,35 @@ button:focus-visible {
 
 .logo-intro img {
   width: 280px;
-  max-width: 80%
+  max-width: 80%;
+  display: none;
 }
 
 .intro-hide {
   opacity: 0;
   visibility: hidden;
   pointer-events: none
+}
+
+
+.logo-intro__img--light {
+  display: block;
+}
+
+body.dark-mode .logo-intro__img--light {
+  display: none;
+}
+
+body.dark-mode .logo-intro__img--dark {
+  display: block;
+}
+
+
+/* Estado oculto */
+.intro-hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* =======================================
@@ -473,39 +495,40 @@ body.dark-mode .btn-nav {
 }
 
 /* ===============================
-   SERVICIOS – Estilos completos
+   SERVICIOS
    =============================== */
 
 #servicios {
+  /* Tokens locales */
   --bg: #fcf9f5;
-  /* fondo crema de tu marca */
   --text: #343434;
-  /* texto negro */
   --muted: #6b6b6b;
-  /* texto gris */
-  --card-bg: #ffffff;
-  /* fondo de card */
+  --card-bg: var(--bg);
   --card-bd: rgba(0, 0, 0, .06);
-  /* borde de card */
   --shadow: 0 8px 24px rgba(0, 0, 0, .06);
   --radius-xl: 22px;
   --radius-md: 16px;
   --gap: 24px;
   --lila: #b5aefa;
-  /* acento iconos */
+  position: relative;
+  background: var(--bg);
+  padding: 3rem 1rem;
+  isolation: isolate;
 }
 
-/* ===== Títulos intro ===== */
+
 #servicios h2 {
   color: var(--text);
-  line-height: 1.1;
+  line-height: 1.15;
   margin: 0 0 .4rem;
+  text-align: center;
 }
 
 #servicios>p {
   color: var(--muted);
   max-width: 920px;
-  margin: 0 0 1.2rem;
+  margin: 0 auto 1.4rem;
+  text-align: center;
 }
 
 /* ===== Grid ===== */
@@ -514,22 +537,25 @@ body.dark-mode .btn-nav {
   display: grid;
   grid-template-columns: repeat(3, minmax(280px, 1fr));
   gap: var(--gap);
+  max-width: 1200px;
+  margin: 0 auto;
   transition: max-height .4s ease;
 }
 
-/* Colapsada con peek (altura definida por JS) */
+/* Colapsada con “peek” */
 #servicios .services-grid.collapsed {
   max-height: var(--collapsed-height, 680px);
   overflow: hidden;
 }
 
-/* Fade al final cuando está colapsada */
 #servicios .services-grid.collapsed::after {
   content: "";
   position: absolute;
-  inset: auto 0 0 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 84px;
-  background: linear-gradient(to bottom, rgba(252, 249, 245, 0), var(--bg));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--bg));
   pointer-events: none;
 }
 
@@ -597,22 +623,48 @@ body.dark-mode .btn-nav {
   line-height: 1.5;
 }
 
-/* ===== Botones dentro de cards ===== */
+/* ===== Botones ===== */
 #servicios .service-card .btn {
   margin-top: 1rem;
   box-shadow: none;
-  /* hereda estilo global sin sombras extras */
+  /* sin sombras extras */
 }
 
-/* ===== Botón “Ver más/menos” ===== */
+/* Botón “ver más/menos” */
 #servicios .center {
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 1.6rem;
 }
 
-/* ===== Utilidades ===== */
-#servicios .hidden {
-  display: none !important;
+#servicios .btn.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid color-mix(in oklab, var(--text) 26%, transparent);
+}
+
+#servicios .btn.btn-ghost:hover {
+  border-color: color-mix(in oklab, var(--text) 50%, transparent);
+  transform: translateY(-1px);
+}
+
+/* ===== Dark mode ===== */
+body.dark-mode #servicios {
+  --bg: #2b2b2d;
+  --text: #f5f5f7;
+  --muted: #d3d3d3;
+  --card-bg: #1a1b1e;
+  --card-bd: rgba(255, 255, 255, .12);
+  --shadow: 0 10px 26px rgba(0, 0, 0, .45);
+}
+
+body.dark-mode #servicios .service-icon {
+  background: color-mix(in oklab, var(--lila) 16%, transparent);
+  color: color-mix(in oklab, var(--lila) 84%, white);
+}
+
+body.dark-mode #servicios .btn.btn-ghost {
+  color: var(--text);
+  border-color: color-mix(in oklab, var(--text) 36%, transparent);
 }
 
 /* =======================================
@@ -1006,6 +1058,12 @@ body.dark-mode .btn-nav {
 .title-nostros-cards {
   font-size: 2rem;
   margin-bottom: 0.5rem;
+}
+
+body.dark-mode .cards-nosotros .btn-card {
+  background: var(--lila);
+  color: #111;
+  border-color: color-mix(in oklab, var(--lila) 80%, transparent);
 }
 
 /* =======================================
