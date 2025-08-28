@@ -277,3 +277,65 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.onbeforeunload = () => window.scrollTo(0, 0);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('servicesGrid');
+  const btn  = document.getElementById('toggle-services');
+
+  if (!grid || !btn) {
+    console.warn('[Servicios] No se encontró', { grid, btn });
+    return;
+  }
+
+ 
+  const PEEK_PX = 120;
+
+  function setCollapsedHeight() {
+    const cards = Array.from(grid.querySelectorAll('.service-card'));
+    if (cards.length === 0) return;
+
+    const firstTop = cards[0].offsetTop;
+    const secondRowFirst = cards.find(el => el.offsetTop > firstTop);
+
+    if (!secondRowFirst) {
+      grid.classList.remove('collapsed');
+      grid.style.removeProperty('--collapsed-height');
+      return;
+    }
+
+    const gridTop = grid.getBoundingClientRect().top + window.scrollY;
+    const secondRowTop = secondRowFirst.getBoundingClientRect().top + window.scrollY;
+
+    const collapsedHeight = (secondRowTop - gridTop) + PEEK_PX;
+    grid.style.setProperty('--collapsed-height', collapsedHeight + 'px');
+    grid.classList.add('collapsed');
+  }
+
+  function toggleServices() {
+    const opening = grid.classList.contains('collapsed'); 
+    grid.classList.toggle('collapsed');
+    btn.textContent = opening ? 'Ver menos servicios' : 'Ver más servicios';
+
+    if (!opening) {
+
+      setCollapsedHeight();
+      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+ 
+      const cards = Array.from(grid.querySelectorAll('.service-card'));
+      const top0 = cards[0]?.offsetTop ?? 0;
+      const secondRowFirst = cards.find(el => el.offsetTop > top0);
+      if (secondRowFirst) {
+        secondRowFirst.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }
+
+  btn.addEventListener('click', toggleServices);
+  window.addEventListener('resize', () => {
+    if (grid.classList.contains('collapsed')) setCollapsedHeight();
+  });
+
+  // Init
+  setCollapsedHeight();
+});

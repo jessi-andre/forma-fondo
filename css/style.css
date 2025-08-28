@@ -366,39 +366,60 @@ body.dark-mode .btn-nav {
   justify-content: center
 }
 
-/* =======================================
-   MARQUEE - FRANJA ANIMADA 
-======================================= */
-.marquee-section {
-  height: 58px;
-  margin: 0rem 0 4rem;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  background: var(--text)
+/* ==============================
+   MARQUEE – sin huecos/solapes
+============================== */
+.marquee-section{
+  height:58px;
+  margin:0 0 4rem;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  color:#fff;
+  animation:bgColorCycle 12s linear infinite;
 }
 
-.marquee {
-  display: flex;
-  width: fit-content;
-  animation: scroll-left 20s linear infinite
+.marquee{
+  width:100%;
+  overflow:hidden;
 }
 
-.marquee-text {
-  white-space: nowrap;
-  padding-right: 4rem;
-  font-size: 1.5rem;
-  color: var(--text)
+.marquee__content{
+  display:inline-flex;          /* contenido en línea, ancho natural */
+  align-items:center;
+  gap:4rem;                     /* separación entre repeticiones */
+  white-space:nowrap;
+  will-change:transform;
+  animation:marqueeShift 44s linear infinite;
 }
 
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0)
-  }
+/* Cada item ocupa al menos 50vw para evitar “huecos” en pantallas grandes */
+.marquee-item{
+  display:inline-block;
+  min-width:50vw;
+  font-size:1.5rem;
+  text-shadow:0 1px 0 rgba(0,0,0,.22);
+}
 
-  100% {
-    transform: translateX(-50%)
-  }
+/* Desplazar media pista (porque 2 mitades son idénticas) */
+@keyframes marqueeShift{
+  0%   { transform:translateX(0); }
+  100% { transform:translateX(-50%); }
+}
+
+/* Fondo animado (tu paleta) */
+@keyframes bgColorCycle{
+  0%   { background:var(--text); }
+  25%  { background:var(--lila); }
+  50%  { background:var(--mostaza); }
+  75%  { background:var(--azul); }
+  100% { background:var(--text); }
+}
+
+/* Respeta reduce-motion */
+@media (prefers-reduced-motion: reduce){
+  .marquee-section{ animation:none; }
+  .marquee__content{ animation:none; }
 }
 
 /* =======================================
@@ -425,90 +446,147 @@ body.dark-mode .btn-nav {
   text-align: center
 }
 
-/* =======================================
-   SERVICIOS
-======================================= */
-.cards-servicios {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  max-width: 980px;
-  margin: 0 auto 2.2rem
+/* ===============================
+   SERVICIOS – Estilos completos
+   =============================== */
+
+#servicios {
+  --bg: #fcf9f5;
+  /* fondo crema de tu marca */
+  --text: #343434;
+  /* texto negro */
+  --muted: #6b6b6b;
+  /* texto gris */
+  --card-bg: #ffffff;
+  /* fondo de card */
+  --card-bd: rgba(0, 0, 0, .06);
+  /* borde de card */
+  --shadow: 0 8px 24px rgba(0, 0, 0, .06);
+  --radius-xl: 22px;
+  --radius-md: 16px;
+  --gap: 24px;
+  --lila: #b5aefa;
+  /* acento iconos */
 }
 
-.card-servicio {
-  flex: 0 1 280px;
-  max-width: 280px;
-  height: 200px;
-  perspective: 1000px;
-  position: relative
+/* ===== Títulos intro ===== */
+#servicios h2 {
+  color: var(--text);
+  line-height: 1.1;
+  margin: 0 0 .4rem;
 }
 
-.card-servicio .card-inner {
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform .9s ease
-}
-
-.card-servicio:hover .card-inner {
-  transform: rotateY(180deg)
-}
-
-.card-servicio .card-front,
-.card-servicio .card-back {
-  position: absolute;
-  inset: 0;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  box-shadow: var(--shadow-1);
-  backface-visibility: hidden;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column
-}
-
-.card-servicio .card-front {
-  padding: 0 0 12px
-}
-
-.card-servicio img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  margin: 0 0 8px
-}
-
-.card-servicio h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
-  margin: 8px 0 0
-}
-
-.card-servicio .card-back {
-  padding: 12px;
-  transform: rotateY(180deg)
-}
-
-.card-servicio .card-back p {
-  margin: .6rem 0 .8rem;
+#servicios>p {
   color: var(--muted);
-  font-size: .92rem;
-  line-height: 1.45
+  max-width: 920px;
+  margin: 0 0 1.2rem;
 }
 
-
-.service-web {
-  --accent: var(--lila);
+/* ===== Grid ===== */
+#servicios .services-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: var(--gap);
+  transition: max-height .4s ease;
 }
 
-.service-cta {
-  margin-top: .9rem;
-  width: 100%;
-  justify-content: center;
+/* Colapsada con peek (altura definida por JS) */
+#servicios .services-grid.collapsed {
+  max-height: var(--collapsed-height, 680px);
+  overflow: hidden;
+}
+
+/* Fade al final cuando está colapsada */
+#servicios .services-grid.collapsed::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 84px;
+  background: linear-gradient(to bottom, rgba(252, 249, 245, 0), var(--bg));
+  pointer-events: none;
+}
+
+/* Responsivo */
+@media (max-width: 1100px) {
+  #servicios .services-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  #servicios .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Cards ===== */
+#servicios .service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-bd);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  padding: 1.4rem 1.4rem 1.2rem;
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+
+#servicios .service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+}
+
+#servicios .service-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--lila) 22%, white);
+  color: var(--lila);
+  margin-bottom: .8rem;
+  font-size: 26px;
+}
+
+#servicios .service-card h3 {
+  margin: 0 0 .4rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+#servicios .service-card>p {
+  margin: 0 0 .8rem;
+  color: var(--muted);
+}
+
+/* Bullets */
+#servicios .service-bullets {
+  padding-left: 1.2rem;
+  margin: 0;
+  display: grid;
+  gap: .5rem;
+  color: var(--text);
+}
+
+#servicios .service-bullets li {
+  line-height: 1.5;
+}
+
+/* ===== Botones dentro de cards ===== */
+#servicios .service-card .btn {
+  margin-top: 1rem;
+  box-shadow: none;
+  /* hereda estilo global sin sombras extras */
+}
+
+/* ===== Botón “Ver más/menos” ===== */
+#servicios .center {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* ===== Utilidades ===== */
+#servicios .hidden {
+  display: none !important;
 }
 
 /* =======================================
@@ -946,13 +1024,15 @@ body.dark-mode .btn-nav {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* texto a la izq, flecha a la der */
+  justify-content: space-between;
+  /* texto a la izq, flecha a la der */
   gap: .6rem;
   padding: .6rem 0;
 }
 
 .faq-item summary::-webkit-details-marker {
-  display: none; /* oculta el triangulito nativo */
+  display: none;
+  /* oculta el triangulito nativo */
 }
 
 .faq-item i {

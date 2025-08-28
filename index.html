@@ -9,7 +9,8 @@
   <title>Forma & Fondo — Branding, UX/UI, Web y Community Management</title>
   <meta name="description"
     content="Forma & Fondo es un estudio de diseño estratégico. Creamos branding, UX/UI, desarrollo web y community management para marcas con propósito que buscan presencia, coherencia y resultados." />
-  <meta name="keywords" content="branding, ux/ui, desarrollo web, community management, diseño consciente, marketing digital, forma y fondo, santiago de chile, argentina" />
+  <meta name="keywords"
+    content="branding, ux/ui, desarrollo web, community management, diseño consciente, marketing digital, forma y fondo, santiago de chile, argentina" />
   <link rel="canonical" href="https://jessi-andre.github.io/forma-fondo/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
@@ -97,22 +98,25 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
 
   <!-- Meta Pixel = seguimiento para publicidad en Facebook/Instagram. -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window,document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '123456789012345'); 
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '123456789012345');
     fbq('track', 'PageView');
   </script>
   <noscript>
@@ -165,8 +169,9 @@
         Diseñamos experiencias que <span class="highlight">conectan <strong>y</strong> transforman</span>
       </h1>
       <p class="ff-hero__subtitle">
-        Impulsamos marcas con diseño estratégico, branding, UX/UI y desarrollo web.
-        Además, gestionamos tus redes sociales con estrategias de Community Management efectivas y creativas.
+        Impulsamos tu marca con diseño, branding y experiencias digitales que inspiran.
+        Creamos webs y gestionamos tus redes para que conectes con las personas correctas y conviertas cada interacción
+        en crecimiento.
       </p>
       <div class="hero-ctas">
         <a href="#contacto" class="btn btn-lg btn-primary ff-hero__cta">Contactanos</a>
@@ -174,13 +179,29 @@
       </div>
     </section>
 
-    <!-- MARQUEE -->
-    <section class="marquee-section fade-in" aria-hidden="true">
+    <!-- MARQUEE (loop perfecto, sin solapes) -->
+    <section class="marquee-section" aria-hidden="true">
       <div class="marquee">
-        <span class="marquee-text">Diseño estratégico ✷ Identidad visual ✺ Experiencias digitales ✦ Branding con
-          personalidad • Interfaces funcionales ✷</span>
-        <span class="marquee-text">Diseño estratégico ✷ Identidad visual ✺ Experiencias digitales ✦ Branding con
-          personalidad • Interfaces funcionales ✷</span>
+        <div class="marquee__content">
+          <!-- Bloque A (x4) -->
+          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+            ✺ Automatizaciones ✷ Asesorias ✦</span>
+          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+            ✺ Automatizaciones ✷ Asesorias ✦</span>
+          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+            ✺ Automatizaciones ✷ Asesorias ✦</span>
+          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+            ✺ Automatizaciones ✷ Asesorias ✦</span>
+
+          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+            ✺ Automatizaciones ✷ Asesorias ✦</span>
+          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+            ✺ Automatizaciones ✷ Asesorias ✦</span>
+          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+            ✺ Automatizaciones ✷ Asesorias ✦</span>
+          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+            ✺ Automatizaciones ✷ Asesorias ✦</span>
+        </div>
       </div>
     </section>
 
@@ -189,7 +210,20 @@
       <h2 id="servicios-title">Servicios que potencian tu marca</h2>
       <p>Diseño y estrategia para conectar con tu audiencia, construir confianza y convertir mejor.</p>
 
-      <div class="services-grid">
+      <div class="services-grid" id="servicesGrid">
+        <!-- Consulta gratis -->
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true"><i class="ph ph-calendar"></i></div>
+          <h3>Asesoria gratis (30′)</h3>
+          <p>Sesión express para diagnosticar tu presencia digital y salir con un plan de acción.</p>
+          <ul class="service-bullets">
+            <li>Revisión de redes y sitio</li>
+            <li>Oportunidades rápidas de mejora</li>
+            <li>Próximos pasos claros</li>
+          </ul>
+          <a href="#contacto" target="_blank" rel="noopener" class="btn btn-primary">Quiero mi asesoria</a>
+        </article>
+
         <!-- Gestión de Redes -->
         <article class="service-card">
           <div class="service-icon" aria-hidden="true"><i class="ph ph-share-network"></i></div>
@@ -214,6 +248,34 @@
             <li>Piezas gráficas en Illustrator o Canva</li>
             <li>Interfaces creadas en Figma</li>
             <li>Stories que inspiran interacción</li>
+          </ul>
+        </article>
+
+        <!-- Desarrollo Web -->
+        <article class="service-card service-web">
+          <div class="service-icon" aria-hidden="true"><i class="ph ph-monitor"></i></div>
+          <h3>Desarrollo Web / Sitio Web</h3>
+          <p>Sitios personalizados: UX/UI a medida, responsive y SEO básico listos para convertir.</p>
+          <ul class="service-bullets">
+            <li>WordPress (autogestionable) o código (HTML/CSS/JS)</li>
+            <li>SEO básico</li>
+            <li>Integraciones: formularios, Analytics y WhatsApp</li>
+            <li>Capacitación para autogestionar</li>
+          </ul>
+          <a href="https://wa.me/5491125532868?text=Hola%20%F0%9F%91%8B%20quiero%20un%20presupuesto%20para%20mi%20sitio%20web"
+            target="_blank" rel="noopener noreferrer" class="btn btn-primary">Solicitar presupuesto</a>
+        </article>
+
+        <!-- Automatizaciones -->
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true"><i class="ph ph-plugs-connected"></i></div>
+          <h3>Automatizaciones</h3>
+          <p>Hacemos que tus herramientas trabajen solas: menos tareas repetitivas, más tiempo para vender.</p>
+          <ul class="service-bullets">
+            <li>Respuestas automáticas en WhatsApp/IG</li>
+            <li>Integraciones con Zapier o Make</li>
+            <li>Formularios a Sheets/CRM</li>
+            <li>Flujos de emails y recordatorios</li>
           </ul>
         </article>
 
@@ -243,36 +305,15 @@
           </ul>
         </article>
 
-        <!-- Grillas de Contenido -->
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true"><i class="ph ph-grid-four"></i></div>
-          <h3>Grillas de contenido</h3>
-          <p>Planificación visual para que tu perfil se vea ordenado, profesional y fácil de navegar.</p>
-          <ul class="service-bullets">
-            <li>Diseño de grillas coherentes</li>
-            <li>Propuesta estética para feeds</li>
-            <li>Estrategias visuales de engagement</li>
-          </ul>
-        </article>
+      </div>
 
-        <!-- Desarrollo Web (WordPress o Código) -->
-        <article class="service-card service-web">
-          <div class="service-icon" aria-hidden="true"><i class="ph ph-monitor"></i></div>
-          <h3>Desarrollo Web / Sitio Web (Pack)</h3>
-          <p>Sitios modernos y rápidos: UX/UI a medida, responsive y SEO básico listos para convertir.</p>
-          <ul class="service-bullets">
-            <li>WordPress (autogestionable) o código (HTML/CSS/JS)</li>
-            <li>SEO básico: meta, sitemap, favicon</li>
-            <li>Integraciones: formularios, Analytics y WhatsApp</li>
-            <li>Capacitación para autogestionar</li>
-          </ul>
-
-          <a href="https://wa.me/5491125532868?text=Hola%20%F0%9F%91%8B%20quiero%20un%20presupuesto%20para%20mi%20sitio%20web"
-            target="_blank" rel="noopener noreferrer" class="btn btn-primary service-cta">Solicitar presupuesto</a>
-        </article>
-
+      <!-- Botón ver más/menos -->
+      <div class="center">
+        <button id="toggle-services" class="btn btn-ghost">Ver más servicios</button>
       </div>
     </section>
+
+
 
 
     <!-- PACKS / PRECIOS -->
@@ -287,7 +328,7 @@
           <p class="plan-sub">Objetivo: activar tu marca con constancia y orden, sin sobrecargarte.</p>
 
           <div class="plan-price">
-            <span class="amount">$280 USD</span><span class="per">/mes</span>
+            <span class="amount">$320 USD</span><span class="per">/mes</span>
           </div>
 
           <ul class="plan-features">
