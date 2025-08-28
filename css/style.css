@@ -369,57 +369,83 @@ body.dark-mode .btn-nav {
 /* ==============================
    MARQUEE – sin huecos/solapes
 ============================== */
-.marquee-section{
-  height:58px;
-  margin:0 0 4rem;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-  color:#fff;
-  animation:bgColorCycle 12s linear infinite;
+.marquee-section {
+  height: 58px;
+  margin: 0 0 4rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  animation: bgColorCycle 12s linear infinite;
 }
 
-.marquee{
-  width:100%;
-  overflow:hidden;
+.marquee {
+  width: 100%;
+  overflow: hidden;
 }
 
-.marquee__content{
-  display:inline-flex;          /* contenido en línea, ancho natural */
-  align-items:center;
-  gap:4rem;                     /* separación entre repeticiones */
-  white-space:nowrap;
-  will-change:transform;
-  animation:marqueeShift 44s linear infinite;
+.marquee__content {
+  display: inline-flex;
+  /* contenido en línea, ancho natural */
+  align-items: center;
+  gap: 4rem;
+  /* separación entre repeticiones */
+  white-space: nowrap;
+  will-change: transform;
+  animation: marqueeShift 44s linear infinite;
 }
 
 /* Cada item ocupa al menos 50vw para evitar “huecos” en pantallas grandes */
-.marquee-item{
-  display:inline-block;
-  min-width:50vw;
-  font-size:1.5rem;
-  text-shadow:0 1px 0 rgba(0,0,0,.22);
+.marquee-item {
+  display: inline-block;
+  min-width: 50vw;
+  font-size: 1.5rem;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .22);
 }
 
 /* Desplazar media pista (porque 2 mitades son idénticas) */
-@keyframes marqueeShift{
-  0%   { transform:translateX(0); }
-  100% { transform:translateX(-50%); }
+@keyframes marqueeShift {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Fondo animado (tu paleta) */
-@keyframes bgColorCycle{
-  0%   { background:var(--text); }
-  25%  { background:var(--lila); }
-  50%  { background:var(--mostaza); }
-  75%  { background:var(--azul); }
-  100% { background:var(--text); }
+@keyframes bgColorCycle {
+  0% {
+    background: var(--text);
+  }
+
+  25% {
+    background: var(--lila);
+  }
+
+  50% {
+    background: var(--mostaza);
+  }
+
+  75% {
+    background: var(--azul);
+  }
+
+  100% {
+    background: var(--text);
+  }
 }
 
 /* Respeta reduce-motion */
-@media (prefers-reduced-motion: reduce){
-  .marquee-section{ animation:none; }
-  .marquee__content{ animation:none; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-section {
+    animation: none;
+  }
+
+  .marquee__content {
+    animation: none;
+  }
 }
 
 /* =======================================
