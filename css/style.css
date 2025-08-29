@@ -471,162 +471,8 @@ body.dark-mode .btn-nav {
   text-align: center
 }
 
-/* =============================== SERVICIOS =============================== */
-#servicios {
-  /* Tokens locales */
-  --bg: #fcf9f5;
-  --text: #343434;
-  --muted: #6b6b6b;
-  --card-bg: var(--bg);
-  --card-bd: rgba(0, 0, 0, .06);
-  --shadow: 0 8px 24px rgba(0, 0, 0, .06);
-  --radius-xl: 22px;
-  --radius-md: 16px;
-  --gap: 24px;
-  --lila: #b5aefa;
-  position: relative;
-  background: var(--bg);
-  padding: 3rem 1rem;
-  isolation: isolate;
-}
 
-#servicios h2 {
-  color: var(--text);
-  line-height: 1.15;
-  margin: 0 0 .4rem;
-  text-align: center;
-}
-
-#servicios>p {
-  color: var(--muted);
-  max-width: 920px;
-  margin: 0 auto 1.4rem;
-  text-align: center;
-}
-
-/* ===== Grid ===== */
-#servicios .services-grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(280px, 1fr));
-  gap: var(--gap);
-  max-width: 1200px;
-  margin: 0 auto;
-  transition: max-height .4s ease;
-}
-
-#servicios .services-grid.collapsed {
-  max-height: var(--collapsed-height, 680px);
-  overflow: hidden;
-}
-
-#servicios .services-grid.collapsed::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 84px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--bg));
-  pointer-events: none;
-}
-
-
-/* ===== Cards ===== */
-#servicios .service-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-bd);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow);
-  padding: 1.4rem 1.4rem 1.2rem;
-  transition: transform .15s ease, box-shadow .2s ease;
-}
-
-#servicios .service-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
-}
-
-#servicios .service-icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: color-mix(in oklab, var(--lila) 22%, white);
-  color: var(--lila);
-  margin-bottom: .8rem;
-  font-size: 26px;
-}
-
-#servicios .service-card h3 {
-  margin: 0 0 .4rem;
-  color: var(--text);
-  line-height: 1.2;
-}
-
-#servicios .service-card>p {
-  margin: 0 0 .8rem;
-  color: var(--muted);
-}
-
-/* Bullets */
-#servicios .service-bullets {
-  padding-left: 1.2rem;
-  margin: 0;
-  display: grid;
-  gap: .5rem;
-  color: var(--text);
-}
-
-#servicios .service-bullets li {
-  line-height: 1.5;
-}
-
-/* ===== Botones ===== */
-#servicios .service-card .btn {
-  margin-top: 1rem;
-  box-shadow: none;
-  /* sin sombras extras */
-}
-
-/* Botón “ver más/menos” */
-#servicios .center {
-  text-align: center;
-  margin-top: 1.6rem;
-}
-
-#servicios .btn.btn-ghost {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid color-mix(in oklab, var(--text) 26%, transparent);
-}
-
-#servicios .btn.btn-ghost:hover {
-  border-color: color-mix(in oklab, var(--text) 50%, transparent);
-  transform: translateY(-1px);
-}
-
-/* ===== Dark mode ===== */
-body.dark-mode #servicios {
-  --bg: #2b2b2d;
-  --text: #f5f5f7;
-  --muted: #d3d3d3;
-  --card-bg: #1a1b1e;
-  --card-bd: rgba(255, 255, 255, .12);
-  --shadow: 0 10px 26px rgba(0, 0, 0, .45);
-}
-
-body.dark-mode #servicios .service-icon {
-  background: color-mix(in oklab, var(--lila) 16%, transparent);
-  color: color-mix(in oklab, var(--lila) 84%, white);
-}
-
-body.dark-mode #servicios .btn.btn-ghost {
-  color: var(--text);
-  border-color: color-mix(in oklab, var(--text) 36%, transparent);
-}
-
+/*
 /* ======================================= BENEFICIOS ======================================= */
 #beneficios {
   position: relative;
@@ -1684,85 +1530,189 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* ======= Servicios: cards ======= */
-.services-grid {
-  --accent: var(--lila);
-  max-width: 1100px;
-  margin: 0 auto 2.2rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-
-.service-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: var(--shadow-1);
-  padding: 1.2rem 1.2rem 1rem;
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+/* ===== SERVICIOS (base) ===== */
+#servicios {
+  --bg: #fcf9f5;
+  --text: #343434;
+  --muted: #6b6b6b;
+  --card-bg: var(--bg);
+  --card-bd: rgba(0, 0, 0, .06);
+  --shadow: 0 8px 24px rgba(0, 0, 0, .06);
+  --radius-xl: 22px;
+  --gap: 24px;
   position: relative;
-  overflow: hidden;
+  background: var(--bg);
+  padding: 3rem 1rem;
+  isolation: isolate;
 }
 
-.service-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 4px;
-  background: var(--accent);
-  transform: scaleX(.25);
-  transform-origin: left;
-  transition: transform .35s ease;
+#servicios h2 {
+  text-align: center;
+  margin: 0 0 .4rem;
+  line-height: 1.15;
+  color: var(--text);
 }
 
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-2);
-  border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
-  background: color-mix(in oklab, var(--accent) 6%, var(--surface));
-}
-
-.service-card:hover::before {
-  transform: scaleX(1);
-}
-
-.service-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  margin-bottom: .7rem;
-  background: color-mix(in oklab, var(--accent) 18%, transparent);
-  color: color-mix(in oklab, var(--accent) 80%, var(--text));
-  font-size: 22px;
-}
-
-.service-card h3 {
-  font-size: 1.15rem;
-  margin-bottom: .25rem;
-}
-
-.service-card p {
-  font-size: .98rem;
-  margin-bottom: .6rem;
-  text-align: left;
-}
-
-.service-bullets {
-  margin: 0;
-  padding-left: 1rem;
-  display: grid;
-  gap: .28rem;
-}
-
-.service-bullets li {
-  font-family: var(--fuente);
-  font-size: .95rem;
+#servicios>p {
+  text-align: center;
+  margin: 0 auto 1.4rem;
+  max-width: 920px;
   color: var(--muted);
 }
+
+/* ===== Grid ===== */
+#servicios .services-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: var(--surface-2);
+  max-width: 1200px;
+  margin: 0 auto;
+  transition: max-height .35s ease;
+}
+
+/* COLAPSADO + DEFUMINADO */
+#servicios .services-grid.collapsed {
+  max-height: var(--collapsed-height, 720px);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+
+#servicios .services-grid.collapsed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  /* en vez de 90px */
+  background: linear-gradient(to bottom, rgba(252, 249, 245, 0), var(--bg) 90%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+#servicios .center {
+  position: relative;
+  z-index: 2;
+  /* encima del fade */
+  margin-top: 24px !important;
+  /* más aire */
+}
+
+/*
+#servicios .services-grid.collapsed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 84px;
+  background: linear-gradient(to bottom, rgba(252, 249, 245, 0), var(--bg));
+  pointer-events: none;
+  z-index: 1;
+}*/
+
+
+/* ===== Cards ===== */
+#servicios .service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-bd);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  padding: 1.4rem 1.4rem 1.2rem;
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+
+#servicios .service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+}
+
+#servicios .service-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--lila) 22%, white);
+  color: var(--lila);
+  margin-bottom: .8rem;
+  font-size: 26px;
+}
+
+#servicios .service-card h3 {
+  margin: 0 0 .4rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+#servicios .service-card>p {
+  margin: 0 0 .8rem;
+  color: var(--muted);
+}
+
+#servicios .service-bullets {
+  padding-left: 1.2rem;
+  margin: 0;
+  display: grid;
+  gap: .5rem;
+  color: var(--text);
+}
+
+#servicios .service-card .btn {
+  margin-top: 1rem;
+  box-shadow: none;
+}
+
+#servicios .center {
+  text-align: center;
+  margin-top: 1.6rem;
+}
+
+#servicios .btn.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid color-mix(in oklab, var(--text) 26%, transparent);
+}
+
+#servicios .btn.btn-ghost:hover {
+  border-color: color-mix(in oklab, var(--text) 50%, transparent);
+  transform: translateY(-1px);
+}
+
+/* ===== Dark mode ===== */
+body.dark-mode #servicios {
+  --bg: #2b2b2d;
+  --text: #f5f5f7;
+  --muted: #d3d3d3;
+  --card-bg: #1a1b1e;
+  --card-bd: rgba(255, 255, 255, .12);
+  --shadow: 0 10px 26px rgba(0, 0, 0, .45);
+}
+
+/* ===== Responsive ===== */
+@media (max-width:1100px) {
+  #servicios .services-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width:640px) {
+  #servicios .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #servicios .services-grid.collapsed {
+    max-height: none;
+    overflow: visible;
+  }
+
+  #servicios .services-grid.collapsed::after {
+    content: none;
+  }
+}
+
 
 /* ===== Beneficios nuevo ===== */
 #beneficios {
@@ -2052,11 +2002,21 @@ body.dark-mode .benefit-badge {
   color: var(--negro);
 }
 
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-/* Utilidades base */
+/* Utilidades base (comunes a todo) */
 :root {
   --safe: env(safe-area-inset-bottom, 16px);
 }
@@ -2069,14 +2029,14 @@ canvas {
   height: auto;
 }
 
-/* ====== <= 1100px — Servicios 3→2 columnas ====== */
+/* ====== ≤1100px — Servicios 3→2 ====== */
 @media (max-width: 1100px) {
   #servicios .services-grid {
     grid-template-columns: repeat(2, minmax(260px, 1fr));
   }
 }
 
-/* ====== <= 1024px — Nav hamburguesa + respiración hero ====== */
+/* ====== ≤1024px — Nav hamburguesa + hero + Nosotros centrado ====== */
 @media (max-width: 1024px) {
 
   /* NAV */
@@ -2118,12 +2078,35 @@ canvas {
   .ff-hero {
     padding: 8rem 1.2rem 3rem;
   }
+
+  /* NOSOTROS (centrado y seguro) */
+  .cards-nosotros {
+    max-width: 980px;
+    margin: 0 auto;
+    gap: 1.6rem;
+    padding: 0 1rem;
+    justify-content: center;
+  }
+
+  .card-nos {
+    margin: 0 auto;
+  }
+
+  .cards-nosotros img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
 }
 
-/* ====== <= 900px — Beneficios 4→2 y Footer 3→2 ====== */
+/* ====== ≤900px — Beneficios 4→2 + Footer 3→2 ====== */
 @media (max-width: 900px) {
   .benefits-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
 
   .footer-container {
@@ -2135,7 +2118,10 @@ canvas {
   }
 }
 
-/* ====== <= 680px — Vista móvil principal ====== */
+
+
+
+/* ====== ≤680px — MOBILE principal ====== */
 @media (max-width: 680px) {
 
   /* Logo */
@@ -2146,13 +2132,13 @@ canvas {
 
   /* HERO (breve y legible) */
   .ff-hero {
-    padding: clamp(5.5rem, 8vw + 2rem, 7.5rem) 1rem 2.5rem;
+    padding: clamp(5.2rem, 8vw + 2rem, 7.2rem) 1rem 1.9rem;
     text-align: center;
   }
 
   .ff-hero__title {
     font-size: clamp(1.8rem, 5.5vw + .6rem, 2.3rem);
-    line-height: 1.25;
+    line-height: 1.22;
     font-weight: 800;
     word-break: break-word;
   }
@@ -2161,7 +2147,7 @@ canvas {
     display: inline;
   }
 
-  /* Subtítulos */
+  /* Subtítulos (solo la versión corta) */
   .subtitle-desktop {
     display: none;
   }
@@ -2174,7 +2160,7 @@ canvas {
     font-size: .95rem;
     line-height: 1.45;
     max-width: 85vw;
-    margin: 0 auto 1rem;
+    margin: .2rem auto 1rem;
   }
 
   /* CTAs */
@@ -2184,7 +2170,7 @@ canvas {
     gap: .6rem;
     justify-content: center;
     padding-bottom: 90px;
-    /* espacio para el FAB de WhatsApp */
+    /* espacio para FAB WhatsApp */
   }
 
   .hero-ctas .btn {
@@ -2195,12 +2181,18 @@ canvas {
     border-radius: 12px;
   }
 
-  /* ===== Servicios 2→1 ===== */
+  /* Ajuste de secciones para reducir “aire” con el marquee */
+  .section {
+    margin-top: clamp(2rem, 4vw, 2.6rem);
+    margin-bottom: clamp(2.4rem, 4.5vw, 3rem);
+  }
+
+  /* Servicios 2→1 */
   #servicios .services-grid {
     grid-template-columns: 1fr;
   }
 
-  /* ===== Packs 1 columna y centrados ===== */
+  /* Packs 1 col y centrados */
   #packs {
     position: relative;
     z-index: 2;
@@ -2218,11 +2210,42 @@ canvas {
     justify-items: center;
   }
 
-  #servicios .services-grid.collapsed::after {
-    z-index: 0;
+  /* Beneficios 1 col y centrado */
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
 
-  /* ===== Testimonios ===== */
+  /* Nosotros 1 col y centrado */
+  .cards-nosotros {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    justify-items: center;
+  }
+
+  .card-nos {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .card-content {
+    text-align: center;
+  }
+
+  .cards-nosotros img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Testimonios: swipe solo */
   .testi-card {
     min-width: 86vw;
     max-width: 86vw;
@@ -2233,7 +2256,7 @@ canvas {
     display: none;
   }
 
-  /* ===== FAQ centrado ===== */
+  /* FAQ centrado */
   .faq {
     padding-left: 0;
     padding-right: 0;
@@ -2241,7 +2264,20 @@ canvas {
     max-width: 95%;
   }
 
-  /* ===== Footer simplificado ===== */
+  /* Formulario centrado */
+  form {
+    max-width: 92%;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  input,
+  textarea {
+    font-size: 1rem;
+  }
+
+  /* Footer simplificado */
   .footer-container {
     grid-template-columns: 1fr !important;
     gap: 1rem;
@@ -2258,21 +2294,7 @@ canvas {
     height: 38px;
   }
 
-  /* ===== Formulario centrado ===== */
-  form {
-    max-width: 92%;
-    margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  /* ===== Inputs ===== */
-  input,
-  textarea {
-    font-size: 1rem;
-  }
-
-  /* ===== FABs ===== */
+  /* FABs */
   .btn-whatsapp {
     bottom: calc(16px + var(--safe));
     right: 16px;
@@ -2282,12 +2304,17 @@ canvas {
     bottom: calc(var(--safe) + 16px + 60px + 12px);
     right: 23px;
   }
+
+  /* Evitar solape del peek de servicios (si lo usás) */
+  #servicios .services-grid.collapsed::after {
+    z-index: 0;
+  }
 }
 
-/* ====== <= 400px — Ajustes finos ====== */
+/* ====== ≤400px — Ajustes finos ====== */
 @media (max-width: 400px) {
   .ff-hero {
-    padding: 7.5rem 1rem 2.5rem;
+    padding: 7.2rem 1rem 2.2rem;
   }
 
   input,
@@ -2296,7 +2323,7 @@ canvas {
   }
 }
 
-/* ====== <= 360px — Tarjetas muy chicas ====== */
+/* ====== ≤360px — Tarjetas muy chicas ====== */
 @media (max-width: 360px) {
   .card-servicio {
     height: 200px;
@@ -2307,7 +2334,7 @@ canvas {
   }
 }
 
-/* ====== Accesibilidad: reduce motion ====== */
+/* ====== Preferencias de movimiento ====== */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: .001ms !important;
@@ -2317,9 +2344,13 @@ canvas {
   }
 }
 
+
+
+
+
+
 /* =========================================================
    TABLET 681–1024 px
-   (ajustes de hero, servicios, packs, beneficios, FAQ y footer)
 ========================================================= */
 
 /* ====== 681–900 px ====== */
@@ -2346,16 +2377,12 @@ canvas {
   object-fit: cover;
 }
 
-/* Evitar que el "velo" de servicios tape lo siguiente */
-#servicios .services-grid.collapsed {
-  max-height: none;
-  overflow: visible;
-}
 
+/*
 #servicios .services-grid.collapsed::after {
   content: none !important;
   pointer-events: none;
-}
+}*/
 
 /* Aseguramos stacking correcto de secciones vecinas */
 #beneficios,
@@ -2426,7 +2453,7 @@ canvas {
     flex-wrap: wrap;
     gap: .6rem;
     justify-content: center;
-    padding-bottom: 90px;
+    padding-bottom: 40px;
   }
 
   .hero-ctas .btn {
@@ -2518,6 +2545,15 @@ canvas {
   .scroll-to-top {
     bottom: calc(var(--safe) + 16px + 60px + 12px);
     right: 23px;
+  }
+
+  #servicios .services-grid.collapsed {
+    max-height: none;
+    overflow: visible;
+  }
+
+  #servicios .services-grid.collapsed::after {
+    display: none;
   }
 }
 
@@ -2697,4 +2733,61 @@ canvas {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+
+
+#servicios .services-grid.collapsed {
+  max-height: 580px !important;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 22px;
+  margin-bottom: 26px;
+}
+
+
+#servicios .services-grid.collapsed {
+  -webkit-mask-image: linear-gradient(to bottom,
+      #000 0%,
+      #000 82%,
+      rgba(0, 0, 0, .85) 90%,
+      rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom,
+      #000 0%,
+      #000 82%,
+      rgba(0, 0, 0, .85) 90%,
+      rgba(0, 0, 0, 0) 100%);
+}
+
+#servicios .services-grid.collapsed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 56px;
+  background: linear-gradient(to bottom,
+      rgba(252, 249, 245, 0) 0%,
+      rgba(252, 249, 245, .85) 80%,
+      var(--bg) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+#servicios .center {
+  position: relative;
+  z-index: 2;
+}
+
+
+#servicios .service-card h3,
+#servicios .service-card>p,
+#servicios .service-bullets {
+  text-align: left !important;
+}
+
+
+#servicios .services-grid {
+  gap: 26px !important;
 }

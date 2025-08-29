@@ -353,3 +353,61 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('servicesGrid');
+  const btn  = document.getElementById('toggleServicios');
+  if (!grid || !btn) return;
+
+  // Cuánto del título querés que se vea (en píxeles)
+  const SHOW_H3_PX = 28; // subí/bajá para mostrar más/menos del h3
+
+  function setCollapsedHeight() {
+    const cards = Array.from(grid.querySelectorAll('.service-card'));
+    if (cards.length < 4) { // si no hay 2 filas completas, no colapsamos
+      grid.classList.remove('collapsed');
+      grid.style.removeProperty('--collapsed-height');
+      return;
+    }
+
+    // 1) ubicamos la primera card de la segunda fila
+    const firstTop = cards[0].offsetTop;
+    const secondRowFirst = cards.find(el => el.offsetTop > firstTop);
+    if (!secondRowFirst) return;
+
+    // 2) medimos hasta su <h3> y dejamos un “peek” de X px
+    const gridTop = grid.getBoundingClientRect().top + window.scrollY;
+    const h3 = secondRowFirst.querySelector('h3') || secondRowFirst;
+    const h3Top = h3.getBoundingClientRect().top + window.scrollY;
+
+    const collapsedH = (h3Top - gridTop) + SHOW_H3_PX;
+    grid.style.setProperty('--collapsed-height', collapsedH + 'px');
+  }
+
+  function setLabel(){
+    btn.textContent = grid.classList.contains('collapsed')
+      ? 'Ver más servicios'
+      : 'Ver menos servicios';
+  }
+
+  btn.addEventListener('click', () => {
+    const wasCollapsed = grid.classList.contains('collapsed');
+    grid.classList.toggle('collapsed');
+    setLabel();
+
+    // Al cerrar, volvemos a calcular y hacemos scroll suave arriba de la grilla
+    if (wasCollapsed === false) {
+      setCollapsedHeight();
+      grid.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+
+  // iniciar
+  setCollapsedHeight();
+  setLabel();
+
+  // recalcular en resize (solo si está colapsado)
+  window.addEventListener('resize', () => {
+    if (grid.classList.contains('collapsed')) setCollapsedHeight();
+  });
+});
+
