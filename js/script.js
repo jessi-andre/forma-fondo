@@ -1,13 +1,25 @@
+window.onbeforeunload = () => window.scrollTo(0, 0);
 document.addEventListener("DOMContentLoaded", () => {
   // === MENU HAMBURGUESA ===
   const toggleBtn = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".nav-links");
   if (toggleBtn && navLinks) {
     toggleBtn.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      toggleBtn.setAttribute("aria-expanded", String(isOpen));
+     const isOpen = navLinks.classList.toggle("open");
+     toggleBtn.setAttribute("aria-expanded", String(isOpen));
+     document.documentElement.classList.toggle("lock-scroll", isOpen);
     });
   }
+// Cerrar menú al tocar un enlace (mobile)
+document.querySelectorAll(".nav-links a").forEach(a=>{
+  a.addEventListener("click", ()=>{
+    if (navLinks.classList.contains("open")) {
+      navLinks.classList.remove("open");
+      document.documentElement.classList.remove("lock-scroll");
+      toggleBtn.setAttribute("aria-expanded","false");
+    }
+  });
+});
 
   // === SCROLL SUAVE ===
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -339,3 +351,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init
   setCollapsedHeight();
 });
+
+

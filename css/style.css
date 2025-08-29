@@ -1,14 +1,10 @@
-/* ======================================= 
-   TOKENS / VARIABLES
-======================================= */
+/* ======================================= TOKENS / VARIABLES ======================================= */
 :root {
   --lila: #b5aefa;
   --mostaza: #f4bc71;
   --azul: #4987e0;
-
   --fuente: 'Work Sans', sans-serif;
   --titulo: 'Inter', sans-serif;
-
   /* Claro */
   --bg: #F7F5F2;
   --text: #343434;
@@ -16,14 +12,11 @@
   --surface: #ffffff;
   --surface-2: #fcf9f5;
   --border: #e7e2dc;
-
   --shadow-1: 0 2px 6px rgba(0, 0, 0, .06);
   --shadow-2: 0 6px 18px rgba(0, 0, 0, .08);
-
   --radius-s: 6px;
   --radius-m: 12px;
   --radius-l: 20px;
-
   --min-tap: 44px;
 }
 
@@ -38,9 +31,7 @@ body.dark-mode {
   --shadow-2: 0 8px 22px rgba(0, 0, 0, .45);
 }
 
-/* =======================================
-   GLOBAL ESTILOS
-======================================= */
+/* ======================================= GLOBAL ESTILOS ======================================= */
 * {
   margin: 0;
   padding: 0;
@@ -81,8 +72,7 @@ h4 {
   letter-spacing: -0.01em
 }
 
-/* Helper de accesibilidad **A11Y**: sirve para ocultar visualmente el texto, pero mantenerlo disponible para 
-los lectores de pantalla, usado para personas con discapacidad visual*/
+/* Helper de accesibilidad **A11Y**: sirve para ocultar visualmente el texto, pero mantenerlo disponible para los lectores de pantalla, usado para personas con discapacidad visual*/
 .sr-only {
   position: absolute;
   width: 1px;
@@ -102,9 +92,7 @@ button:focus-visible {
   border-radius: 12px
 }
 
-/* =======================================
-   INTRO
-======================================= */
+/* ======================================= INTRO ======================================= */
 .logo-intro {
   position: fixed;
   inset: 0;
@@ -122,7 +110,6 @@ button:focus-visible {
 .logo-intro img {
   width: 280px;
   max-width: 80%;
-  display: none;
 }
 
 .intro-hide {
@@ -130,7 +117,6 @@ button:focus-visible {
   visibility: hidden;
   pointer-events: none
 }
-
 
 .logo-intro__img--light {
   display: block;
@@ -144,7 +130,6 @@ body.dark-mode .logo-intro__img--dark {
   display: block;
 }
 
-
 /* Estado oculto */
 .intro-hide {
   opacity: 0;
@@ -152,9 +137,7 @@ body.dark-mode .logo-intro__img--dark {
   pointer-events: none;
 }
 
-/* =======================================
-   HEADER / NAV
-======================================= */
+/* ======================================= HEADER / NAV ======================================= */
 header {
   position: fixed;
   top: 0;
@@ -247,9 +230,7 @@ body.dark-mode #logoDark {
   line-height: 1;
 }
 
-/* =======================================
-   BOTONES
-======================================= */
+/* ======================================= BOTONES ======================================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -350,9 +331,7 @@ body.dark-mode .btn-nav {
   color: #1d1d1f
 }
 
-/* =======================================
-   HERO
-======================================= */
+/* ======================================= HERO ======================================= */
 .ff-hero {
   min-height: 80vh;
   padding: 9rem 1.5rem 4rem;
@@ -388,9 +367,7 @@ body.dark-mode .btn-nav {
   justify-content: center
 }
 
-/* ==============================
-   MARQUEE – sin huecos/solapes
-============================== */
+/* ============================== MARQUEE – sin huecos/solapes ============================== */
 .marquee-section {
   height: 58px;
   margin: 0 0 4rem;
@@ -470,9 +447,7 @@ body.dark-mode .btn-nav {
   }
 }
 
-/* =======================================
-   SECCIONES
-======================================= */
+/* ======================================= SECCIONES ======================================= */
 .section {
   padding-left: 2rem;
   padding-right: 1rem;
@@ -494,10 +469,7 @@ body.dark-mode .btn-nav {
   text-align: center
 }
 
-/* ===============================
-   SERVICIOS
-   =============================== */
-
+/* =============================== SERVICIOS =============================== */
 #servicios {
   /* Tokens locales */
   --bg: #fcf9f5;
@@ -515,7 +487,6 @@ body.dark-mode .btn-nav {
   padding: 3rem 1rem;
   isolation: isolate;
 }
-
 
 #servicios h2 {
   color: var(--text);
@@ -667,14 +638,11 @@ body.dark-mode #servicios .btn.btn-ghost {
   border-color: color-mix(in oklab, var(--text) 36%, transparent);
 }
 
-/* =======================================
-   BENEFICIOS
-======================================= */
+/* ======================================= BENEFICIOS ======================================= */
 #beneficios {
   position: relative;
   isolation: isolate;
 }
-
 
 .benefits-grid {
   max-width: 980px;
@@ -729,8 +697,6 @@ body.dark-mode #servicios .btn.btn-ghost {
   transform: scaleX(1);
 }
 
-
-
 /* Ícono “respirando” al hover */
 #beneficios .benefit-card>i {
   display: grid;
@@ -778,9 +744,7 @@ body.dark-mode #servicios .btn.btn-ghost {
   text-align: left;
 }
 
-/* =======================================
-   STATS (pastillas)
-======================================= */
+/* ======================================= STATS (pastillas) ======================================= */
 .stats {
   display: flex;
   flex-wrap: wrap;
@@ -838,7 +802,6 @@ body.dark-mode #servicios .btn.btn-ghost {
   --accent: var(--azul);
 }
 
-
 .stat[data-emoji]::before {
   content: attr(data-emoji);
   width: auto;
@@ -854,10 +817,7 @@ body.dark-mode #servicios .btn.btn-ghost {
   /* usa el gap del .stat */
 }
 
-/* =======================================
-   TESTIMONIOS
-======================================= */
-
+/* ======================================= TESTIMONIOS ======================================= */
 #testimonios.section {
   text-align: center;
   padding: 60px 20px;
@@ -1003,9 +963,7 @@ body.dark-mode #servicios .btn.btn-ghost {
   }
 }
 
-/* =======================================
-   NOSOTROS
-======================================= */
+/* ======================================= NOSOTROS ======================================= */
 .cards-nosotros {
   display: flex;
   flex-wrap: wrap;
@@ -1066,9 +1024,7 @@ body.dark-mode .cards-nosotros .btn-card {
   border-color: color-mix(in oklab, var(--lila) 80%, transparent);
 }
 
-/* =======================================
-   FAQ
-======================================= */
+/* ======================================= FAQ ======================================= */
 .faq {
   max-width: 980px;
   margin: 0 auto
@@ -1131,10 +1087,7 @@ body.dark-mode .cards-nosotros .btn-card {
   color: var(--text);
 }
 
-
-/* =======================================
-   FORMULARIO
-======================================= */
+/* ======================================= FORMULARIO ======================================= */
 form {
   display: flex;
   flex-direction: column;
@@ -1189,9 +1142,7 @@ textarea:focus {
   }
 }
 
-/* =======================================
-   WHATSAPP FLOAT
-======================================= */
+/* ======================================= WHATSAPP FLOAT ======================================= */
 .btn-whatsapp {
   position: fixed;
   bottom: 20px;
@@ -1218,9 +1169,7 @@ textarea:focus {
   transform: scale(1.06)
 }
 
-/* =======================================
-   SCROLL TOP
-======================================= */
+/* ======================================= SCROLL TOP ======================================= */
 .scroll-to-top {
   position: fixed;
   bottom: 88px;
@@ -1255,9 +1204,7 @@ body.dark-mode .scroll-to-top {
   color: #111
 }
 
-/* =======================================
-   FOOTER
-======================================= */
+/* ======================================= FOOTER ======================================= */
 footer {
   background: var(--surface-2);
   color: var(--text);
@@ -1487,7 +1434,6 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: .5rem;
-
 }
 
 .ff-pay-text {
@@ -1531,9 +1477,7 @@ body.dark-mode .footer-copy {
   border-top-color: rgba(255, 255, 255, .2);
 }
 
-/* =========================
-   Modales (legales)
-========================= */
+/* ========================= Modales (legales) ========================= */
 .ff-modal {
   position: fixed;
   inset: 0;
@@ -1606,9 +1550,7 @@ body.dark-mode .ff-pill:hover {
   color: #111;
 }
 
-/* =========================
-   Footer: responsive
-========================= */
+/* ========================= Footer: responsive ========================= */
 @media (max-width: 900px) {
   .footer-container {
     grid-template-columns: 1fr 1fr;
@@ -1625,9 +1567,7 @@ body.dark-mode .ff-pill:hover {
   }
 }
 
-/* =======================================
-   ANIMACIONES ENTRADA
-======================================= */
+/* ======================================= ANIMACIONES ENTRADA ======================================= */
 .fade-in {
   opacity: 0;
   transform: translateY(50px);
@@ -1639,9 +1579,7 @@ body.dark-mode .ff-pill:hover {
   transform: translateY(0) !important
 }
 
-/* =======================================
-   RESPONSIVE
-======================================= */
+/* ======================================= RESPONSIVE ======================================= */
 @media (max-width:1024px) {
   .cards-servicios {
     display: grid;
@@ -1722,7 +1660,7 @@ body.dark-mode .ff-pill:hover {
   }
 }
 
-/* === Intro: barra/linea bajo el logo  === */
+/* === Intro: barra/linea bajo el logo === */
 .logo-intro::after {
   content: "";
   position: absolute;
@@ -1801,8 +1739,6 @@ body.dark-mode .ff-pill:hover {
   }
 }
 
-
-
 /* === Beneficios - ACTUALIZACIÓN === */
 .benefit-card {
   position: relative;
@@ -1877,9 +1813,7 @@ body.dark-mode .scroll-to-top {
   text-decoration: none;
 }
 
-/* ============================
-   BENEFICIOS – hover 
-============================ */
+/* ============================ BENEFICIOS – hover ============================ */
 #beneficios {
   --benefit-accent: var(--lila);
 }
@@ -1961,11 +1895,8 @@ body.dark-mode .scroll-to-top:hover {
   transform: translateY(-1px);
 }
 
-/* =======================================================
-   === AJUSTES RESPONSIVE 
-======================================================= */
-
-/* Medios fluidos  */
+/* ======================================================= === AJUSTES RESPONSIVE ======================================================= */
+/* Medios fluidos */
 img,
 svg,
 video,
@@ -2089,7 +2020,7 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* ======= Servicios: cards  ======= */
+/* ======= Servicios: cards ======= */
 .services-grid {
   --accent: var(--lila);
   max-width: 1100px;
@@ -2180,7 +2111,6 @@ button {
   color: var(--muted);
 }
 
-
 /* ===== Beneficios nuevo ===== */
 #beneficios {
   --benefit-accent: var(--azul);
@@ -2248,7 +2178,6 @@ body.dark-mode .benefit-badge {
   background: color-mix(in oklab, var(--benefit-accent) 26%, transparent);
   color: #111;
 }
-
 
 /* ====== PACKS / PRECIOS ====== */
 #packs {
@@ -2429,9 +2358,6 @@ body.dark-mode .benefit-badge {
   text-align: center;
   color: var(--muted);
 }
-
-
-
 
 .web-pack {
   background: var(--blanco);
