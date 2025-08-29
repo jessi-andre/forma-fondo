@@ -14,22 +14,6 @@ Live: `https://jessi-andre.github.io/forma-fondo/`
 - **Performance**: preconnect/dns-prefetch, assets externos controlados.
 - **Seguridad**: **CSP** ajustada para GA4 y Meta Pixel.
 
-## 📊 Analytics & Pixel
-1. **Google Analytics 4**
-   - Creá un stream web y obtené tu **Measurement ID** (formato `G-XXXXXXXXXX`).
-   - En `index.html` reemplazá **todas** las ocurrencias de `G-XXXXXXXXXX`.
-   - Evento on submit: `generate_lead`.
-
-2. **Meta Pixel**
-   - Creá un Pixel y copiá tu **Pixel ID** (numérico).
-   - En `index.html` reemplazá **todas** las ocurrencias de `123456789012345`.
-   - Evento on submit: `Lead`.
-
-> Los eventos se disparan en `js/script.js` solo cuando el **fetch a Formspree** responde `200 OK`.
-
-## ✉️ Formulario (Formspree)
-- Endpoint actual: `https://formspree.io/f/xkgbwywv`.
-- Para usar el tuyo, reemplazá el `action` del `<form>` y (opcional) agrega campos ocultos según tus reglas.
 
 ## 🛡️ CSP (Content-Security-Policy)
 La política está embebida en `index.html`. Si agregás nuevas librerías:
@@ -37,8 +21,4 @@ La política está embebida en `index.html`. Si agregás nuevas librerías:
 - **connect-src**: autorizar destinos de XHR/fetch/beacon.
 - **img-src**: autorizar hosts de imágenes/pixel.
 
-## 🧪 Desarrollo local
-1. Cloná el repo  
-   ```bash
-   git clone <url>
-   cd forma-fondo
+
