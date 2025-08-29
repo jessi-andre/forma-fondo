@@ -5,7 +5,6 @@
   --azul: #4987e0;
   --fuente: 'Work Sans', sans-serif;
   --titulo: 'Inter', sans-serif;
-  /* Claro */
   --bg: #F7F5F2;
   --text: #343434;
   --muted: #545454;
@@ -367,6 +366,10 @@ body.dark-mode .btn-nav {
   justify-content: center
 }
 
+.subtitle-mobile {
+  display: none;
+}
+
 /* ============================== MARQUEE – sin huecos/solapes ============================== */
 .marquee-section {
   height: 58px;
@@ -402,7 +405,6 @@ body.dark-mode .btn-nav {
   text-shadow: 0 1px 0 rgba(0, 0, 0, .22);
 }
 
-/* Desplazar media pista (porque 2 mitades son idénticas) */
 @keyframes marqueeShift {
   0% {
     transform: translateX(0);
@@ -413,7 +415,7 @@ body.dark-mode .btn-nav {
   }
 }
 
-/* Fondo animado (tu paleta) */
+/* Fondo animado */
 @keyframes bgColorCycle {
   0% {
     background: var(--text);
@@ -436,7 +438,7 @@ body.dark-mode .btn-nav {
   }
 }
 
-/* Respeta reduce-motion */
+/* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .marquee-section {
     animation: none;
@@ -513,7 +515,6 @@ body.dark-mode .btn-nav {
   transition: max-height .4s ease;
 }
 
-/* Colapsada con “peek” */
 #servicios .services-grid.collapsed {
   max-height: var(--collapsed-height, 680px);
   overflow: hidden;
@@ -530,18 +531,6 @@ body.dark-mode .btn-nav {
   pointer-events: none;
 }
 
-/* Responsivo */
-@media (max-width: 1100px) {
-  #servicios .services-grid {
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  #servicios .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* ===== Cards ===== */
 #servicios .service-card {
@@ -697,7 +686,6 @@ body.dark-mode #servicios .btn.btn-ghost {
   transform: scaleX(1);
 }
 
-/* Ícono “respirando” al hover */
 #beneficios .benefit-card>i {
   display: grid;
   place-items: center;
@@ -807,160 +795,11 @@ body.dark-mode #servicios .btn.btn-ghost {
   width: auto;
   height: auto;
   background: transparent;
-  /* sin pastilla */
   box-shadow: none;
   font-size: 1.1em;
   line-height: 1;
   transform: translateY(1px);
-  /* alinea con el texto */
   margin-right: .1rem;
-  /* usa el gap del .stat */
-}
-
-/* ======================================= TESTIMONIOS ======================================= */
-#testimonios.section {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-#testimonios h2 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  margin-bottom: 24px;
-}
-
-/* Viewport con flechas laterales */
-.testi-viewport {
-  position: relative;
-  max-width: 980px;
-  margin: 0 auto;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-/* Pista horizontal con snap */
-.testi-track {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding: .4rem 0;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.testi-track::-webkit-scrollbar {
-  display: none;
-}
-
-/* Tarjeta */
-.testi-card {
-  flex: 0 0 86%;
-  max-width: 86%;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: var(--shadow-1);
-  padding: 1rem 1.1rem;
-  text-align: left;
-  scroll-snap-align: center;
-}
-
-@media (min-width: 760px) {
-  .testi-card {
-    flex: 0 0 320px;
-    max-width: 320px;
-  }
-}
-
-/* Header de la tarjeta (avatar + nombre) */
-.testi-header {
-  display: flex;
-  gap: .8rem;
-  align-items: center;
-  margin-bottom: .6rem;
-}
-
-.testi-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  overflow: hidden;
-}
-
-.testi-avatar .initial {
-  font-weight: 700;
-}
-
-.testi-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Flechas */
-.testi-prev,
-.testi-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  min-width: var(--min-tap);
-  min-height: var(--min-tap);
-  display: grid;
-  place-items: center;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  box-shadow: var(--shadow-1);
-  cursor: pointer;
-  z-index: 3;
-}
-
-.testi-prev {
-  left: -6px;
-}
-
-.testi-next {
-  right: -6px;
-}
-
-.testi-prev:hover,
-.testi-next:hover {
-  background: var(--lila);
-  color: #1d1d1f;
-}
-
-/* Dots */
-.testi-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin: .8rem 0 0;
-}
-
-.testi-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  background: color-mix(in oklab, var(--muted) 40%, transparent);
-}
-
-.testi-dot.is-active {
-  background: var(--lila);
-}
-
-/* Opcional: ocultar flechas en móvil y usar swipe */
-@media (max-width: 640px) {
-
-  .testi-prev,
-  .testi-next {
-    display: none;
-  }
 }
 
 /* ======================================= NOSOTROS ======================================= */
@@ -1065,14 +904,12 @@ body.dark-mode .cards-nosotros .btn-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* texto a la izq, flecha a la der */
   gap: .6rem;
   padding: .6rem 0;
 }
 
 .faq-item summary::-webkit-details-marker {
   display: none;
-  /* oculta el triangulito nativo */
 }
 
 .faq-item i {
@@ -1081,7 +918,6 @@ body.dark-mode .cards-nosotros .btn-card {
   color: var(--muted);
 }
 
-/* cuando el item está abierto, la flecha rota */
 .faq-item[open] i {
   transform: rotate(180deg);
   color: var(--text);
@@ -1373,7 +1209,6 @@ footer {
   transform: translateY(-2px);
 }
 
-/* Columna central: Contacto */
 .ff-contact-list {
   list-style: none;
   display: grid;
@@ -1398,7 +1233,6 @@ footer {
   text-decoration: underline;
 }
 
-/* Columna derecha: Información legal */
 .ff-legal-links {
   list-style: none;
   margin: .4rem 0 .6rem;
@@ -1550,22 +1384,7 @@ body.dark-mode .ff-pill:hover {
   color: #111;
 }
 
-/* ========================= Footer: responsive ========================= */
-@media (max-width: 900px) {
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-  }
 
-  .ff-legal {
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 680px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* ======================================= ANIMACIONES ENTRADA ======================================= */
 .fade-in {
@@ -1579,86 +1398,7 @@ body.dark-mode .ff-pill:hover {
   transform: translateY(0) !important
 }
 
-/* ======================================= RESPONSIVE ======================================= */
-@media (max-width:1024px) {
-  .cards-servicios {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px
-  }
-}
 
-@media (max-width:900px) {
-  .benefits-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr))
-  }
-
-  .footer-container {
-    grid-template-columns: 1fr 1fr
-  }
-}
-
-@media (max-width:680px) {
-  .footer-container {
-    grid-template-columns: 1fr
-  }
-}
-
-@media (max-width:640px) {
-  .hero-ctas .btn {
-    width: 100%;
-    max-width: 320px
-  }
-
-  .marquee-section {
-    margin-bottom: 3rem
-  }
-
-  .testi-card {
-    min-width: 86vw;
-    max-width: 86vw
-  }
-}
-
-@media (max-width:768px) {
-  .nav-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: var(--surface);
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 220px;
-    box-shadow: var(--shadow-1);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    z-index: 1001;
-    padding: .6rem
-  }
-
-  .nav-links.open {
-    display: flex
-  }
-
-  .ff-hero {
-    padding: 8rem 1.2rem 3rem
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: .001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .001ms !important;
-    scroll-behavior: auto !important
-  }
-}
 
 /* === Intro: barra/linea bajo el logo === */
 .logo-intro::after {
@@ -1905,61 +1645,6 @@ canvas {
   height: auto;
 }
 
-/* NAV móvil: panel flexible y tap targets */
-@media (max-width: 768px) {
-  .nav-links {
-    left: 12px;
-    right: 12px;
-    width: auto;
-    /* en vez de ancho fijo */
-    max-width: calc(100vw - 24px);
-  }
-
-  .nav-links a {
-    padding: .6rem .8rem;
-    min-height: var(--min-tap);
-    width: 100%;
-  }
-}
-
-/* HERO: respiración en teléfonos muy angostos */
-@media (max-width: 400px) {
-  .ff-hero {
-    padding: 7.5rem 1rem 2.5rem;
-  }
-}
-
-/* SERVICIOS: tarjetas no se cortan y sin flip en touch */
-.card-servicio {
-  flex: 1 1 min(100%, 280px);
-  max-width: min(100%, 320px);
-}
-
-@media (max-width: 360px) {
-  .card-servicio {
-    height: 200px;
-  }
-
-  .card-servicio img {
-    height: 120px;
-  }
-}
-
-@media (hover: none) and (pointer: coarse) {
-  .card-servicio:hover .card-inner {
-    transform: none;
-  }
-
-  .card-servicio .card-back {
-    display: none;
-  }
-}
-
-@media (max-width: 520px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 .testi-track {
   scroll-snap-type: x mandatory;
@@ -1970,13 +1655,6 @@ canvas {
   scroll-snap-align: center;
 }
 
-@media (max-width: 640px) {
-
-  .testi-prev,
-  .testi-next {
-    display: none;
-  }
-}
 
 :root {
   --safe: env(safe-area-inset-bottom, 16px);
@@ -1991,20 +1669,6 @@ canvas {
   bottom: calc(var(--safe) + 16px + 60px + 12px);
   /* 16 de margen del WA + 60 de diámetro del WA + 12 de gap */
   right: 23px;
-}
-
-@media (max-width: 760px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 400px) {
-
-  input,
-  textarea {
-    font-size: 1rem;
-  }
 }
 
 .marquee-section {
@@ -2030,17 +1694,6 @@ button {
   gap: 18px;
 }
 
-@media (max-width: 980px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 560px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 .service-card {
   background: var(--surface);
@@ -2123,12 +1776,6 @@ button {
   gap: 12px;
 }
 
-@media (min-width: 900px) {
-  .benefits-list {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 .benefit-row {
   display: flex;
   gap: .9rem;
@@ -2198,18 +1845,6 @@ body.dark-mode .benefit-badge {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-}
-
-@media (max-width: 1020px) {
-  .pricing-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 680px) {
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .plan-card {
@@ -2415,4 +2050,651 @@ body.dark-mode .benefit-badge {
 .btn-presupuesto:hover {
   background: var(--mostaza);
   color: var(--negro);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+/* Utilidades base */
+:root {
+  --safe: env(safe-area-inset-bottom, 16px);
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ====== <= 1100px — Servicios 3→2 columnas ====== */
+@media (max-width: 1100px) {
+  #servicios .services-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
+/* ====== <= 1024px — Nav hamburguesa + respiración hero ====== */
+@media (max-width: 1024px) {
+
+  /* NAV */
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: calc(100vw - 24px);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow-2);
+    padding: .6rem;
+    flex-direction: column;
+    gap: .2rem;
+    z-index: 1001;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: .7rem .9rem;
+    min-height: var(--min-tap);
+    width: 100%;
+  }
+
+  /* HERO */
+  .ff-hero {
+    padding: 8rem 1.2rem 3rem;
+  }
+}
+
+/* ====== <= 900px — Beneficios 4→2 y Footer 3→2 ====== */
+@media (max-width: 900px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ff-legal {
+    grid-column: span 2;
+  }
+}
+
+/* ====== <= 680px — Vista móvil principal ====== */
+@media (max-width: 680px) {
+
+  /* Logo */
+  .logo-link img {
+    height: clamp(26px, 4vw + 18px, 36px);
+    width: auto;
+  }
+
+  /* HERO (breve y legible) */
+  .ff-hero {
+    padding: clamp(5.5rem, 8vw + 2rem, 7.5rem) 1rem 2.5rem;
+    text-align: center;
+  }
+
+  .ff-hero__title {
+    font-size: clamp(1.8rem, 5.5vw + .6rem, 2.3rem);
+    line-height: 1.25;
+    font-weight: 800;
+    word-break: break-word;
+  }
+
+  .ff-hero__title br {
+    display: inline;
+  }
+
+  /* Subtítulos */
+  .subtitle-desktop {
+    display: none;
+  }
+
+  .subtitle-mobile {
+    display: block;
+  }
+
+  .ff-hero__subtitle {
+    font-size: .95rem;
+    line-height: 1.45;
+    max-width: 85vw;
+    margin: 0 auto 1rem;
+  }
+
+  /* CTAs */
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    justify-content: center;
+    padding-bottom: 90px;
+    /* espacio para el FAB de WhatsApp */
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    max-width: 320px;
+    padding: .62rem 1rem;
+    font-size: .98rem;
+    border-radius: 12px;
+  }
+
+  /* ===== Servicios 2→1 ===== */
+  #servicios .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== Packs 1 columna y centrados ===== */
+  #packs {
+    position: relative;
+    z-index: 2;
+    isolation: isolate;
+    margin-top: clamp(1.2rem, 3vw, 2rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  #servicios .services-grid.collapsed::after {
+    z-index: 0;
+  }
+
+  /* ===== Testimonios ===== */
+  .testi-card {
+    min-width: 86vw;
+    max-width: 86vw;
+  }
+
+  .testi-prev,
+  .testi-next {
+    display: none;
+  }
+
+  /* ===== FAQ centrado ===== */
+  .faq {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    max-width: 95%;
+  }
+
+  /* ===== Footer simplificado ===== */
+  .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  .footer-container>*:nth-child(2),
+  .footer-container>*:nth-child(3) {
+    display: none !important;
+  }
+
+  .footer-icons a,
+  .ff-pill {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* ===== Formulario centrado ===== */
+  form {
+    max-width: 92%;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* ===== Inputs ===== */
+  input,
+  textarea {
+    font-size: 1rem;
+  }
+
+  /* ===== FABs ===== */
+  .btn-whatsapp {
+    bottom: calc(16px + var(--safe));
+    right: 16px;
+  }
+
+  .scroll-to-top {
+    bottom: calc(var(--safe) + 16px + 60px + 12px);
+    right: 23px;
+  }
+}
+
+/* ====== <= 400px — Ajustes finos ====== */
+@media (max-width: 400px) {
+  .ff-hero {
+    padding: 7.5rem 1rem 2.5rem;
+  }
+
+  input,
+  textarea {
+    font-size: 1rem;
+  }
+}
+
+/* ====== <= 360px — Tarjetas muy chicas ====== */
+@media (max-width: 360px) {
+  .card-servicio {
+    height: 200px;
+  }
+
+  .card-servicio img {
+    height: 120px;
+  }
+}
+
+/* ====== Accesibilidad: reduce motion ====== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   TABLET 681–1024 px
+   (ajustes de hero, servicios, packs, beneficios, FAQ y footer)
+========================================================= */
+
+/* ====== 681–900 px ====== */
+#nosotros,
+.cards-nosotros,
+.card-nos {
+  position: relative;
+  z-index: 5;
+}
+
+.cards-nosotros .fade-in,
+.card-nos.fade-in,
+.card-nos img.fade-in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.cards-nosotros img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100%;
+  height: 410px;
+  object-fit: cover;
+}
+
+/* Evitar que el "velo" de servicios tape lo siguiente */
+#servicios .services-grid.collapsed {
+  max-height: none;
+  overflow: visible;
+}
+
+#servicios .services-grid.collapsed::after {
+  content: none !important;
+  pointer-events: none;
+}
+
+/* Aseguramos stacking correcto de secciones vecinas */
+#beneficios,
+#packs,
+#testimonios,
+#faq,
+footer {
+  position: relative;
+  z-index: 3;
+}
+
+/* Utilidad para zonas seguras (notch) */
+:root {
+  --safe: env(safe-area-inset-bottom, 16px);
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   MOBILE (≤ 680px)
+========================================================= */
+@media (max-width: 680px) {
+
+  /* HERO */
+  .logo-link img {
+    height: clamp(26px, 4vw + 18px, 36px);
+    width: auto;
+  }
+
+  .ff-hero {
+    padding: clamp(5.5rem, 8vw + 2rem, 7.5rem) 1rem 2.5rem;
+    text-align: center;
+  }
+
+  .ff-hero__title {
+    font-size: clamp(1.8rem, 5vw + .7rem, 2.25rem);
+    line-height: 1.18;
+    letter-spacing: -.01em;
+    font-weight: 700;
+    text-wrap: balance;
+    margin-bottom: .6rem;
+  }
+
+  .subtitle-desktop {
+    display: none;
+  }
+
+  .subtitle-mobile {
+    display: block;
+  }
+
+  .ff-hero__subtitle {
+    font-size: .95rem;
+    line-height: 1.45;
+    max-width: 85vw;
+    margin: 0 auto 1rem;
+  }
+
+  /* CTAs */
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    justify-content: center;
+    padding-bottom: 90px;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    max-width: 320px;
+    padding: .62rem 1rem;
+    font-size: .98rem;
+    border-radius: 12px;
+  }
+
+  /* SERVICIOS: 1 columna y sin colapso */
+  #servicios .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* PACKS: 1 columna y centrado */
+  #packs {
+    position: relative;
+    z-index: 4;
+    isolation: isolate;
+    margin-top: clamp(1.2rem, 3vw, 2rem);
+    padding: 0 1rem;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  /* NOSOTROS */
+  .cards-nosotros img {
+    height: 380px;
+  }
+
+  /* un poco más bajo en móvil */
+
+  /* TESTIMONIOS */
+  .testi-card {
+    min-width: 86vw;
+    max-width: 86vw;
+  }
+
+  .testi-prev,
+  .testi-next {
+    display: none;
+  }
+
+  /* FAQ centrado */
+  .faq {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  /* FOOTER simplificado (solo 1ª columna + copy) */
+  .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  .footer-container>*:nth-child(2),
+  .footer-container>*:nth-child(3) {
+    display: none !important;
+  }
+
+  .footer-icons a,
+  .ff-pill {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* FORM centrado */
+  form {
+    max-width: 92%;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  input,
+  textarea {
+    font-size: 1rem;
+  }
+
+  /* FABs */
+  .btn-whatsapp {
+    bottom: calc(16px + var(--safe));
+    right: 16px;
+  }
+
+  .scroll-to-top {
+    bottom: calc(var(--safe) + 16px + 60px + 12px);
+    right: 23px;
+  }
+}
+
+/* =========================================================
+   TABLET (681–1024px)
+========================================================= */
+
+/* ----- 681–900 px ----- */
+@media (min-width:681px) and (max-width:900px) {
+
+  /* HERO */
+  .ff-hero {
+    padding: 7.5rem 1.4rem 3rem;
+    text-align: center;
+  }
+
+  .ff-hero__title {
+    font-size: clamp(2.2rem, 3.2vw + 1rem, 3rem);
+    line-height: 1.18;
+    font-weight: 800;
+  }
+
+  .subtitle-desktop {
+    display: block;
+  }
+
+  .subtitle-mobile {
+    display: none;
+  }
+
+  .ff-hero__subtitle {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    max-width: 680px;
+    margin: 0 auto 1.2rem;
+  }
+
+  .hero-ctas .btn {
+    padding: .7rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  /* SECCIONES centradas */
+  .section,
+  #packs,
+  #faq,
+  form {
+    padding: 0 1.4rem;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  /* SERVICIOS: 2 columnas */
+  #servicios .services-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  /* PACKS: 1 columna en tablet chica */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  /* BENEFICIOS: 2 columnas */
+  .benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  /* FAQ */
+  .faq {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  /* FOOTER: 2 columnas */
+  .footer-container {
+    grid-template-columns: 1.2fr 1fr !important;
+    gap: 1.2rem;
+  }
+
+  .footer-container>* {
+    display: initial !important;
+  }
+
+  .footer-icons a,
+  .ff-pill {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* NOSOTROS visible */
+  #nosotros,
+  .cards-nosotros,
+  .card-nos {
+    position: relative;
+    z-index: 5;
+  }
+
+  .cards-nosotros img {
+    display: block;
+    width: 100%;
+    height: 410px;
+    object-fit: cover;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ----- 901–1024 px ----- */
+@media (min-width:901px) and (max-width:1024px) {
+
+  /* HERO */
+  .ff-hero {
+    padding: 8rem 1.8rem 3.2rem;
+  }
+
+  .ff-hero__title {
+    font-size: clamp(2.6rem, 2.4vw + 1.2rem, 3.4rem);
+    line-height: 1.16;
+  }
+
+  .ff-hero__subtitle {
+    font-size: 1.08rem;
+    max-width: 740px;
+    margin: 0 auto 1.2rem;
+  }
+
+  /* SERVICIOS: 2 columnas cómodas */
+  #servicios .services-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 22px;
+  }
+
+  /* PACKS: 2 columnas en tablet grande */
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    justify-items: stretch;
+  }
+
+  /* BENEFICIOS: 2 columnas */
+  .benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* FAQ */
+  .faq {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* FOOTER: 2 columnas */
+  .footer-container {
+    grid-template-columns: 1.2fr 1fr !important;
+    gap: 1.4rem;
+  }
+
+  .footer-container>* {
+    display: initial !important;
+  }
+
+  /* NOSOTROS visible */
+  #nosotros,
+  .cards-nosotros,
+  .card-nos {
+    position: relative;
+    z-index: 5;
+  }
+
+  .cards-nosotros img {
+    display: block;
+    width: 100%;
+    height: 410px;
+    object-fit: cover;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
