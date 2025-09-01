@@ -22,12 +22,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // === SCROLL SUAVE ===
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener("click", e => {
-      const target = document.querySelector(a.getAttribute("href"));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth" }); }
-    });
+// === SCROLL SUAVE con offset del header fijo ===
+const header = document.getElementById("header");
+const getOffset = () => (header?.offsetHeight || 72) + 12;
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener("click", e => {
+    const hash = a.getAttribute("href");
+    const target = document.querySelector(hash);
+    if (!target) return;
+    e.preventDefault();
+
+    const y = target.getBoundingClientRect().top + window.scrollY - getOffset();
+    window.scrollTo({ top: y, behavior: "smooth" });
   });
+});
 
   // === FADE-IN EN SCROLL ===
   const fadeElements = document.querySelectorAll(".fade-in");
@@ -337,8 +346,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Si volvemos a colapsar, recalculamos y hacemos scroll al inicio de la grilla
     if (!wasCollapsed) {
       setCollapsedHeight();
-      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+const yGrid = grid.getBoundingClientRect().top + window.scrollY - getOffset();
+window.scrollTo({ top: yGrid, behavior: 'smooth' });    }
   });
 
   // Init
@@ -350,3 +359,45 @@ document.addEventListener('DOMContentLoaded', () => {
     if (grid.classList.contains('collapsed')) setCollapsedHeight();
   });
 });
+
+
+// === MODALES LEGALES ===
+// abrir
+document.querySelectorAll('.legal-link').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.getAttribute('data-modal');
+    const modal = document.getElementById(id);
+    if (!modal) return;
+
+    modal.classList.add('is-open');
+
+    // 🔒 bloquear scroll del fondo
+    document.documentElement.classList.add('lock-scroll');
+
+    // focus accesible
+    const closeBtn = modal.querySelector('.ff-modal__close');
+    closeBtn?.focus();
+  });
+});
+
+// cerrar por click en backdrop o botón
+document.querySelectorAll('.ff-modal [data-close-modal], .ff-modal__backdrop').forEach(el => {
+  el.addEventListener('click', (e) => {
+    const modal = e.target.closest('.ff-modal') || document.querySelector('.ff-modal.is-open');
+    if (!modal) return;
+
+    modal.classList.remove('is-open');
+
+    // 🔓 habilitar scroll del fondo
+    document.documentElement.classList.remove('lock-scroll');
+  });
+});
+
+// cerrar con ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.ff-modal.is-open').forEach(m => m.classList.remove('is-open'));
+    document.documentElement.classList.remove('lock-scroll'); // 🔓
+  }
+});
+

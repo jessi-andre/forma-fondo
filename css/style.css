@@ -17,7 +17,21 @@
   --radius-m: 12px;
   --radius-l: 20px;
   --min-tap: 44px;
+  --nav-altura: 72px;
 }
+
+
+/*  */
+#inicio,
+#servicios,
+#packs,
+#beneficios,
+#nosotros,
+#faq,
+#contacto {
+  scroll-margin-top: calc(var(--nav-altura) + 14px);
+}
+
 
 body.dark-mode {
   --bg: #343434;
@@ -697,13 +711,15 @@ body.dark-mode .btn-nav {
   font-size: 1rem;
   line-height: 1.6;
 }
-#nosotros-title .highlight{
+
+#nosotros-title .highlight {
   color: var(--lila) !important;
   background: none !important;
-  background-clip: border-box;       
-  -webkit-background-clip: border-box;  
-  -webkit-text-fill-color: currentColor; 
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: currentColor;
 }
+
 .title-nostros-cards {
   font-size: 2rem;
   margin-bottom: 0.5rem;
@@ -1561,7 +1577,7 @@ button {
 
 #servicios>p {
   text-align: center;
-  margin: 0 auto 1.4rem;
+  margin: 0 auto 4rem;
   max-width: 920px;
   color: var(--muted);
 }
@@ -1827,7 +1843,16 @@ body.dark-mode .benefit-badge {
 }
 
 #packs-sub {
-  text-align: center !important;
+  text-align: center;
+  font-size: 1rem;
+  max-width: none !important;
+  white-space: nowrap;
+  width: 100%;
+  margin: 0 auto 6rem;
+  /* centrado */
+  overflow: hidden;
+  /* evita scroll horizontal si se pasa */
+  text-overflow: clip;
 }
 
 .pricing-grid {
@@ -2137,6 +2162,12 @@ canvas {
 
 /* ====== ≤900px — Beneficios 4→2 + Footer 3→2 ====== */
 @media (max-width: 900px) {
+  #packs-sub {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: initial;
+  }
+
   .benefits-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: 980px;
@@ -2776,4 +2807,22 @@ canvas {
     display: block;
     margin-top: 0.3rem;
   }
+}
+
+
+/* Bloquear scroll del fondo cuando activemos .lock-scroll en <html> */
+html.lock-scroll,
+body.lock-scroll {
+  overflow: hidden;
+}
+
+/* El panel del modal scrollea por dentro, sin “arrastrar” a la página */
+.ff-modal__panel {
+  max-height: calc(100vh - 140px);
+  /* ajustá el padding superior/inf si querés */
+  overflow: auto;
+  overscroll-behavior: contain;
+  /* evita scroll chaining al body */
+  -webkit-overflow-scrolling: touch;
+  /* suave en iOS */
 }
