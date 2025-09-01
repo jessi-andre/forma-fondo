@@ -5,21 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelector(".nav-links");
   if (toggleBtn && navLinks) {
     toggleBtn.addEventListener("click", () => {
-     const isOpen = navLinks.classList.toggle("open");
-     toggleBtn.setAttribute("aria-expanded", String(isOpen));
-     document.documentElement.classList.toggle("lock-scroll", isOpen);
+      const isOpen = navLinks.classList.toggle("open");
+      toggleBtn.setAttribute("aria-expanded", String(isOpen));
+      document.documentElement.classList.toggle("lock-scroll", isOpen);
     });
   }
-// Cerrar menú al tocar un enlace (mobile)
-document.querySelectorAll(".nav-links a").forEach(a=>{
-  a.addEventListener("click", ()=>{
-    if (navLinks.classList.contains("open")) {
-      navLinks.classList.remove("open");
-      document.documentElement.classList.remove("lock-scroll");
-      toggleBtn.setAttribute("aria-expanded","false");
-    }
+  // Cerrar menú al tocar un enlace (mobile)
+  document.querySelectorAll(".nav-links a").forEach(a => {
+    a.addEventListener("click", () => {
+      if (navLinks.classList.contains("open")) {
+        navLinks.classList.remove("open");
+        document.documentElement.classList.remove("lock-scroll");
+        toggleBtn.setAttribute("aria-expanded", "false");
+      }
+    });
   });
-});
 
   // === SCROLL SUAVE ===
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -50,25 +50,25 @@ document.querySelectorAll(".nav-links a").forEach(a=>{
       if (logoIntro.dataset.done === "1") return;
       logoIntro.dataset.done = "1";
       logoIntro.classList.add("intro-hide");
-      logoIntro.setAttribute("aria-hidden","true");
+      logoIntro.setAttribute("aria-hidden", "true");
       const onEnd = () => {
         document.querySelector("#inicio")?.scrollIntoView({ behavior: "smooth" });
-        ["click","wheel","touchstart","scroll"].forEach(ev => window.removeEventListener(ev, hideIntroAndGoHome));
+        ["click", "wheel", "touchstart", "scroll"].forEach(ev => window.removeEventListener(ev, hideIntroAndGoHome));
       };
-      logoIntro.addEventListener("transitionend", onEnd, { once:true });
+      logoIntro.addEventListener("transitionend", onEnd, { once: true });
       setTimeout(onEnd, 600);
     };
     setTimeout(() => {
       window.addEventListener("click", hideIntroAndGoHome);
-      window.addEventListener("wheel", hideIntroAndGoHome, { passive:true });
-      window.addEventListener("touchstart", hideIntroAndGoHome, { passive:true });
+      window.addEventListener("wheel", hideIntroAndGoHome, { passive: true });
+      window.addEventListener("touchstart", hideIntroAndGoHome, { passive: true });
       window.addEventListener("scroll", hideIntroAndGoHome);
     }, 100);
   }
 
   // === MODO OSCURO ===
   const darkToggle = document.getElementById("darkModeToggle");
-  if (localStorage.getItem("darkMode")==="enabled") {
+  if (localStorage.getItem("darkMode") === "enabled") {
     document.body.classList.add("dark-mode");
     if (darkToggle) darkToggle.textContent = "☀️";
   }
@@ -87,7 +87,7 @@ document.querySelectorAll(".nav-links a").forEach(a=>{
   });
   scrollBtn?.addEventListener("click", e => {
     e.preventDefault();
-    window.scrollTo({ top:0, behavior:"smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   // === FORMULARIO ===
@@ -133,15 +133,15 @@ document.querySelectorAll(".nav-links a").forEach(a=>{
   const sendButton = document.querySelector(".btn-contacto");
   sendButton?.addEventListener("click", () => {
     const r = sendButton.getBoundingClientRect();
-    const cx = r.left + r.width/2, cy = r.top + r.height/2;
-    for (let i=0;i<12;i++){
+    const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    for (let i = 0; i < 12; i++) {
       const s = document.createElement("span");
       s.classList.add("joy-particle");
-      s.textContent = ["❤️","✨","💖","💕"][Math.floor(Math.random()*4)];
-      const ox = (Math.random()-0.5)*30, oy=(Math.random()-0.5)*20;
-      s.style.left = `${cx+ox}px`; s.style.top = `${cy+oy}px`;
-      s.style.setProperty('--scale', (Math.random()*0.6+0.8).toFixed(2));
-      document.body.appendChild(s); setTimeout(()=>s.remove(),2500);
+      s.textContent = ["❤️", "✨", "💖", "💕"][Math.floor(Math.random() * 4)];
+      const ox = (Math.random() - 0.5) * 30, oy = (Math.random() - 0.5) * 20;
+      s.style.left = `${cx + ox}px`; s.style.top = `${cy + oy}px`;
+      s.style.setProperty('--scale', (Math.random() * 0.6 + 0.8).toFixed(2));
+      document.body.appendChild(s); setTimeout(() => s.remove(), 2500);
     }
   });
 
@@ -155,10 +155,10 @@ document.querySelectorAll(".nav-links a").forEach(a=>{
     if (!section) return;
 
     const viewport = section.querySelector('.testi-viewport');
-    const track    = section.querySelector('.testi-track');
-    const prevBtn  = section.querySelector('.testi-prev');
-    const nextBtn  = section.querySelector('.testi-next');
-    const dotsBox  = section.querySelector('.testi-dots');
+    const track = section.querySelector('.testi-track');
+    const prevBtn = section.querySelector('.testi-prev');
+    const nextBtn = section.querySelector('.testi-next');
+    const dotsBox = section.querySelector('.testi-dots');
 
     const gap = 16;
     const slideW = () => (track.querySelector('.testi-card')?.getBoundingClientRect().width || 300) + gap;
@@ -169,7 +169,7 @@ document.querySelectorAll(".nav-links a").forEach(a=>{
     dotsBox.innerHTML = '';
     originals.forEach((_, i) => {
       const b = document.createElement('button');
-      b.className = 'testi-dot' + (i===0 ? ' is-active' : '');
+      b.className = 'testi-dot' + (i === 0 ? ' is-active' : '');
       b.setAttribute('role', 'tab');
       b.addEventListener('click', () => goTo(i));
       dotsBox.appendChild(b);
@@ -177,11 +177,11 @@ document.querySelectorAll(".nav-links a").forEach(a=>{
     const dots = Array.from(section.querySelectorAll('.testi-dot'));
 
     let index = 0;
-    function goTo(i, smooth = true){
+    function goTo(i, smooth = true) {
       index = (i + originals.length) % originals.length;
       const x = i * slideW();
       track.scrollTo({ left: x, behavior: smooth ? 'smooth' : 'auto' });
-      dots.forEach((d,di)=> d.classList.toggle('is-active', di===index));
+      dots.forEach((d, di) => d.classList.toggle('is-active', di === index));
     }
 
     prevBtn?.addEventListener('click', () => {
@@ -196,23 +196,23 @@ document.querySelectorAll(".nav-links a").forEach(a=>{
     track.addEventListener('scroll', () => {
       const approx = Math.round(track.scrollLeft / slideW());
       const logical = ((approx % originals.length) + originals.length) % originals.length;
-      dots.forEach((d,di)=> d.classList.toggle('is-active', di===logical));
+      dots.forEach((d, di) => d.classList.toggle('is-active', di === logical));
     });
 
     // Autoplay
-    let autoplay = setInterval(()=> nextBtn?.click(), 5000);
+    let autoplay = setInterval(() => nextBtn?.click(), 5000);
     const stop = () => { clearInterval(autoplay); autoplay = null; };
-    const start = () => { if (!autoplay) autoplay = setInterval(()=> nextBtn?.click(), 5000); };
+    const start = () => { if (!autoplay) autoplay = setInterval(() => nextBtn?.click(), 5000); };
     viewport.addEventListener('mouseenter', stop);
     viewport.addEventListener('mouseleave', start);
-    viewport.addEventListener('touchstart', stop, {passive:true});
+    viewport.addEventListener('touchstart', stop, { passive: true });
     viewport.addEventListener('touchend', start);
 
     // Accesibilidad teclado
     viewport.tabIndex = 0;
-    viewport.addEventListener('keydown', (e)=>{
+    viewport.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') nextBtn?.click();
-      if (e.key === 'ArrowLeft')  prevBtn?.click();
+      if (e.key === 'ArrowLeft') prevBtn?.click();
     });
 
     // Avatares: fallback inicial
@@ -290,100 +290,40 @@ document.querySelectorAll(".nav-links a").forEach(a=>{
 
 window.onbeforeunload = () => window.scrollTo(0, 0);
 
-document.addEventListener('DOMContentLoaded', () => {
-  const grid = document.getElementById('servicesGrid');
-  const btn  = document.getElementById('toggle-services');
-
-  if (!grid || !btn) {
-    console.warn('[Servicios] No se encontró', { grid, btn });
-    return;
-  }
-
- 
-  const PEEK_PX = 120;
-
-  function setCollapsedHeight() {
-    const cards = Array.from(grid.querySelectorAll('.service-card'));
-    if (cards.length === 0) return;
-
-    const firstTop = cards[0].offsetTop;
-    const secondRowFirst = cards.find(el => el.offsetTop > firstTop);
-
-    if (!secondRowFirst) {
-      grid.classList.remove('collapsed');
-      grid.style.removeProperty('--collapsed-height');
-      return;
-    }
-
-    const gridTop = grid.getBoundingClientRect().top + window.scrollY;
-    const secondRowTop = secondRowFirst.getBoundingClientRect().top + window.scrollY;
-
-    const collapsedHeight = (secondRowTop - gridTop) + PEEK_PX;
-    grid.style.setProperty('--collapsed-height', collapsedHeight + 'px');
-    grid.classList.add('collapsed');
-  }
-
-  function toggleServices() {
-    const opening = grid.classList.contains('collapsed'); 
-    grid.classList.toggle('collapsed');
-    btn.textContent = opening ? 'Ver menos servicios' : 'Ver más servicios';
-
-    if (!opening) {
-
-      setCollapsedHeight();
-      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
- 
-      const cards = Array.from(grid.querySelectorAll('.service-card'));
-      const top0 = cards[0]?.offsetTop ?? 0;
-      const secondRowFirst = cards.find(el => el.offsetTop > top0);
-      if (secondRowFirst) {
-        secondRowFirst.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  }
-
-  btn.addEventListener('click', toggleServices);
-  window.addEventListener('resize', () => {
-    if (grid.classList.contains('collapsed')) setCollapsedHeight();
-  });
-
-  // Init
-  setCollapsedHeight();
-});
-
-
+// === SERVICIOS: colapso con "peek" de los títulos de la 2ª fila ===
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('servicesGrid');
   const btn  = document.getElementById('toggleServicios');
   if (!grid || !btn) return;
 
-  // Cuánto del título querés que se vea (en píxeles)
-  const SHOW_H3_PX = 28; // subí/bajá para mostrar más/menos del h3
+  // Cuánto del <h3> de la 2ª fila querés que asome (en px)
+  const SHOW_H3_PX = 56;
 
   function setCollapsedHeight() {
     const cards = Array.from(grid.querySelectorAll('.service-card'));
-    if (cards.length < 4) { // si no hay 2 filas completas, no colapsamos
+    if (cards.length < 4) {
+      // Si no hay 2 filas completas, no colapsamos
       grid.classList.remove('collapsed');
       grid.style.removeProperty('--collapsed-height');
       return;
     }
 
-    // 1) ubicamos la primera card de la segunda fila
+    // 1) Primera tarjeta de la 2ª fila
     const firstTop = cards[0].offsetTop;
     const secondRowFirst = cards.find(el => el.offsetTop > firstTop);
     if (!secondRowFirst) return;
 
-    // 2) medimos hasta su <h3> y dejamos un “peek” de X px
+    // 2) Medimos hasta el <h3> y dejamos asomar SHOW_H3_PX
     const gridTop = grid.getBoundingClientRect().top + window.scrollY;
     const h3 = secondRowFirst.querySelector('h3') || secondRowFirst;
     const h3Top = h3.getBoundingClientRect().top + window.scrollY;
 
     const collapsedH = (h3Top - gridTop) + SHOW_H3_PX;
-    grid.style.setProperty('--collapsed-height', collapsedH + 'px');
+    grid.style.setProperty('--collapsed-height', `${collapsedH}px`);
+    grid.classList.add('collapsed');
   }
 
-  function setLabel(){
+  function setLabel() {
     btn.textContent = grid.classList.contains('collapsed')
       ? 'Ver más servicios'
       : 'Ver menos servicios';
@@ -394,20 +334,19 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.classList.toggle('collapsed');
     setLabel();
 
-    // Al cerrar, volvemos a calcular y hacemos scroll suave arriba de la grilla
-    if (wasCollapsed === false) {
+    // Si volvemos a colapsar, recalculamos y hacemos scroll al inicio de la grilla
+    if (!wasCollapsed) {
       setCollapsedHeight();
-      grid.scrollIntoView({behavior:'smooth', block:'start'});
+      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 
-  // iniciar
+  // Init
   setCollapsedHeight();
   setLabel();
 
-  // recalcular en resize (solo si está colapsado)
+  // Recalcular en resize (solo si está colapsado)
   window.addEventListener('resize', () => {
     if (grid.classList.contains('collapsed')) setCollapsedHeight();
   });
 });
-
