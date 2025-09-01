@@ -3072,3 +3072,10 @@ body.lock-scroll {
 .ff-modal__dialog h4[id] {
   scroll-margin-top: var(--modal-sticky-h);
 }
+
+
+
+@media (max-width:1024px) {
+  /* además de .nav-links.open, habilitamos abrir por clase en <body> */
+  body.menu-open .nav-links { display: flex; }
+}

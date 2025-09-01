@@ -310,3 +310,56 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+
+(function () {
+  var navToggle = document.querySelector('.nav-toggle');   // botón ☰
+  var navLinks  = document.querySelector('.nav-links');    // <ul> del menú
+  var darkBtn   = document.getElementById('darkModeToggle');
+
+  if (!navToggle || !navLinks) return;
+
+  function isOpen() { return document.body.classList.contains('menu-open'); }
+  function openMenu()  { document.body.classList.add('menu-open');  navLinks.classList.add('open');  navToggle.setAttribute('aria-expanded','true'); }
+  function closeMenu() { document.body.classList.remove('menu-open'); navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); }
+  function toggleMenu() { isOpen() ? closeMenu() : openMenu(); }
+
+  // Abrir/cerrar con el hamburguesa
+  navToggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Cerrar al tocar el botón de modo oscuro
+  if (darkBtn) {
+    darkBtn.addEventListener('click', function () {
+      if (isOpen()) closeMenu();
+      // no tocamos tu lógica de dark-mode (si la tenés en otro lado)
+    });
+  }
+
+  // Cerrar al elegir un link del menú
+  navLinks.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', closeMenu);
+  });
+
+  // Cerrar al tocar fuera del menú/botón
+  document.addEventListener('click', function (e) {
+    if (!isOpen()) return;
+    var dentro = e.target.closest('.nav-links') || e.target.closest('.nav-toggle') || (darkBtn && e.target.closest('#darkModeToggle'));
+    if (!dentro) closeMenu();
+  });
+
+  // Cerrar con ESC
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && isOpen()) closeMenu();
+  });
+
+  // Al pasar a desktop, aseguramos cerrado
+  var mq = window.matchMedia('(min-width:1025px)');
+  function handleMQ(ev){ if (ev.matches) closeMenu(); }
+  if (mq.addEventListener) mq.addEventListener('change', handleMQ);
+  else mq.addListener(handleMQ); // Safari viejo
+})();
