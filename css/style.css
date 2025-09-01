@@ -1354,7 +1354,7 @@ body.dark-mode .ff-pill:hover {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
@@ -2903,7 +2903,8 @@ body.lock-scroll {
   #servicesGrid::after {
     display: none !important;
   }
-  #servicios .center{
+
+  #servicios .center {
     position: static !important;
     transform: none !important;
     bottom: auto !important;
@@ -3040,6 +3041,34 @@ body.lock-scroll {
 
   #toggleServicios {
     pointer-events: auto;
-    /* el click sí entra al botón */
   }
+}
+
+
+/* ===== Ajustes ===== */
+
+:root {
+  --nav-h: var(--nav-altura, 72px);
+}
+
+.ff-modal__dialog {
+  top: clamp(calc(var(--nav-h) + 12px), 8vh, 120px);
+}
+
+:root {
+  --modal-sticky-h: 56px;
+}
+
+.ff-modal__dialog {
+  padding-top: calc(1.6rem + 20px);
+}
+
+.ff-modal__dialog {
+  scroll-padding-top: var(--modal-sticky-h);
+}
+
+.ff-modal__dialog h2[id],
+.ff-modal__dialog h3[id],
+.ff-modal__dialog h4[id] {
+  scroll-margin-top: var(--modal-sticky-h);
 }
