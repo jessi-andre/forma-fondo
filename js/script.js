@@ -21,28 +21,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // === SCROLL SUAVE ===
-// === SCROLL SUAVE con offset del header fijo ===
-const header = document.getElementById("header");
-const getOffset = () => (header?.offsetHeight || 72) + 12;
+  // === SCROLL SUAVE con offset del header fijo ===
+  const header = document.getElementById("header");
+  const getOffset = () => (header?.offsetHeight || 72) + 12;
 
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener("click", e => {
-    const hash = a.getAttribute("href");
-    const target = document.querySelector(hash);
-    if (!target) return;
-    e.preventDefault();
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener("click", e => {
+      const hash = a.getAttribute("href");
+      const target = document.querySelector(hash);
+      if (!target) return;
+      e.preventDefault();
 
-    const y = target.getBoundingClientRect().top + window.scrollY - getOffset();
-    window.scrollTo({ top: y, behavior: "smooth" });
+      const y = target.getBoundingClientRect().top + window.scrollY - getOffset();
+      window.scrollTo({ top: y, behavior: "smooth" });
+    });
   });
-});
 
   // === FADE-IN EN SCROLL ===
   const fadeElements = document.querySelectorAll(".fade-in");
   const obsFade = new IntersectionObserver(ents => {
     ents.forEach(en => {
-      if (en.isIntersecting) { en.target.classList.add("show"); obsFade.unobserve(en.target); }
+      if (en.isIntersecting) {
+        en.target.classList.add("show");
+        obsFade.unobserve(en.target);
+      }
     });
   }, { threshold: 0.2, rootMargin: "0px 0px -50px 0px" });
   fadeElements.forEach(el => {
@@ -270,134 +272,41 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   }
 
   // === MODALES LEGALES ===
-  // abrir
   document.querySelectorAll('.legal-link').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = btn.getAttribute('data-modal');
       const modal = document.getElementById(id);
       if (!modal) return;
       modal.classList.add('is-open');
-      // focus accesible
+      document.documentElement.classList.add('lock-scroll');
       const closeBtn = modal.querySelector('.ff-modal__close');
       closeBtn?.focus();
     });
   });
-  // cerrar por click en backdrop o botón
   document.querySelectorAll('.ff-modal [data-close-modal], .ff-modal__backdrop').forEach(el => {
     el.addEventListener('click', (e) => {
       const modal = e.target.closest('.ff-modal') || document.querySelector('.ff-modal.is-open');
-      modal?.classList.remove('is-open');
+      if (!modal) return;
+      modal.classList.remove('is-open');
+      document.documentElement.classList.remove('lock-scroll');
     });
   });
-  // cerrar con ESC
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       document.querySelectorAll('.ff-modal.is-open').forEach(m => m.classList.remove('is-open'));
+      document.documentElement.classList.remove('lock-scroll');
     }
   });
-});
 
-window.onbeforeunload = () => window.scrollTo(0, 0);
-
-// === SERVICIOS: colapso con "peek" de los títulos de la 2ª fila ===
-document.addEventListener('DOMContentLoaded', () => {
+  // === SERVICIOS: colapso con botón ===
   const grid = document.getElementById('servicesGrid');
   const btn  = document.getElementById('toggleServicios');
-  if (!grid || !btn) return;
-
-  // Cuánto del <h3> de la 2ª fila querés que asome (en px)
-  const SHOW_H3_PX = 56;
-
-  function setCollapsedHeight() {
-    const cards = Array.from(grid.querySelectorAll('.service-card'));
-    if (cards.length < 4) {
-      // Si no hay 2 filas completas, no colapsamos
-      grid.classList.remove('collapsed');
-      grid.style.removeProperty('--collapsed-height');
-      return;
-    }
-
-    // 1) Primera tarjeta de la 2ª fila
-    const firstTop = cards[0].offsetTop;
-    const secondRowFirst = cards.find(el => el.offsetTop > firstTop);
-    if (!secondRowFirst) return;
-
-    // 2) Medimos hasta el <h3> y dejamos asomar SHOW_H3_PX
-    const gridTop = grid.getBoundingClientRect().top + window.scrollY;
-    const h3 = secondRowFirst.querySelector('h3') || secondRowFirst;
-    const h3Top = h3.getBoundingClientRect().top + window.scrollY;
-
-    const collapsedH = (h3Top - gridTop) + SHOW_H3_PX;
-    grid.style.setProperty('--collapsed-height', `${collapsedH}px`);
-    grid.classList.add('collapsed');
-  }
-
-  function setLabel() {
-    btn.textContent = grid.classList.contains('collapsed')
-      ? 'Ver más servicios'
-      : 'Ver menos servicios';
-  }
-
-  btn.addEventListener('click', () => {
-    const wasCollapsed = grid.classList.contains('collapsed');
-    grid.classList.toggle('collapsed');
-    setLabel();
-
-    // Si volvemos a colapsar, recalculamos y hacemos scroll al inicio de la grilla
-    if (!wasCollapsed) {
-      setCollapsedHeight();
-const yGrid = grid.getBoundingClientRect().top + window.scrollY - getOffset();
-window.scrollTo({ top: yGrid, behavior: 'smooth' });    }
-  });
-
-  // Init
-  setCollapsedHeight();
-  setLabel();
-
-  // Recalcular en resize (solo si está colapsado)
-  window.addEventListener('resize', () => {
-    if (grid.classList.contains('collapsed')) setCollapsedHeight();
-  });
-});
-
-
-// === MODALES LEGALES ===
-// abrir
-document.querySelectorAll('.legal-link').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const id = btn.getAttribute('data-modal');
-    const modal = document.getElementById(id);
-    if (!modal) return;
-
-    modal.classList.add('is-open');
-
-    // 🔒 bloquear scroll del fondo
-    document.documentElement.classList.add('lock-scroll');
-
-    // focus accesible
-    const closeBtn = modal.querySelector('.ff-modal__close');
-    closeBtn?.focus();
-  });
-});
-
-// cerrar por click en backdrop o botón
-document.querySelectorAll('.ff-modal [data-close-modal], .ff-modal__backdrop').forEach(el => {
-  el.addEventListener('click', (e) => {
-    const modal = e.target.closest('.ff-modal') || document.querySelector('.ff-modal.is-open');
-    if (!modal) return;
-
-    modal.classList.remove('is-open');
-
-    // 🔓 habilitar scroll del fondo
-    document.documentElement.classList.remove('lock-scroll');
-  });
-});
-
-// cerrar con ESC
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.ff-modal.is-open').forEach(m => m.classList.remove('is-open'));
-    document.documentElement.classList.remove('lock-scroll'); // 🔓
+  if (grid && btn) {
+    btn.setAttribute('aria-expanded', 'false');
+    btn.addEventListener('click', function () {
+      const open = grid.classList.toggle('expanded');
+      btn.textContent = open ? 'Ver menos' : 'Ver más servicios';
+      btn.setAttribute('aria-expanded', String(open));
+    });
   }
 });
-

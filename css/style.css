@@ -2188,6 +2188,16 @@ canvas {
 
 
 /* ====== ≤680px — MOBILE principal ====== */
+
+@media (max-width: 480px) {
+  .subtitulo {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    text-align: center;
+    padding: 0 12px;
+  }
+}
+
 @media (max-width: 680px) {
 
   /* Logo */
@@ -2519,7 +2529,7 @@ canvas {
     flex-wrap: wrap;
     gap: .6rem;
     justify-content: center;
-    padding-bottom: 40px;
+    padding-bottom: 14px;
   }
 
   .hero-ctas .btn {
@@ -2613,14 +2623,14 @@ canvas {
     right: 23px;
   }
 
-  #servicios .services-grid.collapsed {
+  /*#servicios .services-grid.collapsed {
     max-height: none;
     overflow: visible;
   }
 
   #servicios .services-grid.collapsed::after {
     display: none;
-  }
+  }*/
 }
 
 /* =========================================================
@@ -2825,4 +2835,199 @@ body.lock-scroll {
   /* evita scroll chaining al body */
   -webkit-overflow-scrolling: touch;
   /* suave en iOS */
+}
+
+
+/* ===== Servicios: MOBILE FIRST ===== */
+#servicesGrid {
+  position: relative;
+  max-height: 460px;
+  /* ajustá a gusto: 420–520px */
+  overflow: hidden;
+  transition: max-height .35s ease;
+  padding-bottom: 72px;
+  /* espacio para que el botón no tape nada */
+}
+
+/* Degradado para indicar que hay más contenido */
+#servicesGrid::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 64px;
+  height: 120px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(247, 245, 242, 0) 0%, var(--bg, #F7F5F2) 70%);
+}
+
+/* Estado expandido */
+#servicesGrid.expanded {
+  max-height: 9999px;
+}
+
+#servicesGrid.expanded::after {
+  display: none;
+}
+
+/* Botón centrado y por encima */
+#servicios .center {
+  position: sticky;
+  bottom: 12px;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+  padding: 0 12px;
+}
+
+/* ===== Desktop: sin colapso ===== */
+@media (min-width: 769px) {
+  #servicesGrid {
+    max-height: none !important;
+    overflow: visible !important;
+    padding-bottom: 0 !important;
+  }
+
+  #servicesGrid::after {
+    display: none !important;
+  }
+  #servicios .center{
+    position: static !important;
+    transform: none !important;
+    bottom: auto !important;
+    width: auto !important;
+    pointer-events: auto !important;
+    z-index: auto !important;
+    padding: 0 !important;
+    display: none !important;
+  }
+}
+
+
+
+#servicesGrid {
+  position: relative;
+  max-height: 460px;
+  overflow: hidden;
+  transition: max-height .35s ease;
+  padding-bottom: 72px;
+}
+
+#servicesGrid::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 64px;
+  height: 120px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(247, 245, 242, 0) 0%, var(--bg, #F7F5F2) 70%);
+}
+
+#servicesGrid.expanded {
+  max-height: 9999px;
+}
+
+#servicesGrid.expanded::after {
+  display: none;
+}
+
+#servicios .center {
+  position: sticky;
+  bottom: 12px;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+  padding: 0 12px;
+}
+
+@media (min-width: 769px) {
+  #servicesGrid {
+    max-height: none;
+    overflow: visible;
+    padding-bottom: 0
+  }
+
+  #servicesGrid::after {
+    display: none
+  }
+
+  #servicios .center {
+    position: static
+  }
+}
+
+/* ===== FIX 320–360px para Servicios (más aire y sin solapes) ===== */
+@media (max-width: 360px) {
+
+  /* mostrás un poquito más de contenido antes del fade */
+  #servicesGrid {
+    max-height: 520px;
+    /* antes 460px */
+    padding-bottom: 120px;
+    /* más espacio para FABs y el botón */
+  }
+
+  /* el degradado sube porque el botón ahora “flota” más alto */
+  #servicesGrid::after {
+    bottom: 108px;
+    /* antes 64px */
+    height: 140px;
+    /* un poco más largo para un fade suave */
+  }
+
+  /* movemos el botón por encima de los FABs y respetamos el notch */
+  #servicios .center {
+    bottom: calc(84px + var(--safe));
+    /* 60px FAB + 24px aire */
+    z-index: 1002;
+    /* por si los FABs tienen z-index alto */
+    padding: 0 12px;
+  }
+}
+
+
+
+/* ===== FIX fuerte para 320–360 px ===== */
+@media (max-width: 360px) {
+
+  /* 1) Reservamos más espacio en la sección para que nada pise al botón */
+  #servicios {
+    padding-bottom: 140px;
+  }
+
+  /* 2) Mostramos un poco más de contenido antes del fade */
+  #servicesGrid {
+    max-height: 540px;
+    /* subí si querés ver más */
+    padding-bottom: 128px;
+    /* deja hueco real bajo la grilla */
+  }
+
+  /* 3) Movemos el inicio del degradado para que no tape bullets/títulos */
+  #servicesGrid::after {
+    bottom: 116px;
+    /* debe ser ~ padding-bottom - 12 */
+    height: 150px;
+    /* fade más largo en 320px */
+  }
+
+  /* 4) Hacemos el botón FIXED en 320px para evitar conflictos con sticky/FABs */
+  #servicios .center {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(88px + var(--safe));
+    /* 60px FAB + 28px aire */
+    width: min(92vw, 360px);
+    pointer-events: none;
+    /* el contenedor no captura */
+    z-index: 10050;
+    /* por sobre FABs */
+  }
+
+  #toggleServicios {
+    pointer-events: auto;
+    /* el click sí entra al botón */
+  }
 }

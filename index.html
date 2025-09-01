@@ -1,848 +1,852 @@
-<!DOCTYPE html>
-<html lang="es">
+  <!DOCTYPE html>
+  <html lang="es">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <title>Forma & Fondo — Branding, UX/UI, Web y Community Management</title>
-  <meta name="description"
-    content="Forma & Fondo es un estudio de diseño estratégico. Creamos branding, UX/UI, desarrollo web y community management para marcas con propósito que buscan presencia, coherencia y resultados." />
-  <meta name="keywords"
-    content="branding, ux/ui, desarrollo web, community management, diseño consciente, marketing digital, forma y fondo, santiago de chile, argentina" />
-  <link rel="canonical" href="https://jessi-andre.github.io/forma-fondo/" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+    <!-- SEO -->
+    <title>Forma & Fondo — Branding, UX/UI, Web y Community Management</title>
+    <meta name="description"
+      content="Forma & Fondo es un estudio de diseño estratégico. Creamos branding, UX/UI, desarrollo web y community management para marcas con propósito que buscan presencia, coherencia y resultados." />
+    <meta name="keywords"
+      content="branding, ux/ui, desarrollo web, community management, diseño consciente, marketing digital, forma y fondo, santiago de chile, argentina" />
+    <link rel="canonical" href="https://jessi-andre.github.io/forma-fondo/" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
 
-  <!-- Social -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Forma & Fondo — Branding, UX/UI, Web y Community Management" />
-  <meta property="og:description"
-    content="Diseñamos marcas que inspiran y se adaptan a lo digital: branding, UX/UI, desarrollo web y community management." />
-  <meta property="og:url" content="https://jessi-andre.github.io/forma-fondo/" />
-  <meta property="og:image" content="https://jessi-andre.github.io/forma-fondo/img/og-cover.jpg" />
-  <meta property="og:locale" content="es_CL" />
+    <!-- Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Forma & Fondo — Branding, UX/UI, Web y Community Management" />
+    <meta property="og:description"
+      content="Diseñamos marcas que inspiran y se adaptan a lo digital: branding, UX/UI, desarrollo web y community management." />
+    <meta property="og:url" content="https://jessi-andre.github.io/forma-fondo/" />
+    <meta property="og:image" content="https://jessi-andre.github.io/forma-fondo/img/og-cover.jpg" />
+    <meta property="og:locale" content="es_CL" />
 
-  <!-- Favicons -->
-  <link rel="icon" href="./img/favicon-32.png" sizes="32x32">
-  <link rel="icon" href="./img/favicon-192.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
-  <link rel="icon" href="./img/iniciales-blanco.png" sizes="32x32" type="image/png">
+    <!-- Favicons -->
+    <link rel="icon" href="./img/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="./img/favicon-192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
+    <link rel="icon" href="./img/iniciales-blanco.png" sizes="32x32" type="image/png">
 
-  <!-- Rendimiento -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-  <link rel="dns-prefetch" href="//connect.facebook.net" />
+    <!-- Rendimiento -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//connect.facebook.net" />
 
-  <!-- Fuentes -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Work+Sans:wght@300;400;600;700&display=swap"
-    rel="stylesheet" />
+    <!-- Fuentes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Work+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet" />
 
-  <!-- Phosphor Icons -->
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="./css/style.css?v=2.2.0" />
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/style.css?v=2.2.0" />
 
-  <!-- Seguridad (CSP) -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    img-src 'self' data: https: https://www.facebook.com https://www.google-analytics.com;
-    script-src 'self' 'unsafe-inline' https://unpkg.com https://www.googletagmanager.com https://connect.facebook.net;
-    style-src  'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
-    font-src https://fonts.gstatic.com https://unpkg.com data:;
-    connect-src https://formspree.io https://www.google-analytics.com https://www.facebook.com;
-    form-action https://formspree.io;
-    frame-ancestors 'none';
-    base-uri 'self';
-  ">
+    <!-- Seguridad (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      img-src 'self' data: https: https://www.facebook.com https://www.google-analytics.com;
+      script-src 'self' 'unsafe-inline' https://unpkg.com https://www.googletagmanager.com https://connect.facebook.net;
+      style-src  'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
+      font-src https://fonts.gstatic.com https://unpkg.com data:;
+      connect-src https://formspree.io https://www.google-analytics.com https://www.facebook.com;
+      form-action https://formspree.io;
+      frame-ancestors 'none';
+      base-uri 'self';
+    ">
 
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Permissions-Policy"
-    content="geolocation=(), camera=(), microphone=(), payment=(), interest-cohort=()">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy"
+      content="geolocation=(), camera=(), microphone=(), payment=(), interest-cohort=()">
 
-  <!-- Datos estructurados -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Forma & Fondo",
-    "url":"https://jessi-andre.github.io/forma-fondo/",
-    "logo":"https://jessi-andre.github.io/forma-fondo/img/logo.png",
-    "sameAs":[
-      "https://www.behance.net/jessAndre",
-      "https://www.behance.net/ezequielandre1",
-      "https://instagram.com/formayfondo__",
-      "https://www.linkedin.com/in/jessicaandre", 
-      "https://github.com/jessi-andre"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "url":"https://jessi-andre.github.io/forma-fondo/",
-    "name":"Forma & Fondo"
-  }
-  </script>
+    <!-- Datos estructurados -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Organization",
+      "name":"Forma & Fondo",
+      "url":"https://jessi-andre.github.io/forma-fondo/",
+      "logo":"https://jessi-andre.github.io/forma-fondo/img/logo.png",
+      "sameAs":[
+        "https://www.behance.net/jessAndre",
+        "https://www.behance.net/ezequielandre1",
+        "https://instagram.com/formayfondo__",
+        "https://www.linkedin.com/in/jessicaandre", 
+        "https://github.com/jessi-andre"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebSite",
+      "url":"https://jessi-andre.github.io/forma-fondo/",
+      "name":"Forma & Fondo"
+    }
+    </script>
 
-  <!--esta parte es la que conecta la web con herramientas de analítica y publicidad
-  GA4 = estadísticas generales de visitas.-->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+    <!--esta parte es la que conecta la web con herramientas de analítica y publicidad
+    GA4 = estadísticas generales de visitas.-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
-  <!-- Meta Pixel = seguimiento para publicidad en Facebook/Instagram. -->
-  <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '123456789012345');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=123456789012345&ev=PageView&noscript=1" alt="" />
-  </noscript>
-</head>
+    <!-- Meta Pixel = seguimiento para publicidad en Facebook/Instagram. -->
+    <script>
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+          n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '123456789012345');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=123456789012345&ev=PageView&noscript=1" alt="" />
+    </noscript>
+  </head>
 
-<body>
-  <!-- INTRO -->
-  <div class="logo-intro" id="logoIntro" aria-hidden="true">
-    <img src="./img/logo.png" alt="Logo de Forma & Fondo" />
-  </div>
+  <body>
+    <!-- INTRO -->
+    <div class="logo-intro" id="logoIntro" aria-hidden="true">
+      <img src="./img/logo.png" alt="Logo de Forma & Fondo" />
+    </div>
 
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/5491125532868" class="btn-whatsapp" target="_blank" aria-label="Contactar por WhatsApp">
-    <img src="https://icongr.am/fontawesome/whatsapp.svg?size=32&color=ffffff" alt="Icono WhatsApp">
-  </a>
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/5491125532868" class="btn-whatsapp" target="_blank" aria-label="Contactar por WhatsApp">
+      <img src="https://icongr.am/fontawesome/whatsapp.svg?size=32&color=ffffff" alt="Icono WhatsApp">
+    </a>
 
-  <!-- HEADER -->
-  <header id="header">
-    <nav class="navbar">
-      <div class="logo">
-        <a href="#inicio" class="logo-link" aria-label="Ir al inicio">
-          <img id="logoLight" src="./img/logo.png" alt="Forma & Fondo — logo" />
-          <img id="logoDark" src="./img/logoBlanco.png" alt="Forma & Fondo — logo modo oscuro" />
-        </a>
-      </div>
-
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
-
-      <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#packs">Packs</a></li>
-        <li><a href="#beneficios">Beneficios</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contacto" class="btn btn-nav btn-primary">Contacto</a></li>
-        <li><button id="darkModeToggle" aria-label="Cambiar modo" class="dark-mode-btn" title="Cambiar modo">🌙</button>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section id="inicio" class="ff-hero fade-in" aria-labelledby="hero-title">
-      <h1 id="hero-title" class="ff-hero__title">
-        Diseñamos experiencias que <span class="highlight">conectan <strong>y</strong> transforman</span>
-      </h1>
-      <p class="ff-hero__subtitle subtitle-desktop">
-        Impulsamos tu marca con diseño, branding y experiencias digitales que inspiran.
-        Creamos webs y gestionamos tus redes para que conectes con las personas correctas y conviertas cada interacción
-        en crecimiento.
-      </p>
-      <p class="ff-hero__subtitle subtitle-mobile">Diseño, branding y webs para marcas con propósito.Escribinos para
-      </p>
-      <div class="hero-ctas">
-        <a href="#contacto" class="btn btn-lg btn-primary ff-hero__cta">Contáctanos</a>
-        <a href="#servicios" class="btn btn-lg btn-ghost" aria-label="Ver servicios">Ver servicios</a>
-      </div>
-    </section>
-
-    <!-- MARQUEE (loop perfecto, sin solapes) -->
-    <section class="marquee-section" aria-hidden="true">
-      <div class="marquee">
-        <div class="marquee__content">
-          <!-- Bloque A (x4) -->
-          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
-            ✺ Automatizaciones ✷ Asesorías ✦</span>
-          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
-            ✺ Automatizaciones ✷ Asesorías ✦</span>
-          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
-            ✺ Automatizaciones ✷ Asesorías ✦</span>
-          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
-            ✺ Automatizaciones ✷ Asesorías ✦</span>
-
-          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
-            ✺ Automatizaciones ✷ Asesorías ✦</span>
-          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
-            ✺ Automatizaciones ✷ Asesorías ✦</span>
-          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
-            ✺ Automatizaciones ✷ Asesorías ✦</span>
-          <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
-            ✺ Automatizaciones ✷ Asesorías ✦</span>
+    <!-- HEADER -->
+    <header id="header">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="#inicio" class="logo-link" aria-label="Ir al inicio">
+            <img id="logoLight" src="./img/logo.png" alt="Forma & Fondo — logo" />
+            <img id="logoDark" src="./img/logoBlanco.png" alt="Forma & Fondo — logo modo oscuro" />
+          </a>
         </div>
-      </div>
-    </section>
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="section fade-in" aria-labelledby="servicios-title">
-      <h2 id="servicios-title">Servicios que potencian tu marca</h2>
-      <p>Diseño y estrategia para conectar con tu audiencia, construir confianza y convertir mejor.</p>
+        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
 
-      <div class="services-grid collapsed" id="servicesGrid">
-        <!-- Consulta gratis -->
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true"><i class="ph ph-calendar"></i></div>
-          <h3>Asesoría <span class="title-highlight">GRATIS</span></h3>
-          <p>Agendá tu sesión express de 30' para diagnosticar tu presencia digital y salir con un plan de acción.</p>
-          <ul class="service-bullets">
-            <li>Revisión de redes y sitio</li>
-            <li>Oportunidades rápidas de mejora</li>
-            <li>Próximos pasos claros</li>
-          </ul>
-          <a href="#contacto" target="_blank" rel="noopener" class="btn btn-primary">Quiero mi asesoria</a>
-        </article>
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#packs">Packs</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contacto" class="btn btn-nav btn-primary">Contacto</a></li>
+          <li><button id="darkModeToggle" aria-label="Cambiar modo" class="dark-mode-btn" title="Cambiar modo">🌙</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-        <!-- Gestión de Redes -->
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true"><i class="ph ph-share-network"></i></div>
-          <h3>Gestión de Redes</h3>
-          <p>Estrategia y administración de redes para generar comunidad real y potenciar la visibilidad de tu marca.
-          </p>
-          <ul class="service-bullets">
-            <li>Calendario de publicaciones</li>
-            <li>Monitoreo y respuestas de mensajes</li>
-            <li>Reportes con métricas claras</li>
-            <li>Community management</li>
-            <li>Copywriting</li>
-          </ul>
-        </article>
+    <main>
+      <!-- HERO -->
+      <section id="inicio" class="ff-hero fade-in" aria-labelledby="hero-title">
+        <h1 id="hero-title" class="ff-hero__title">
+          Diseñamos experiencias que <span class="highlight">conectan <strong>y</strong> transforman</span>
+        </h1>
+        <p class="ff-hero__subtitle subtitle-desktop">
+          Impulsamos tu marca con diseño, branding y experiencias digitales que inspiran.
+          Creamos webs y gestionamos tus redes para que conectes con las personas correctas y conviertas cada interacción
+          en crecimiento.
+        </p>
+        <p class="ff-hero__subtitle subtitle-mobile">Branding, diseño y webs que potencian tu negocio con estrategia y
+          creatividad.
+        </p>
+        <div class="hero-ctas">
+          <a href="#contacto" class="btn btn-lg btn-primary ff-hero__cta">Contáctanos</a>
+          <a href="#servicios" class="btn btn-lg btn-ghost" aria-label="Ver servicios">Ver servicios</a>
+        </div>
+      </section>
 
-        <!-- Desarrollo Web -->
-        <article class="service-card service-web">
-          <div class="service-icon" aria-hidden="true"><i class="ph ph-monitor"></i></div>
-          <h3>Desarrollo Web / Sitio Web</h3>
-          <p>Sitios personalizados: UX/UI a medida, responsive y SEO básico listos para convertir.</p>
-          <ul class="service-bullets">
-            <li>WordPress (autogestionable) o código (HTML/CSS/JS)</li>
-            <li>SEO básico</li>
-            <li>Integraciones: formularios, Analytics y WhatsApp</li>
-            <li>Capacitación para autogestionar</li>
-          </ul>
-          <a href="https://wa.me/5491125532868?text=Hola%20%F0%9F%91%8B%20quiero%20un%20presupuesto%20para%20mi%20sitio%20web"
-            target="_blank" rel="noopener noreferrer" class="btn btn-primary">Solicitar presupuesto</a>
-        </article>
+      <!-- MARQUEE (loop perfecto, sin solapes) -->
+      <section class="marquee-section" aria-hidden="true">
+        <div class="marquee">
+          <div class="marquee__content">
+            <!-- Bloque A (x4) -->
+            <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+              ✺ Automatizaciones ✷ Asesorías ✦</span>
+            <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+              ✺ Automatizaciones ✷ Asesorías ✦</span>
+            <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+              ✺ Automatizaciones ✷ Asesorías ✦</span>
+            <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+              ✺ Automatizaciones ✷ Asesorías ✦</span>
 
-        <!-- Diseño de Publicaciones -->
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true"><i class="ph ph-paint-brush"></i></div>
-          <h3>Diseño de Publicaciones</h3>
-          <p>Diseños que mantienen tu feed coherente y atractivo, transmitiendo la esencia de tu marca.</p>
-          <ul class="service-bullets">
-            <li>Identidad Visual</li>
-            <li>Piezas gráficas en Illustrator o Canva</li>
-            <li>Interfaces creadas en Figma</li>
-            <li>Stories que inspiran interacción</li>
-          </ul>
-        </article>
-
-        <!-- Automatizaciones -->
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true"><i class="ph ph-plugs-connected"></i></div>
-          <h3>Automatizaciones</h3>
-          <p>Hacemos que tus herramientas trabajen solas: menos tareas repetitivas, más tiempo para vender.</p>
-          <ul class="service-bullets">
-            <li>Respuestas automáticas en WhatsApp/IG</li>
-            <li>Integraciones con Zapier o Make</li>
-            <li>Formularios a Sheets/CRM</li>
-            <li>Flujos de emails y recordatorios</li>
-          </ul>
-        </article>
-
-        <!-- Planificación Estratégica -->
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true"><i class="ph ph-calendar-check"></i></div>
-          <h3>Planificación Estratégica</h3>
-          <p>Organización inteligente para que tu comunicación sea constante, efectiva y sin improvisación.</p>
-          <ul class="service-bullets">
-            <li>Organización en Trello o Notion</li>
-            <li>Estrategia de contenido por etapas</li>
-            <li>Cronogramas claros y flexibles</li>
-            <li>Optimización de tiempos y recursos</li>
-            <li>Optimización de campañas (Meta/Google): presupuesto, audiencias, creatividades y pujas con A/B testing.
-            </li>
-
-          </ul>
-        </article>
-
-        <!-- Copywriting
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true"><i class="ph ph-pen-nib"></i></div>
-          <h3>Copywriting</h3>
-          <p>Palabras que conectan y venden, con un estilo fresco y cercano para hablarle a tu público.</p>
-          <ul class="service-bullets">
-            <li>Copy para posts y anuncios</li>
-            <li>Storytelling auténtico</li>
-            <li>Llamados a la acción que convierten</li>
-            <li>Desarrollo de tono y voz de marca</li>
-          </ul>
-        </article>
- -->
-      </div>
-
-      <!-- Botón ver más/menos -->
-      <div class="center">
-        <button id="toggleServicios" class="btn btn-ghost" type="button">Ver más servicios</button>
-      </div>
-    </section>
-
-
-    <!-- PACKS / PRECIOS -->
-    <section id="packs" class="section fade-in" aria-labelledby="packs-title">
-      <h2 id="packs-title">Packs de contenido</h2>
-      <p id="packs-sub">Elegí el plan que mejor se adapte a tu marca. Diseño + estrategia + organización clara.</p>
-
-      <div class="pricing-grid">
-        <!-- Pack 1 — Presencia & Consistencia -->
-        <article class="plan-card plan-basic">
-          <h3 class="plan-title">Pack 1 — Presencia & Consistencia</h3>
-          <p class="plan-sub">Objetivo: activar tu marca con constancia y orden, sin sobrecargarte.</p>
-
-          <div class="plan-price">
-            <span class="amount">$320 USD</span><span class="per">/mes</span>
+            <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+              ✺ Automatizaciones ✷ Asesorías ✦</span>
+            <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+              ✺ Automatizaciones ✷ Asesorías ✦</span>
+            <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+              ✺ Automatizaciones ✷ Asesorías ✦</span>
+            <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
+              ✺ Automatizaciones ✷ Asesorías ✦</span>
           </div>
+        </div>
+      </section>
 
-          <ul class="plan-features">
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>4 reels, 4 carruseles, 4 historias (12 piezas)</li>
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Copywriting y diseño (Canva/Figma)</li>
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Calendario en Trello / Notion + publicación
-              programada</li>
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>1 reporte mensual con métricas clave</li>
-          </ul>
+      <!-- SERVICIOS -->
+      <section id="servicios" class="section fade-in" aria-labelledby="servicios-title">
+        <h2 id="servicios-title">Servicios que potencian tu marca</h2>
+        <p>Diseño y estrategia para conectar con tu audiencia, construir confianza y convertir mejor.</p>
 
-          <a href="https://wa.me/5491125532868?text=Hola%20%F0%9F%91%8B%2C%20quiero%20info%20del%20Pack%201%20%E2%80%94%20Presencia%20%26%20Consistencia"
-            target="_blank" rel="noopener noreferrer" class="btn btn-primary plan-cta"
-            aria-label="Abrir WhatsApp — Pack 1">
-            Seleccionar Pack
-          </a>
-        </article>
+        <div class="services-grid" id="servicesGrid">
+          <!-- Consulta gratis -->
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><i class="ph ph-calendar"></i></div>
+            <h3>Asesoría <span class="title-highlight">GRATIS</span></h3>
+            <p>Agendá tu sesión express de 30' para diagnosticar tu presencia digital y salir con un plan de acción.</p>
+            <ul class="service-bullets">
+              <li>Revisión de redes y sitio</li>
+              <li>Oportunidades rápidas de mejora</li>
+              <li>Próximos pasos claros</li>
+            </ul>
+            <a href="#contacto" target="_blank" rel="noopener" class="btn btn-primary">Quiero mi asesoria</a>
+          </article>
 
-        <!-- Pack 2 — Crecimiento & Conversión -->
-        <article class="plan-card plan-mid recomendado">
-          <h3 class="plan-title">Pack 2 — Crecimiento & Conversión</h3>
-          <div class="plan-badge" aria-hidden="true">Recomendado</div>
-          <p class="plan-sub">Objetivo: crecer en alcance y empezar a convertir con intención.</p>
+          <!-- Gestión de Redes -->
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><i class="ph ph-share-network"></i></div>
+            <h3>Gestión de Redes</h3>
+            <p>Estrategia y administración de redes para generar comunidad real y potenciar la visibilidad de tu marca.
+            </p>
+            <ul class="service-bullets">
+              <li>Calendario de publicaciones</li>
+              <li>Monitoreo y respuestas de mensajes</li>
+              <li>Reportes con métricas claras</li>
+              <li>Community management</li>
+              <li>Copywriting</li>
+            </ul>
+          </article>
 
-          <div class="plan-price">
-            <span class="amount">$400 USD</span><span class="per">/mes</span>
-          </div>
+          <!-- Desarrollo Web -->
+          <article class="service-card service-web">
+            <div class="service-icon" aria-hidden="true"><i class="ph ph-monitor"></i></div>
+            <h3>Desarrollo Web / Sitio Web</h3>
+            <p>Sitios personalizados: UX/UI a medida, responsive y SEO básico listos para convertir.</p>
+            <ul class="service-bullets">
+              <li>WordPress (autogestionable) o código (HTML/CSS/JS)</li>
+              <li>SEO básico</li>
+              <li>Integraciones: formularios, Analytics y WhatsApp</li>
+              <li>Capacitación para autogestionar</li>
+            </ul>
+            <a href="https://wa.me/5491125532868?text=Hola%20%F0%9F%91%8B%20quiero%20un%20presupuesto%20para%20mi%20sitio%20web"
+              target="_blank" rel="noopener noreferrer" class="btn btn-primary">Solicitar presupuesto</a>
+          </article>
 
-          <ul class="plan-features">
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>6 reels, 6 carruseles, 6 historias (18 piezas)</li>
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Copy + diseño con variantes A/B en 2 piezas
-            </li>
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Calendario + publicación programada
-            </li>
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Gestión de comentarios y DMs básicos</li>
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>2 reportes quincenales con insights y próximos
-              pasos</li>
-          </ul>
+          <!-- Diseño de Publicaciones -->
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><i class="ph ph-paint-brush"></i></div>
+            <h3>Diseño de Publicaciones</h3>
+            <p>Diseños que mantienen tu feed coherente y atractivo, transmitiendo la esencia de tu marca.</p>
+            <ul class="service-bullets">
+              <li>Identidad Visual</li>
+              <li>Piezas gráficas en Illustrator o Canva</li>
+              <li>Interfaces creadas en Figma</li>
+              <li>Stories que inspiran interacción</li>
+            </ul>
+          </article>
 
-          <a href="https://wa.me/5491125532868?text=Hola%20%F0%9F%91%8B%2C%20quiero%20info%20del%20Pack%202%20%E2%80%94%20Crecimiento%20%26%20Conversi%C3%B3n"
-            target="_blank" rel="noopener noreferrer" class="btn btn-primary plan-cta"
-            aria-label="Abrir WhatsApp — Pack 2">
-            Seleccionar Pack
-          </a>
-        </article>
+          <!-- Automatizaciones -->
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><i class="ph ph-plugs-connected"></i></div>
+            <h3>Automatizaciones</h3>
+            <p>Hacemos que tus herramientas trabajen solas: menos tareas repetitivas, más tiempo para vender.</p>
+            <ul class="service-bullets">
+              <li>Respuestas automáticas en WhatsApp/IG</li>
+              <li>Integraciones con Zapier o Make</li>
+              <li>Formularios a Sheets/CRM</li>
+              <li>Flujos de emails y recordatorios</li>
+            </ul>
+          </article>
 
-        <!-- Pack 3 — Performance & Escala -->
-        <article class="plan-card plan-pro">
-          <h3 class="plan-title">Pack 3 — Performance & Escala</h3>
-          <p class="plan-sub">Objetivo: acelerar resultados con más volumen y optimización.</p>
+          <!-- Planificación Estratégica -->
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><i class="ph ph-calendar-check"></i></div>
+            <h3>Planificación Estratégica</h3>
+            <p>Organización inteligente para que tu comunicación sea constante, efectiva y sin improvisación.</p>
+            <ul class="service-bullets">
+              <li>Organización en Trello o Notion</li>
+              <li>Estrategia de contenido por etapas</li>
+              <li>Cronogramas claros y flexibles</li>
+              <li>Optimización de tiempos y recursos</li>
+              <li>Optimización de campañas (Meta/Google): presupuesto, audiencias, creatividades y pujas con A/B testing.
+              </li>
 
-          <div class="plan-price">
-            <span class="amount">$550 USD</span><span class="per">/mes</span>
-          </div>
+            </ul>
+          </article>
 
-          <ul class="plan-features">
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>8 reels, 8 carruseles, 8 historias (24 piezas)</li>
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Copy + diseño + guías de UGC (para grabar mejor)
-            </li>
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Calendario + publicación programada</li>
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Gestión diaria de comunidad (comentarios + DMs)
-            </li>
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Testing A/B permanente (3–4 piezas)
-            </li>
+          <!-- Copywriting
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><i class="ph ph-pen-nib"></i></div>
+            <h3>Copywriting</h3>
+            <p>Palabras que conectan y venden, con un estilo fresco y cercano para hablarle a tu público.</p>
+            <ul class="service-bullets">
+              <li>Copy para posts y anuncios</li>
+              <li>Storytelling auténtico</li>
+              <li>Llamados a la acción que convierten</li>
+              <li>Desarrollo de tono y voz de marca</li>
+            </ul>
+          </article>
+  -->
+        </div>
 
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>3 reportes (2 quincenales + cierre mensual con
-              recomendaciones)</li>
-          </ul>
-          <a href="https://wa.me/5491125532868?text=Hola%20%F0%9F%91%8B%2C%20quiero%20info%20del%20Pack%203%20%E2%80%94%20Performance%20%26%20Escala"
-            target="_blank" rel="noopener noreferrer" class="btn btn-primary plan-cta"
-            aria-label="Abrir WhatsApp — Pack 3">
-            Seleccionar Pack
-          </a>
-        </article>
-      </div>
-      <small id="plan-note">
-        Valores de referencia. Podemos ajustar el pack según tu necesidad. Extras opcionales: pauta/ads, landing lite,
-        sesión de fotos, motion avanzado.
-      </small>
-    </section>
+        <!-- Botón ver más/menos -->
+        <div class="center">
+          <button id="toggleServicios" class="btn btn-ghost" type="button" aria-expanded="false"
+            aria-controls="servicesGrid">
+            Ver más servicios
+          </button>
+        </div>
+      </section>
 
-    <!-- BENEFICIOS    -->
-    <section id="beneficios" class="section fade-in" aria-labelledby="beneficios-title">
-      <h2 id="beneficios-title">¿Por qué trabajar con nosotros?</h2>
-      <p>Resultados medibles, procesos claros y una estética que posiciona tu marca.</p>
 
-      <div class="benefits-list">
-        <!-- 1 -->
-        <article class="benefit-row">
-          <span class="benefit-badge" aria-hidden="true"><i class="ph ph-rocket-launch"></i></span>
-          <div class="benefit-copy">
+      <!-- PACKS / PRECIOS -->
+      <section id="packs" class="section fade-in" aria-labelledby="packs-title">
+        <h2 id="packs-title">Packs de contenido</h2>
+        <p id="packs-sub">Elegí el plan que mejor se adapte a tu marca. Diseño + estrategia + organización clara.</p>
+
+        <div class="pricing-grid">
+          <!-- Pack 1 — Presencia & Consistencia -->
+          <article class="plan-card plan-basic">
+            <h3 class="plan-title">Pack 1 — Presencia & Consistencia</h3>
+            <p class="plan-sub">Objetivo: activar tu marca con constancia y orden, sin sobrecargarte.</p>
+
+            <div class="plan-price">
+              <span class="amount">$320 USD</span><span class="per">/mes</span>
+            </div>
+
+            <ul class="plan-features">
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>4 reels, 4 carruseles, 4 historias (12 piezas)</li>
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>Copywriting y diseño (Canva/Figma)</li>
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>Calendario en Trello / Notion + publicación
+                programada</li>
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>1 reporte mensual con métricas clave</li>
+            </ul>
+
+            <a href="https://wa.me/5491125532868?text=Hola%20%F0%9F%91%8B%2C%20quiero%20info%20del%20Pack%201%20%E2%80%94%20Presencia%20%26%20Consistencia"
+              target="_blank" rel="noopener noreferrer" class="btn btn-primary plan-cta"
+              aria-label="Abrir WhatsApp — Pack 1">
+              Seleccionar Pack
+            </a>
+          </article>
+
+          <!-- Pack 2 — Crecimiento & Conversión -->
+          <article class="plan-card plan-mid recomendado">
+            <h3 class="plan-title">Pack 2 — Crecimiento & Conversión</h3>
+            <div class="plan-badge" aria-hidden="true">Recomendado</div>
+            <p class="plan-sub">Objetivo: crecer en alcance y empezar a convertir con intención.</p>
+
+            <div class="plan-price">
+              <span class="amount">$400 USD</span><span class="per">/mes</span>
+            </div>
+
+            <ul class="plan-features">
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>6 reels, 6 carruseles, 6 historias (18 piezas)</li>
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>Copy + diseño con variantes A/B en 2 piezas
+              </li>
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>Calendario + publicación programada
+              </li>
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>Gestión de comentarios y DMs básicos</li>
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>2 reportes quincenales con insights y próximos
+                pasos</li>
+            </ul>
+
+            <a href="https://wa.me/5491125532868?text=Hola%20%F0%9F%91%8B%2C%20quiero%20info%20del%20Pack%202%20%E2%80%94%20Crecimiento%20%26%20Conversi%C3%B3n"
+              target="_blank" rel="noopener noreferrer" class="btn btn-primary plan-cta"
+              aria-label="Abrir WhatsApp — Pack 2">
+              Seleccionar Pack
+            </a>
+          </article>
+
+          <!-- Pack 3 — Performance & Escala -->
+          <article class="plan-card plan-pro">
+            <h3 class="plan-title">Pack 3 — Performance & Escala</h3>
+            <p class="plan-sub">Objetivo: acelerar resultados con más volumen y optimización.</p>
+
+            <div class="plan-price">
+              <span class="amount">$550 USD</span><span class="per">/mes</span>
+            </div>
+
+            <ul class="plan-features">
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>8 reels, 8 carruseles, 8 historias (24 piezas)</li>
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>Copy + diseño + guías de UGC (para grabar mejor)
+              </li>
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>Calendario + publicación programada</li>
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>Gestión diaria de comunidad (comentarios + DMs)
+              </li>
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>Testing A/B permanente (3–4 piezas)
+              </li>
+
+              <li><i class="ph ph-check-circle" aria-hidden="true"></i>3 reportes (2 quincenales + cierre mensual con
+                recomendaciones)</li>
+            </ul>
+            <a href="https://wa.me/5491125532868?text=Hola%20%F0%9F%91%8B%2C%20quiero%20info%20del%20Pack%203%20%E2%80%94%20Performance%20%26%20Escala"
+              target="_blank" rel="noopener noreferrer" class="btn btn-primary plan-cta"
+              aria-label="Abrir WhatsApp — Pack 3">
+              Seleccionar Pack
+            </a>
+          </article>
+        </div>
+        <small id="plan-note">
+          Valores de referencia. Podemos ajustar el pack según tu necesidad. Extras opcionales: pauta/ads, landing lite,
+          sesión de fotos, motion avanzado.
+        </small>
+      </section>
+
+      <!-- BENEFICIOS    -->
+      <section id="beneficios" class="section fade-in" aria-labelledby="beneficios-title">
+        <h2 id="beneficios-title">¿Por qué trabajar con nosotros?</h2>
+        <p>Resultados medibles, procesos claros y una estética que posiciona tu marca.</p>
+
+        <div class="benefits-list">
+          <!-- 1 -->
+          <article class="benefit-row">
+            <span class="benefit-badge" aria-hidden="true"><i class="ph ph-rocket-launch"></i></span>
+            <div class="benefit-copy">
+              <h3>Enfoque en conversión</h3>
+              <p>Diseño orientado a objetivos: CTA claros, storytelling y jerarquía visual efectiva.</p>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="benefit-row">
+            <span class="benefit-badge" aria-hidden="true"><i class="ph ph-users-three"></i></span>
+            <div class="benefit-copy">
+              <h3>UX basada en datos</h3>
+              <p>Decisiones informadas con buenas prácticas, accesibilidad y pruebas con usuarios.</p>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="benefit-row">
+            <span class="benefit-badge" aria-hidden="true"><i class="ph ph-palette"></i></span>
+            <div class="benefit-copy">
+              <h3>Identidad consistente</h3>
+              <p>Coherencia visual en web, redes y materiales para fortalecer tu marca.</p>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="benefit-row">
+            <span class="benefit-badge" aria-hidden="true"><i class="ph ph-clock"></i></span>
+            <div class="benefit-copy">
+              <h3>Entrega ágil</h3>
+              <p>Procesos por etapas y feedback continuo para avanzar rápido y con calidad.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+
+
+      <!--  
+      <section id="beneficios" class="section fade-in" aria-labelledby="beneficios-title">
+        <h2 id="beneficios-title">¿Por qué trabajar con nosotros?</h2>
+        <p>Resultados medibles, procesos claros y una estética que posiciona tu marca.</p>
+
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <i class="ph ph-rocket-launch" aria-hidden="true"></i>
             <h3>Enfoque en conversión</h3>
-            <p>Diseño orientado a objetivos: CTA claros, storytelling y jerarquía visual efectiva.</p>
-          </div>
-        </article>
+            <p>Diseño pensado para vender: CTA claros, storytelling y jerarquía visual efectiva.</p>
+          </article>
 
-        <!-- 2 -->
-        <article class="benefit-row">
-          <span class="benefit-badge" aria-hidden="true"><i class="ph ph-users-three"></i></span>
-          <div class="benefit-copy">
+          <article class="benefit-card">
+            <i class="ph ph-users-three" aria-hidden="true"></i>
             <h3>UX basada en datos</h3>
-            <p>Decisiones informadas con buenas prácticas, accesibilidad y pruebas con usuarios.</p>
-          </div>
-        </article>
+            <p>Decisiones informadas con buenas prácticas, accesibilidad y tests.</p>
+          </article>
 
-        <!-- 3 -->
-        <article class="benefit-row">
-          <span class="benefit-badge" aria-hidden="true"><i class="ph ph-palette"></i></span>
-          <div class="benefit-copy">
+          <article class="benefit-card">
+            <i class="ph ph-palette" aria-hidden="true"></i>
             <h3>Identidad consistente</h3>
             <p>Coherencia visual en web, redes y materiales para fortalecer tu marca.</p>
-          </div>
-        </article>
+          </article>
 
-        <!-- 4 -->
-        <article class="benefit-row">
-          <span class="benefit-badge" aria-hidden="true"><i class="ph ph-clock"></i></span>
-          <div class="benefit-copy">
+          <article class="benefit-card">
+            <i class="ph ph-clock" aria-hidden="true"></i>
             <h3>Entrega ágil</h3>
-            <p>Procesos por etapas y feedback continuo para avanzar rápido y con calidad.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-
-
-
-    <!--  
-    <section id="beneficios" class="section fade-in" aria-labelledby="beneficios-title">
-      <h2 id="beneficios-title">¿Por qué trabajar con nosotros?</h2>
-      <p>Resultados medibles, procesos claros y una estética que posiciona tu marca.</p>
-
-      <div class="benefits-grid">
-        <article class="benefit-card">
-          <i class="ph ph-rocket-launch" aria-hidden="true"></i>
-          <h3>Enfoque en conversión</h3>
-          <p>Diseño pensado para vender: CTA claros, storytelling y jerarquía visual efectiva.</p>
-        </article>
-
-        <article class="benefit-card">
-          <i class="ph ph-users-three" aria-hidden="true"></i>
-          <h3>UX basada en datos</h3>
-          <p>Decisiones informadas con buenas prácticas, accesibilidad y tests.</p>
-        </article>
-
-        <article class="benefit-card">
-          <i class="ph ph-palette" aria-hidden="true"></i>
-          <h3>Identidad consistente</h3>
-          <p>Coherencia visual en web, redes y materiales para fortalecer tu marca.</p>
-        </article>
-
-        <article class="benefit-card">
-          <i class="ph ph-clock" aria-hidden="true"></i>
-          <h3>Entrega ágil</h3>
-          <p>Procesos claros por etapas y feedback continuo para avanzar rápido.</p>
-        </article>
-      </div>
-      <div class="stats">
-        <div class="stat" data-emoji="🚀">+ Experiencia en proyectos reales</div>
-        <div class="stat" data-emoji="😊">+ Clientes felices</div>
-        <div class="stat" data-emoji="🌍">+ Presencia internacional</div>
-      </div>
-
-    </section>
-    -->
-
-    <!-- TESTIMONIOS 
-    <section id="testimonios" class="section fade-in" aria-labelledby="testimonios-title">
-      <h2 id="testimonios-title">Lo que dicen nuestros clientes</h2>
-      <p>Historias reales de marcas que hoy se ven y venden mejor.</p>
-
-      <div class="testi-viewport" aria-roledescription="carrusel">
-        <div class="testi-track">
-          <article class="testi-card">
-            <div class="testi-header">
-              <div class="testi-avatar">
-                <span class="initial" aria-hidden="true">M</span>
-                <img src="./img/avatars/maria.jpg" alt="Foto de María — Directora de Marketing" loading="lazy">
-              </div>
-              <div>
-                <h3>María — Directora de Marketing</h3>
-                <small>Retail · Caso web + contenido</small>
-              </div>
-            </div>
-            <p>“Profesionales, rápidos y con criterio. Pasamos de una web caótica a un sitio claro que convirtió 2x.”
-            </p>
-          </article>
-
-          <article class="testi-card">
-            <div class="testi-header">
-              <div class="testi-avatar">
-                <span class="initial" aria-hidden="true">L</span>
-                <img src="./img/avatars/lucas.jpg" alt="Foto de Lucas — Fundador" loading="lazy">
-              </div>
-              <div>
-                <h3>Lucas — Fundador</h3>
-                <small>Startup · Branding + UI</small>
-              </div>
-            </div>
-            <p>“Nos ayudaron a encontrar la voz y la estética. Hoy la marca se siente sólida y diferencial.”</p>
-          </article>
-
-          <article class="testi-card">
-            <div class="testi-header">
-              <div class="testi-avatar">
-                <span class="initial" aria-hidden="true">A</span>
-                <img src="./img/avatars/ana.jpg" alt="Foto de Ana — Emprendedora" loading="lazy">
-              </div>
-              <div>
-                <h3>Ana — Emprendedora</h3>
-                <small>Servicios · UX de reservas</small>
-              </div>
-            </div>
-            <p>“Mejoraron la experiencia de reserva y aumentó la tasa de consultas. Súper recomendables.”</p>
+            <p>Procesos claros por etapas y feedback continuo para avanzar rápido.</p>
           </article>
         </div>
+        <div class="stats">
+          <div class="stat" data-emoji="🚀">+ Experiencia en proyectos reales</div>
+          <div class="stat" data-emoji="😊">+ Clientes felices</div>
+          <div class="stat" data-emoji="🌍">+ Presencia internacional</div>
+        </div>
 
-        <button class="testi-prev" aria-label="Anterior"><i class="ph ph-caret-left"></i></button>
-        <button class="testi-next" aria-label="Siguiente"><i class="ph ph-caret-right"></i></button>
+      </section>
+      -->
+
+      <!-- TESTIMONIOS 
+      <section id="testimonios" class="section fade-in" aria-labelledby="testimonios-title">
+        <h2 id="testimonios-title">Lo que dicen nuestros clientes</h2>
+        <p>Historias reales de marcas que hoy se ven y venden mejor.</p>
+
+        <div class="testi-viewport" aria-roledescription="carrusel">
+          <div class="testi-track">
+            <article class="testi-card">
+              <div class="testi-header">
+                <div class="testi-avatar">
+                  <span class="initial" aria-hidden="true">M</span>
+                  <img src="./img/avatars/maria.jpg" alt="Foto de María — Directora de Marketing" loading="lazy">
+                </div>
+                <div>
+                  <h3>María — Directora de Marketing</h3>
+                  <small>Retail · Caso web + contenido</small>
+                </div>
+              </div>
+              <p>“Profesionales, rápidos y con criterio. Pasamos de una web caótica a un sitio claro que convirtió 2x.”
+              </p>
+            </article>
+
+            <article class="testi-card">
+              <div class="testi-header">
+                <div class="testi-avatar">
+                  <span class="initial" aria-hidden="true">L</span>
+                  <img src="./img/avatars/lucas.jpg" alt="Foto de Lucas — Fundador" loading="lazy">
+                </div>
+                <div>
+                  <h3>Lucas — Fundador</h3>
+                  <small>Startup · Branding + UI</small>
+                </div>
+              </div>
+              <p>“Nos ayudaron a encontrar la voz y la estética. Hoy la marca se siente sólida y diferencial.”</p>
+            </article>
+
+            <article class="testi-card">
+              <div class="testi-header">
+                <div class="testi-avatar">
+                  <span class="initial" aria-hidden="true">A</span>
+                  <img src="./img/avatars/ana.jpg" alt="Foto de Ana — Emprendedora" loading="lazy">
+                </div>
+                <div>
+                  <h3>Ana — Emprendedora</h3>
+                  <small>Servicios · UX de reservas</small>
+                </div>
+              </div>
+              <p>“Mejoraron la experiencia de reserva y aumentó la tasa de consultas. Súper recomendables.”</p>
+            </article>
+          </div>
+
+          <button class="testi-prev" aria-label="Anterior"><i class="ph ph-caret-left"></i></button>
+          <button class="testi-next" aria-label="Siguiente"><i class="ph ph-caret-right"></i></button>
+        </div>
+        <div class="testi-dots" role="tablist" aria-label="Indicadores del carrusel"></div>
+      </section>
+      -->
+
+      <!-- NOSOTROS -->
+      <section id="nosotros" class="section" aria-labelledby="nosotros-title">
+        <h2 id="nosotros-title">Diseño con estrategia: <span class="highlight">marcas con propósito.</span> </h2>
+        <p id="nosotros-text">
+          En Forma & Fondo creemos que el diseño no es solo estética: es estrategia y conexión real. <br>
+          Acompañamos marcas que buscan crecer con coherencia y humanidad.
+        </p>
+        <div class="cards-nosotros">
+          <div class="card-nos">
+            <img src="./img/jess.jpg" alt="Retrato de Jessi" loading="lazy">
+            <div class="card-content">
+              <h3 class="title-nostros-cards">Jessi</h3>
+              <p>Me apasiona crear marcas y experiencias digitales con alma. Diseño contenido, webs y UX/UI que reflejan
+                quién sos y hablan con claridad. Aporto creatividad, estrategia y una mirada humana a cada proyecto.</p>
+              <a href="https://www.behance.net/jessAndre" class="btn-card" target="_blank" rel="noopener">Ver
+                portfolio</a>
+            </div>
+          </div>
+
+          <div class="card-nos">
+            <img src="./img/ezefoto.jpg" alt="Retrato de Eze" loading="lazy">
+            <div class="card-content">
+              <h3 class="title-nostros-cards">Eze</h3>
+              <p>Me desempeño como diseñador y desarrollador web, Creativo de Marca y Social Media. Creo identidades y
+                experiencias digitales que conectan con audiencias llevando cada proyecto a su máximo potencial creativo y
+                estratégico.</p>
+              <a href="https://ezeandre.com.ar/" class="btn-card" target="_blank" rel="noopener">Ver
+                portfolio</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section fade-in" aria-labelledby="faq-title">
+        <h2 id="faq-title">Preguntas frecuentes</h2>
+        <p>Respondemos las dudas más comunes antes de empezar.</p>
+
+        <div class="faq">
+          <details class="faq-item">
+            <summary>
+              <span>¿Cómo es el proceso de trabajo?</span>
+              <i class="ph ph-caret-down" aria-hidden="true"></i>
+            </summary>
+            <div class="faq-content">
+              Trabajamos por etapas: brief inicial → planificación y calendario → producción de piezas
+              (diseño/copy/edición) → revisión y ajustes → programación/publicación → reporte con métricas e insights.
+              Todo con feedback guiado y fechas claras.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>¿En cuánto tiempo entregan?</span>
+              <i class="ph ph-caret-down" aria-hidden="true"></i>
+            </summary>
+            <div class="faq-content">
+              Los tiempos de entrega dependen del tipo de proyecto y el alcance acordado.
+              En cada propuesta se detallan los plazos estimados y se ajustan en conjunto con el cliente para asegurar
+              calidad y realismo en la planificación.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>¿Cómo se paga?</span>
+              <i class="ph ph-caret-down" aria-hidden="true"></i>
+            </summary>
+            <div class="faq-content">
+              Modalidad por hitos: <strong>50 %</strong> para iniciar, <strong>30 %</strong> al aprobar planificación y
+              piezas clave, y <strong>20 %</strong> al finalizar/entregar. Puede ajustarse por acuerdo. Aceptamos
+              transferencia y PayPal.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>¿Puedo cancelar o pausar el servicio?</span>
+              <i class="ph ph-caret-down" aria-hidden="true"></i>
+            </summary>
+            <div class="faq-content">
+              Sí. El servicio es mensual con renovación automática. Para no continuar, avisá por escrito <strong>10 días
+                antes</strong> del cierre del período. Si hay trabajo ya realizado se calcula proporcional (planificación
+              30 % · producción 40 % · programación/entrega 30 %). Ver <button type="button" class="legal-link"
+                data-modal="modal-cancelacion">Política de Cancelación</button>.
+            </div>
+          </details>
+        </div>
+      </section>
+
+
+      <!-- CONTACTO -->
+      <section id="contacto" class="section fade-in" aria-labelledby="contacto-title">
+        <h2 id="contacto-title">Tu proyecto merece una imagen con identidad</h2>
+        <p>Escribinos sin compromiso. Te respondemos en menos de 24 horas.</p>
+
+        <form id="contact-form" action="https://formspree.io/f/xkgbwywv" method="POST">
+          <label class="sr-only" for="nombre">Tu nombre</label>
+          <input id="nombre" type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" inputmode="text"
+            minlength="2" required />
+
+          <label class="sr-only" for="email">Tu email</label>
+          <input id="email" type="email" name="_replyto" placeholder="Tu email" autocomplete="email" inputmode="email"
+            required />
+
+          <label class="sr-only" for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Contanos tu idea o necesidad" minlength="10"
+            required></textarea>
+
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+            style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+
+          <!-- URL de origen -->
+          <input type="hidden" name="pagina" value="https://jessi-andre.github.io/forma-fondo/">
+
+          <button type="submit" class="btn btn-contacto btn-primary" aria-label="Enviar consulta">Enviar consulta</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <!-- Scroll to top -->
+    <a href="#" class="scroll-to-top" aria-label="Ir arriba">
+      <i class="ph ph-arrow-up"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="ff-footer-bg" aria-hidden="true">
+        <div class="ff-circle ff-c1"></div>
+        <div class="ff-circle ff-c2"></div>
+        <div class="ff-circle ff-c3"></div>
       </div>
-      <div class="testi-dots" role="tablist" aria-label="Indicadores del carrusel"></div>
-    </section>
-    -->
 
-    <!-- NOSOTROS -->
-    <section id="nosotros" class="section" aria-labelledby="nosotros-title">
-      <h2 id="nosotros-title">Diseño con estrategia: <span class="highlight">marcas con propósito.</span> </h2>
-      <p id="nosotros-text">
-        En Forma & Fondo creemos que el diseño no es solo estética: es estrategia y conexión real. <br>
-        Acompañamos marcas que buscan crecer con coherencia y humanidad.
-      </p>
-      <div class="cards-nosotros">
-        <div class="card-nos">
-          <img src="./img/jess.jpg" alt="Retrato de Jessi" loading="lazy">
-          <div class="card-content">
-            <h3 class="title-nostros-cards">Jessi</h3>
-            <p>Me apasiona crear marcas y experiencias digitales con alma. Diseño contenido, webs y UX/UI que reflejan
-              quién sos y hablan con claridad. Aporto creatividad, estrategia y una mirada humana a cada proyecto.</p>
-            <a href="https://www.behance.net/jessAndre" class="btn-card" target="_blank" rel="noopener">Ver
-              portfolio</a>
+      <div class="footer-container">
+        <!-- Columna 1 — NO tocar: igual a tu lado izquierdo -->
+        <div class="ff-footer-col ff-brand">
+          <h3 class="ff-title">Forma & Fondo</h3>
+          <p class="ff-text">Transformamos ideas en experiencias visuales. Creamos marcas y sitios que venden y se
+            recuerdan.</p>
+
+          <a href="#contacto" class="btn btn-footer-cta btn-contrast">
+            Empezar mi proyecto
+            <i class="ph ph-arrow-right"></i>
+          </a>
+
+          <div class="footer-icons" aria-label="Redes sociales">
+            <a href="https://www.behance.net/jessAndre" target="_blank" rel="noopener" aria-label="Behance"><i
+                class="ph ph-behance-logo"></i></a>
+            <a href="https://instagram.com/formayfondo__" target="_blank" rel="noopener" aria-label="Instagram"><i
+                class="ph ph-instagram-logo"></i></a>
+            <a href="mailto:jessicaandre890@gmail.com" aria-label="Correo"><i class="ph ph-envelope-simple"></i></a>
           </div>
         </div>
 
-        <div class="card-nos">
-          <img src="./img/ezefoto.jpg" alt="Retrato de Eze" loading="lazy">
-          <div class="card-content">
-            <h3 class="title-nostros-cards">Eze</h3>
-            <p>Me desempeño como diseñador y desarrollador web, Creativo de Marca y Social Media. Creo identidades y
-              experiencias digitales que conectan con audiencias llevando cada proyecto a su máximo potencial creativo y
-              estratégico.</p>
-            <a href="https://ezeandre.com.ar/" class="btn-card" target="_blank" rel="noopener">Ver
-              portfolio</a>
+        <!-- Columna 2 — Contacto -->
+        <div class="ff-footer-col ff-contact">
+          <h4 class="ff-subtitle">Contacto</h4>
+          <ul class="ff-contact-list">
+            <li>
+              <span class="ff-label">WhatsApp</span>
+              <a class="ff-value" href="https://wa.me/5491125532868" target="_blank" rel="noopener">+54 9 11 2553-2868</a>
+            </li>
+            <li>
+              <span class="ff-label">Email</span>
+              <a class="ff-value" href="mailto:holaformayfondo@gmail.com">holaformayfondo@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Columna 3 — Información legal -->
+        <div class="ff-footer-col ff-legal">
+          <h4 class="ff-subtitle">Información legal</h4>
+          <ul class="ff-legal-links">
+            <li><button type="button" class="legal-link" data-modal="modal-terminos">Términos y Condiciones</button></li>
+            <li><button type="button" class="legal-link" data-modal="modal-privacidad">Política de Privacidad</button>
+            </li>
+            <li><button type="button" class="legal-link" data-modal="modal-cancelacion">Política de Cancelación</button>
+            </li>
+          </ul>
+
+          <div class="ff-payments">
+            <span class="ff-pay-label">Métodos de pago aceptados:</span>
+            <span class="ff-pay-row">
+              <span class="ff-pill mini" aria-hidden="true"><i class="ph ph-credit-card"></i></span>
+              <span class="ff-pay-text">Transferencia • Paypal</span>
+            </span>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section fade-in" aria-labelledby="faq-title">
-      <h2 id="faq-title">Preguntas frecuentes</h2>
-      <p>Respondemos las dudas más comunes antes de empezar.</p>
-
-      <div class="faq">
-        <details class="faq-item">
-          <summary>
-            <span>¿Cómo es el proceso de trabajo?</span>
-            <i class="ph ph-caret-down" aria-hidden="true"></i>
-          </summary>
-          <div class="faq-content">
-            Trabajamos por etapas: brief inicial → planificación y calendario → producción de piezas
-            (diseño/copy/edición) → revisión y ajustes → programación/publicación → reporte con métricas e insights.
-            Todo con feedback guiado y fechas claras.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
-            <span>¿En cuánto tiempo entregan?</span>
-            <i class="ph ph-caret-down" aria-hidden="true"></i>
-          </summary>
-          <div class="faq-content">
-            Los tiempos de entrega dependen del tipo de proyecto y el alcance acordado.
-            En cada propuesta se detallan los plazos estimados y se ajustan en conjunto con el cliente para asegurar
-            calidad y realismo en la planificación.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
-            <span>¿Cómo se paga?</span>
-            <i class="ph ph-caret-down" aria-hidden="true"></i>
-          </summary>
-          <div class="faq-content">
-            Modalidad por hitos: <strong>50 %</strong> para iniciar, <strong>30 %</strong> al aprobar planificación y
-            piezas clave, y <strong>20 %</strong> al finalizar/entregar. Puede ajustarse por acuerdo. Aceptamos
-            transferencia y PayPal.
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>
-            <span>¿Puedo cancelar o pausar el servicio?</span>
-            <i class="ph ph-caret-down" aria-hidden="true"></i>
-          </summary>
-          <div class="faq-content">
-            Sí. El servicio es mensual con renovación automática. Para no continuar, avisá por escrito <strong>10 días
-              antes</strong> del cierre del período. Si hay trabajo ya realizado se calcula proporcional (planificación
-            30 % · producción 40 % · programación/entrega 30 %). Ver <button type="button" class="legal-link"
-              data-modal="modal-cancelacion">Política de Cancelación</button>.
-          </div>
-        </details>
+      <div class="footer-copy">
+        © <span id="ff-year"></span> Forma & Fondo. Hecho con ❤️ Todos los derechos reservados.
       </div>
-    </section>
 
+      <!-- ===== Modales legales ===== -->
+      <div id="modal-terminos" class="ff-modal" aria-hidden="true" role="dialog" aria-modal="true"
+        aria-labelledby="ttl-terminos">
+        <div class="ff-modal__backdrop" data-close-modal></div>
+        <div class="ff-modal__dialog" role="document">
+          <button class="ff-modal__close" aria-label="Cerrar" data-close-modal>×</button>
+          <h3 id="ttl-terminos">Términos y Condiciones</h3>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="section fade-in" aria-labelledby="contacto-title">
-      <h2 id="contacto-title">Tu proyecto merece una imagen con identidad</h2>
-      <p>Escribinos sin compromiso. Te respondemos en menos de 24 horas.</p>
+          <p><strong>1) Alcance del servicio</strong><br>
+            Cada proyecto incluye lo acordado en la propuesta/presupuesto. Cambios o adicionales fuera de ese alcance
+            tendrán costo extra.</p>
 
-      <form id="contact-form" action="https://formspree.io/f/xkgbwywv" method="POST">
-        <label class="sr-only" for="nombre">Tu nombre</label>
-        <input id="nombre" type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" inputmode="text"
-          minlength="2" required />
+          <p><strong>2) Pagos</strong><br>
+            Esquema habitual: <strong>50%</strong> inicial para comenzar, <strong>30%</strong> al aprobar planificación y
+            piezas principales, y <strong>20%</strong> al entregar materiales finales.<br>
+            Este esquema puede ajustarse por acuerdo con el cliente según características del proyecto.</p>
 
-        <label class="sr-only" for="email">Tu email</label>
-        <input id="email" type="email" name="_replyto" placeholder="Tu email" autocomplete="email" inputmode="email"
-          required />
+          <p><strong>3) Revisiones</strong><br>
+            Se contemplan hasta <em>2 rondas de cambios</em> por entregable dentro del alcance. Rondas adicionales o
+            cambios de brief se cotizan aparte.</p>
 
-        <label class="sr-only" for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" placeholder="Contanos tu idea o necesidad" minlength="10"
-          required></textarea>
+          <p><strong>4) Propiedad intelectual</strong><br>
+            Hasta cancelar el 100% del servicio, los diseños/prototipos son propiedad de <em>Forma & Fondo</em>. Con el
+            pago total, el cliente obtiene derechos de uso conforme a lo acordado.</p>
 
-        <!-- Honeypot anti-spam -->
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
-          style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
-
-        <!-- URL de origen -->
-        <input type="hidden" name="pagina" value="https://jessi-andre.github.io/forma-fondo/">
-
-        <button type="submit" class="btn btn-contacto btn-primary" aria-label="Enviar consulta">Enviar consulta</button>
-        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-      </form>
-    </section>
-  </main>
-
-  <!-- Scroll to top -->
-  <a href="#" class="scroll-to-top" aria-label="Ir arriba">
-    <i class="ph ph-arrow-up"></i>
-  </a>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="ff-footer-bg" aria-hidden="true">
-      <div class="ff-circle ff-c1"></div>
-      <div class="ff-circle ff-c2"></div>
-      <div class="ff-circle ff-c3"></div>
-    </div>
-
-    <div class="footer-container">
-      <!-- Columna 1 — NO tocar: igual a tu lado izquierdo -->
-      <div class="ff-footer-col ff-brand">
-        <h3 class="ff-title">Forma & Fondo</h3>
-        <p class="ff-text">Transformamos ideas en experiencias visuales. Creamos marcas y sitios que venden y se
-          recuerdan.</p>
-
-        <a href="#contacto" class="btn btn-footer-cta btn-contrast">
-          Empezar mi proyecto
-          <i class="ph ph-arrow-right"></i>
-        </a>
-
-        <div class="footer-icons" aria-label="Redes sociales">
-          <a href="https://www.behance.net/jessAndre" target="_blank" rel="noopener" aria-label="Behance"><i
-              class="ph ph-behance-logo"></i></a>
-          <a href="https://instagram.com/formayfondo__" target="_blank" rel="noopener" aria-label="Instagram"><i
-              class="ph ph-instagram-logo"></i></a>
-          <a href="mailto:jessicaandre890@gmail.com" aria-label="Correo"><i class="ph ph-envelope-simple"></i></a>
+          <p><strong>5) Uso en portfolio</strong><br>
+            Forma & Fondo podrá mostrar el resultado final en portfolio y redes, salvo acuerdo distinto por escrito.</p>
         </div>
       </div>
 
-      <!-- Columna 2 — Contacto -->
-      <div class="ff-footer-col ff-contact">
-        <h4 class="ff-subtitle">Contacto</h4>
-        <ul class="ff-contact-list">
-          <li>
-            <span class="ff-label">WhatsApp</span>
-            <a class="ff-value" href="https://wa.me/5491125532868" target="_blank" rel="noopener">+54 9 11 2553-2868</a>
-          </li>
-          <li>
-            <span class="ff-label">Email</span>
-            <a class="ff-value" href="mailto:holaformayfondo@gmail.com">holaformayfondo@gmail.com</a>
-          </li>
-        </ul>
-      </div>
+      <div id="modal-privacidad" class="ff-modal" aria-hidden="true" role="dialog" aria-modal="true"
+        aria-labelledby="ttl-privacidad">
+        <div class="ff-modal__backdrop" data-close-modal></div>
+        <div class="ff-modal__dialog" role="document">
+          <button class="ff-modal__close" aria-label="Cerrar" data-close-modal>×</button>
+          <h3 id="ttl-privacidad">Política de Privacidad</h3>
 
-      <!-- Columna 3 — Información legal -->
-      <div class="ff-footer-col ff-legal">
-        <h4 class="ff-subtitle">Información legal</h4>
-        <ul class="ff-legal-links">
-          <li><button type="button" class="legal-link" data-modal="modal-terminos">Términos y Condiciones</button></li>
-          <li><button type="button" class="legal-link" data-modal="modal-privacidad">Política de Privacidad</button>
-          </li>
-          <li><button type="button" class="legal-link" data-modal="modal-cancelacion">Política de Cancelación</button>
-          </li>
-        </ul>
+          <p><strong>1) Datos recolectados</strong><br>
+            Guardamos únicamente los datos enviados por formularios o WhatsApp.</p>
 
-        <div class="ff-payments">
-          <span class="ff-pay-label">Métodos de pago aceptados:</span>
-          <span class="ff-pay-row">
-            <span class="ff-pill mini" aria-hidden="true"><i class="ph ph-credit-card"></i></span>
-            <span class="ff-pay-text">Transferencia • Paypal</span>
-          </span>
+          <p><strong>2) Uso de datos</strong><br>
+            La información se utiliza para responder consultas, presupuestos y gestionar proyectos.</p>
+
+          <p><strong>3) No compartimos datos</strong><br>
+            No compartimos tu información con terceros, salvo obligación legal.</p>
+
+          <p><strong>4) Eliminación de datos</strong><br>
+            Podés solicitar la eliminación de tus datos escribiendo a nuestro email de contacto.</p>
+
+          <p><strong>5) Cookies y analítica</strong><br>
+            Usamos Google Analytics con fines estadísticos, sin identificar usuarios individualmente.</p>
         </div>
       </div>
-    </div>
 
-    <div class="footer-copy">
-      © <span id="ff-year"></span> Forma & Fondo. Hecho con ❤️ Todos los derechos reservados.
-    </div>
+      <div id="modal-cancelacion" class="ff-modal" aria-hidden="true" role="dialog" aria-modal="true"
+        aria-labelledby="ttl-cancelacion">
+        <div class="ff-modal__backdrop" data-close-modal></div>
+        <div class="ff-modal__dialog" role="document">
+          <button class="ff-modal__close" aria-label="Cerrar" data-close-modal>×</button>
+          <h3 id="ttl-cancelacion">Política de Cancelación</h3>
 
-    <!-- ===== Modales legales ===== -->
-    <div id="modal-terminos" class="ff-modal" aria-hidden="true" role="dialog" aria-modal="true"
-      aria-labelledby="ttl-terminos">
-      <div class="ff-modal__backdrop" data-close-modal></div>
-      <div class="ff-modal__dialog" role="document">
-        <button class="ff-modal__close" aria-label="Cerrar" data-close-modal>×</button>
-        <h3 id="ttl-terminos">Términos y Condiciones</h3>
+          <h4>Plazos y aprobaciones</h4>
+          <p>Con el pago inicial, la planificación se entrega en <strong>hasta 5 días hábiles</strong>.<br>
+            Ventana de feedback del cliente: <strong>48 horas</strong>. Sin respuesta, se considera aprobado para
+            avanzar.<br>
+            Correcciones dentro del alcance: entrega en <strong>48–72 hs</strong> según complejidad.<br>
+            Feedback o materiales fuera de plazo pueden reprogramarse y/o generar costos adicionales.</p>
 
-        <p><strong>1) Alcance del servicio</strong><br>
-          Cada proyecto incluye lo acordado en la propuesta/presupuesto. Cambios o adicionales fuera de ese alcance
-          tendrán costo extra.</p>
+          <h4>Cancelación y renovación</h4>
+          <p>El servicio mensual se renueva automáticamente. Para no continuar, notificar por escrito con <strong>mínimo
+              10 días</strong> de anticipación al cierre del período.<br>
+            Aviso fuera de término: se cobrará el <strong>50% del valor mensual</strong> por planificación/producción
+            anticipada del mes siguiente.</p>
 
-        <p><strong>2) Pagos</strong><br>
-          Esquema habitual: <strong>50%</strong> inicial para comenzar, <strong>30%</strong> al aprobar planificación y
-          piezas principales, y <strong>20%</strong> al entregar materiales finales.<br>
-          Este esquema puede ajustarse por acuerdo con el cliente según características del proyecto.</p>
+          <h4>Modificaciones</h4>
+          <p>Cada pieza incluye hasta <strong>2 rondas de cambios</strong> dentro del alcance. Rondas adicionales o
+            cambios de brief se cotizan aparte.</p>
 
-        <p><strong>3) Revisiones</strong><br>
-          Se contemplan hasta <em>2 rondas de cambios</em> por entregable dentro del alcance. Rondas adicionales o
-          cambios de brief se cotizan aparte.</p>
-
-        <p><strong>4) Propiedad intelectual</strong><br>
-          Hasta cancelar el 100% del servicio, los diseños/prototipos son propiedad de <em>Forma & Fondo</em>. Con el
-          pago total, el cliente obtiene derechos de uso conforme a lo acordado.</p>
-
-        <p><strong>5) Uso en portfolio</strong><br>
-          Forma & Fondo podrá mostrar el resultado final en portfolio y redes, salvo acuerdo distinto por escrito.</p>
+          <h4>Contacto</h4>
+          <p>Para cancelar o reprogramar, escribí con la mayor anticipación posible para coordinar entregables y fechas.
+            La comunicación oficial se considerará válida por email o WhatsApp Business.</p>
+        </div>
       </div>
-    </div>
 
-    <div id="modal-privacidad" class="ff-modal" aria-hidden="true" role="dialog" aria-modal="true"
-      aria-labelledby="ttl-privacidad">
-      <div class="ff-modal__backdrop" data-close-modal></div>
-      <div class="ff-modal__dialog" role="document">
-        <button class="ff-modal__close" aria-label="Cerrar" data-close-modal>×</button>
-        <h3 id="ttl-privacidad">Política de Privacidad</h3>
-
-        <p><strong>1) Datos recolectados</strong><br>
-          Guardamos únicamente los datos enviados por formularios o WhatsApp.</p>
-
-        <p><strong>2) Uso de datos</strong><br>
-          La información se utiliza para responder consultas, presupuestos y gestionar proyectos.</p>
-
-        <p><strong>3) No compartimos datos</strong><br>
-          No compartimos tu información con terceros, salvo obligación legal.</p>
-
-        <p><strong>4) Eliminación de datos</strong><br>
-          Podés solicitar la eliminación de tus datos escribiendo a nuestro email de contacto.</p>
-
-        <p><strong>5) Cookies y analítica</strong><br>
-          Usamos Google Analytics con fines estadísticos, sin identificar usuarios individualmente.</p>
-      </div>
-    </div>
-
-    <div id="modal-cancelacion" class="ff-modal" aria-hidden="true" role="dialog" aria-modal="true"
-      aria-labelledby="ttl-cancelacion">
-      <div class="ff-modal__backdrop" data-close-modal></div>
-      <div class="ff-modal__dialog" role="document">
-        <button class="ff-modal__close" aria-label="Cerrar" data-close-modal>×</button>
-        <h3 id="ttl-cancelacion">Política de Cancelación</h3>
-
-        <h4>Plazos y aprobaciones</h4>
-        <p>Con el pago inicial, la planificación se entrega en <strong>hasta 5 días hábiles</strong>.<br>
-          Ventana de feedback del cliente: <strong>48 horas</strong>. Sin respuesta, se considera aprobado para
-          avanzar.<br>
-          Correcciones dentro del alcance: entrega en <strong>48–72 hs</strong> según complejidad.<br>
-          Feedback o materiales fuera de plazo pueden reprogramarse y/o generar costos adicionales.</p>
-
-        <h4>Cancelación y renovación</h4>
-        <p>El servicio mensual se renueva automáticamente. Para no continuar, notificar por escrito con <strong>mínimo
-            10 días</strong> de anticipación al cierre del período.<br>
-          Aviso fuera de término: se cobrará el <strong>50% del valor mensual</strong> por planificación/producción
-          anticipada del mes siguiente.</p>
-
-        <h4>Modificaciones</h4>
-        <p>Cada pieza incluye hasta <strong>2 rondas de cambios</strong> dentro del alcance. Rondas adicionales o
-          cambios de brief se cotizan aparte.</p>
-
-        <h4>Contacto</h4>
-        <p>Para cancelar o reprogramar, escribí con la mayor anticipación posible para coordinar entregables y fechas.
-          La comunicación oficial se considerará válida por email o WhatsApp Business.</p>
-      </div>
-    </div>
-
-  </footer>
+    </footer>
 
 
-  <!-- Phosphor Icons JS -->
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  <!-- App script -->
-  <script src="js/script.js?v=1.2.0" defer></script>
-</body>
+    <!-- Phosphor Icons JS -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- App script -->
+    <script src="js/script.js?v=1.2.0" defer></script>
+  </body>
 
-</html>
+  </html>
