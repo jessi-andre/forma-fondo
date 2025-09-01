@@ -23,6 +23,14 @@
   <meta property="og:image" content="https://jessi-andre.github.io/forma-fondo/img/og-cover.jpg" />
   <meta property="og:locale" content="es_CL" />
 
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Forma & Fondo — Branding, UX/UI, Web y Community Management" />
+  <meta name="twitter:description" content="Diseño estratégico, branding y experiencias digitales que convierten." />
+  <meta name="twitter:image" content="https://jessi-andre.github.io/forma-fondo/img/og-cover.jpg" />
+  <meta name="twitter:site" content="@formayfondo__" />
+
+
   <!-- Favicons -->
   <link rel="icon" href="./img/favicon-32.png" sizes="32x32">
   <link rel="icon" href="./img/favicon-192.png" sizes="192x192">
@@ -183,10 +191,15 @@
     </section>
 
     <!-- MARQUEE (loop perfecto, sin solapes) -->
-    <section class="marquee-section" aria-hidden="true">
-      <div class="marquee">
+    <section class="marquee-section">
+      <!-- Texto accesible, solo 1 vez -->
+      <p class="sr-only">
+        Branding, UX/UI, Desarrollo Web, Gestión de Redes, Copywriting, Planificación, Automatizaciones, Asesorías
+      </p>
+
+      <!-- Bloque animado, oculto a lectores -->
+      <div class="marquee" aria-hidden="true">
         <div class="marquee__content">
-          <!-- Bloque A (x4) -->
           <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
             ✺ Automatizaciones ✷ Asesorías ✦</span>
           <span class="marquee-item">Branding ✷ UX/UI ✺ Desarrollo Web ✷ Gestión de Redes ✺ Copywriting ✷ Planificación
@@ -207,6 +220,8 @@
         </div>
       </div>
     </section>
+    <!-- FIN MARQUEE -->
+
 
     <!-- SERVICIOS -->
     <section id="servicios" class="section fade-in" aria-labelledby="servicios-title">
@@ -393,7 +408,8 @@
 
           <ul class="plan-features">
             <li><i class="ph ph-check-circle" aria-hidden="true"></i>8 reels, 8 carruseles, 8 historias (24 piezas)</li>
-            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Copy + diseño + guías de UGC (para grabar mejor)
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Copy + diseño +guías de UGC (tips para grabar mejor
+              contenido con tu celular)
             </li>
             <li><i class="ph ph-check-circle" aria-hidden="true"></i>Calendario + publicación programada</li>
             <li><i class="ph ph-check-circle" aria-hidden="true"></i>Gestión diaria de comunidad (comentarios + DMs)
@@ -412,8 +428,8 @@
         </article>
       </div>
       <small id="plan-note">
-        Valores de referencia. Podemos ajustar el pack según tu necesidad. Extras opcionales: pauta/ads, landing lite,
-        sesión de fotos, motion avanzado.
+        Los packs se adaptan a tu marca. Podés sumar extras (ads, landing lite, fotos, motion)
+        cuando lo necesites. Valores de referencia.
       </small>
     </section>
 
@@ -657,7 +673,7 @@
     </section>
 
 
-    <!-- CONTACTO -->
+    <!-- FORMULARIO DE CONTACTO -->
     <section id="contacto" class="section fade-in" aria-labelledby="contacto-title">
       <h2 id="contacto-title">Tu proyecto merece una imagen con identidad</h2>
       <p>Escribinos sin compromiso. Te respondemos en menos de 24 horas.</p>
@@ -714,12 +730,17 @@
         </a>
 
         <div class="footer-icons" aria-label="Redes sociales">
-          <a href="https://www.behance.net/jessAndre" target="_blank" rel="noopener" aria-label="Behance"><i
-              class="ph ph-behance-logo"></i></a>
-          <a href="https://instagram.com/formayfondo__" target="_blank" rel="noopener" aria-label="Instagram"><i
-              class="ph ph-instagram-logo"></i></a>
-          <a href="mailto:jessicaandre890@gmail.com" aria-label="Correo"><i class="ph ph-envelope-simple"></i></a>
+          <a href="https://www.behance.net/jessAndre" target="_blank" rel="noopener" aria-label="Behance">
+            <i class="ph ph-behance-logo" aria-hidden="true"></i>
+          </a>
+          <a href="https://instagram.com/formayfondo__" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="ph ph-instagram-logo" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:jessicaandre890@gmail.com" aria-label="Correo">
+            <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+          </a>
         </div>
+
       </div>
 
       <!-- Columna 2 — Contacto -->
@@ -835,17 +856,20 @@
           </li>
           <li>Feedback o materiales fuera de plazo pueden reprogramarse y/o generar costos adicionales.</li>
         </ul>
-<br>
+        <br>
         <h4>Cancelación y renovación</h4>
-        <p>El servicio mensual se renueva automáticamente. Para no continuar, es necesario notificar por escrito con un
-          mínimo de 30 días de anticipación antes del cierre del período.
-          En caso de aviso fuera de término, se cobrará el 100% del valor mensual, ya que la planificación y producción
-          se realizan de manera anticipada. No se realizan devoluciones una vez iniciado el mes.</p>
-<br>
+        <ul>
+          <li>El servicio mensual se renueva automáticamente. Para no continuar, notificá por escrito con un mínimo de
+            <strong>30 días de anticipación</strong> antes del cierre del período.
+          </li>
+          <li><strong>No se realizan devoluciones</strong> una vez iniciado el mes. Si ya hay tareas en curso,
+            el servicio continúa hasta finalizar el período contratado.</li>
+        </ul>
+        <br>
         <h4>Modificaciones</h4>
         <p>Cada pieza incluye hasta <strong>2 rondas de cambios</strong> dentro del alcance. Rondas adicionales o
           cambios de brief se cotizan aparte.</p>
-<br>
+        <br>
         <h4>Contacto</h4>
         <p>Para cancelar o reprogramar, escribí con la mayor anticipación posible para coordinar entregables y fechas.
           La comunicación oficial se considerará válida por email o WhatsApp Business.</p>
