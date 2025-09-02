@@ -365,5 +365,21 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Selecciona todos los links que van a wa.me
+  const whatsappLinks = document.querySelectorAll("a[href*='wa.me']");
+
+  whatsappLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      let label = link.getAttribute("aria-label") || link.textContent.trim() || "WhatsApp";
+
+      gtag("event", "click_whatsapp", {
+        event_category: "engagement",
+        event_label: label,
+        value: 1
+      });
+    });
+  });
+});
 
 
